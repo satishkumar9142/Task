@@ -1,0 +1,76 @@
+package com.reactivework.cityexercise.cityservicespackage;
+
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.reactivework.cityexercise.citycustomexceptionpackage.CityCustomException;
+import com.reactivework.cityexercise.citymodelclasspackage.City;
+import com.reactivework.cityexercise.cityutilpackage.R2DBC_Connection;
+
+import io.r2dbc.spi.Batch;
+import io.r2dbc.spi.Connection;
+import reactor.core.publisher.Mono;
+
+public class CRUDOperationWithR2DBC {
+	
+	private static Logger log = LoggerFactory.getLogger(CRUDOperationWithR2DBC.class);
+	private static Connection conn;
+	public void Create() throws CityCustomException  {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		String createSql = 
+				"CREATE TABLE CityExercise (" + 
+						"id INT PRIMARY KEY,"+
+						"Name VARCHAR(250),"+
+						"CountryCode VARCHAR(250),"+
+						"City VARCHAR(250)," +
+						"Population BIGINT)";
+		
+		connectionMono.flatMapMany(connection -> connection.createStatement(createSql).execute()).blockLast();
+	}
+	public void Insert(List<City> data) throws CityCustomException  {
+		R2DBC_Connection connection = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(connection.getConnection().create());
+		conn = 
+		Batch batch = conn.
+		
+		for(City city : data) {
+		String insertSql = 
+				"INSERT INTO CityExercise(id, Name, CountryCode, City, Population) "+
+								"VALUES ("+ city.getId() +", \'" + city.getName() +"\', \'" + city.getCouCode() +"\', \'" + city.getCity() +"\', " + city.getPopulation()+  ")";								
+		connectionMono.flatMapMany(connection -> connection.createStatement(insertSql).execute()).blockLast(); 
+		}
+		
+	}
+	
+	public void Update() throws CityCustomException {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		String updateSql = 
+				" Update CityExercise set Name = 'update' where id =1;";
+
+		connectionMono.flatMapMany(connection -> connection.createStatement(updateSql).execute()).blockLast();
+	}
+	public void Delete() throws CityCustomException {
+
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+
+		String updateSql = 
+				" Delete from CityExercise where id =0;";
+
+		connectionMono.flatMapMany(connection -> connection.createStatement(updateSql).execute()).blockLast();
+	}
+	public void Read() throws CityCustomException  {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		connectionMono.flatMapMany(connection -> connection.createStatement("select * from CityExercise").execute())
+		.flatMap(result -> result.map((row, rowMetadata) -> {
+			return "ID: " + row.get("id") + ", Name: " + row.get("Name")  + ", CountryCode: " + row.get("CountryCode") +
+					", City: " + row.get("City") +", Population: " + row.get("population");
+		})).doOnNext(log::info).blockLast();
+	}
+}

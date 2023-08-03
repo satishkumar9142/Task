@@ -1,0 +1,11 @@
+package Java8;
+interface I{
+	public void add(int a, int b);
+}
+public class MethodReferce_DoubleColon {
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

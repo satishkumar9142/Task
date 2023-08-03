@@ -1,0 +1,6 @@
+package com.reactiveworks.productuser.model;
+
+public interface Laptop extends ProcessingDevice{
+	
+	String graphicCard();
+}

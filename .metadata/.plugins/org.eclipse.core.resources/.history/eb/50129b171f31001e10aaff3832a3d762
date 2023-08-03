@@ -1,0 +1,31 @@
+package com.reactiveworks.stocktrade.services;
+
+import java.util.List;
+
+public class StockTradeServiceImpl implements StockTradeService {
+
+	@Override
+	public StockTrade getMaximumVolTrade() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StockTrade getMinimumVolTrade() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> getDailyTradingDiff() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StockTrade> readStockTrade() {
+		
+		return null;
+	}
+
+}

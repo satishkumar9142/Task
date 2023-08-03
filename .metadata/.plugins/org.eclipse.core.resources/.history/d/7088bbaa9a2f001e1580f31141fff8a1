@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/product/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="product" targetNamespace="http://www.example.org/product/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/product/">
+      <xsd:element name="getProductListByProductType">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productType" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProductListByProductTypeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+                        <xsd:element name="product" type="xsd:date" />
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getProductListByProductTypeRequest">
+    <wsdl:part element="tns:getProductListByProductType" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getProductListByProductTypeResponse">
+    <wsdl:part element="tns:getProductListByProductTypeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="product">
+    <wsdl:operation name="getProductListByProductType">
+      <wsdl:input message="tns:getProductListByProductTypeRequest"/>
+      <wsdl:output message="tns:getProductListByProductTypeResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="productSOAP" type="tns:product">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getProductListByProductType">
+      <soap:operation soapAction="http://www.example.org/product/getProductListByProductType"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="product">
+    <wsdl:port binding="tns:productSOAP" name="productSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

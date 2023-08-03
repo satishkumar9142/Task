@@ -1,0 +1,12 @@
+package pack1;
+
+public class TestApp {
+
+	main
+	   DOMConfigurator.configure("log4j.xml");  
+       logger.debug("Sample debug message");  
+       logger.info("Sample info message");  
+       logger.warn("Sample warn message");  
+       logger.error("Sample error message");  
+       logger.fatal("Sample fatal message");  
+}

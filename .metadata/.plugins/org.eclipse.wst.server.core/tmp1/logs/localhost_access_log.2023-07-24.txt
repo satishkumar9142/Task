@@ -1,0 +1,9 @@
+127.0.0.1 - - [24/Jul/2023:10:15:58 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [24/Jul/2023:11:58:51 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [24/Jul/2023:12:16:36 +0530] "POST /TopDown-Axis2-wsdl/services/SampleSOAP HTTP/1.1" 404 797
+127.0.0.1 - - [24/Jul/2023:12:18:17 +0530] "GET /TopDown-Axis2-wsdl/services/SampleSOAP HTTP/1.1" 404 797
+127.0.0.1 - - [24/Jul/2023:12:18:20 +0530] "GET /TopDown-Axis2-wsdl/services/SampleSOAP HTTP/1.1" 404 797
+127.0.0.1 - - [24/Jul/2023:18:39:19 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [24/Jul/2023:18:40:12 +0530] "GET /Cxf-Calculator1/wsdl/calculatorimpl.wsdl HTTP/1.1" 200 4411
+127.0.0.1 - - [24/Jul/2023:18:42:10 +0530] "POST /Cxf-Calculator1/services/CalculatorImplPort HTTP/1.1" 200 211
+127.0.0.1 - - [24/Jul/2023:18:42:26 +0530] "POST /Cxf-Calculator1/services/CalculatorImplPort HTTP/1.1" 200 218

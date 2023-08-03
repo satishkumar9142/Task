@@ -1,0 +1,12 @@
+package Java8;
+class Student1{
+	String name;
+	int rollno;
+	
+}
+public class MethodRefenceThroughConstructor {
+
+	public static void main(String[] args) {
+		
+	}
+}

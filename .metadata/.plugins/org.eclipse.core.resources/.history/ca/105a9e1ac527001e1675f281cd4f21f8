@@ -1,0 +1,8 @@
+package com.reactiveworks.cxf;
+
+public class Add {
+	
+	public getAdd(int a, int b) {
+		return (a+b);
+	}
+}

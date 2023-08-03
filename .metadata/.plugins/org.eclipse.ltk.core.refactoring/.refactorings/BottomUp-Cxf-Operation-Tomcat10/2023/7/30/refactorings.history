@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.reactiveworks.cxf.Opertions.java&apos; to &apos;Operations.java&apos;&#x0D;&#x0A;- Original project: &apos;BottomUp-Cxf-Operation-Tomcat10&apos;&#x0D;&#x0A;- Original element: &apos;com.reactiveworks.cxf.Opertions.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.reactiveworks.cxf.Operations.java&apos;" description="Rename compilation unit &apos;Opertions.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.reactiveworks.cxf{Opertions.java" name="Operations.java" references="false" stamp="1690293327876" version="1.0"/>
+</session>

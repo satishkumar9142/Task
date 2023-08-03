@@ -1,0 +1,47 @@
+package com.reactivework.cityexercise.model;
+
+
+public class City {
+	private Integer id;
+	private String name;
+	private String couCode;
+	private String city;
+	private long population;
+	
+	public City(Integer id, String name, String couCode, String city, long population) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.couCode = couCode;
+		this.city = city;
+		this.population = population;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public String getCouCode() {
+		return couCode;
+	}
+
+	public String getCity() {
+		return city;
+	}
+	
+	public long getPopulation() {
+		return population;
+	}
+	
+	// ===============  toString (to print the data) ===================
+
+	@Override
+	public String toString() {
+		return "[" + id + ", "+ name + ", " + couCode + ", " + city + ", "
+				+ population +"]";
+	}
+}

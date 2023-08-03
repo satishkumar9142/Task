@@ -1,0 +1,6 @@
+package com.reactiveworks.productuser.model;
+
+public interface Product {
+	
+	private string ProductId; 
+}

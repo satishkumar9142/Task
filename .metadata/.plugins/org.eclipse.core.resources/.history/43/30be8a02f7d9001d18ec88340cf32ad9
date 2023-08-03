@@ -1,0 +1,14 @@
+package pack1;
+
+import org.apache.log4j.Logger;
+
+public class TestApp {
+	    private static final Logger logger 
+	      = LoggerFactory.getLogger(Example.class);
+
+	    public static void main(String[] args) {
+	        logger.info("Example log from {}", Example.class.getSimpleName());
+	    }
+	}
+	
+}

@@ -1,0 +1,18 @@
+package com.reactiveworks.cxf.exercise;
+
+public class MathUtilityImpl implements MathUtility{
+
+	@Override
+	public int getAdd(int a, int b) {
+		// TODO Auto-generated method stub
+		return (a+b);
+	}
+
+	@Override
+	public int getFactorial(int n) {
+		// TODO Auto-generated method stub
+		return (n==0)?1: n*getFactorial(n-1);
+	}
+	
+	
+}

@@ -1,0 +1,83 @@
+package com.reactiveworks.product.util;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import com.reactiveworks.product.exception.ProductException;
+import com.reactiveworks.product.service.Laptop;
+import com.reactiveworks.product.service.Product;
+
+
+public class ProductCsvReader {
+	
+	public List<Product> getAllProducts() throws ProductException {
+		List<Product> list= new ArrayList<Product>(); 
+		BufferedReader br;
+		InputStream is = getClass().getClassLoader().getResourceAsStream("ProductDetail.csv");
+		InputStreamReader streamReader = new InputStreamReader(is);
+		String s ="";
+		if(is == null) {
+			throw new ProductException("File Not Found Exception");
+		}
+			br = new BufferedReader(streamReader);
+			try { 
+				s = br.readLine();
+			} catch (IOException e) {
+				throw new ProductException("problem in reading the line");
+			}
+			String [] s1 = s.split(",");
+			br.lines().filter(line -> line != null).map(line -> line.split(",")).forEach(splitLine ->{
+				Map<String, String> map = new LinkedHashMap<String, String>();
+				 map =  readLineInMap(s1, splitLine);
+				 try {
+					list.add(SendMapToModelClass(map));
+				} catch (ProductException e) {
+					e.printStackTrace();
+				}
+			});
+		return list; 
+	}
+// ================================================================================
+	private static Product SendMapToModelClass(Map<String, String> map) throws ProductException {
+		if(map.get("ProductType").equals("Laptop")) {
+			Laptop laptop = new Laptop();
+			laptop.buildProduct(map);
+			return laptop;
+		}
+		if(map.get("ProductType").equals("Mobile")) {
+			MobileDevice mobile = new MobileDevice();
+			mobile.buildProduct(map);
+			return mobile;
+		}
+		if(map.get("ProductType").equals("TV")) {
+			TV tv = new TV();
+			tv.buildProduct(map);
+			return tv;
+		}
+		if(map.get("ProductType").equals("WashinMachine")) {
+			WashingMachine washinMachine = new WashingMachine();
+			washinMachine.buildProduct(map);
+			return washinMachine;
+		}
+		return null;
+	}
+//===============================================================================
+	private static Map<String,String> readLineInMap(String [] s, String [] s1) {
+		Map<String,String> map = new LinkedHashMap<String,String>();
+		for(int i=0;i<s.length;i++) {
+			try {
+				map.put(s[i], s1[i]);
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				map.put(s[i], "");
+			}
+		}
+		return map;
+	}
+}
+

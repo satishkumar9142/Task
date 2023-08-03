@@ -1,0 +1,33 @@
+package com.reactivework.mysqldemo.cassandradatabase;
+
+import com.datastax.driver.core.ResultSet;
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.SimpleStatement;
+import com.datastax.driver.core.schemabuilder.SchemaBuilder;
+
+public class VideoRepository {
+    private static final String TABLE_NAME = "videos";
+
+    public void createTable() {
+        createTable(null);
+    }
+
+    public void createTable(String keyspace) {
+        createTable createTable = SchemaBuilder.createTable(TABLE_NAME)
+          .withPartitionKey("video_id", DataTypes.UUID)
+          .withColumn("title", DataTypes.TEXT)
+          .withColumn("creation_date", DataTypes.TIMESTAMP);
+
+        executeStatement(createTable.build(), keyspace);
+    }
+
+    private ResultSet executeStatement(SimpleStatement statement, String keyspace) {
+        if (keyspace != null) {
+            statement.setKeyspace(CqlIdentifier.fromCql(keyspace));
+        }
+
+        return Session.execute(statement);
+    }
+
+    // ...
+}

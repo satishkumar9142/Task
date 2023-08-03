@@ -1,0 +1,130 @@
+package com.reactivework.cityexercise.cityutilpackage;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.reactivework.cityexercise.citycustomexceptionpackage.CityCustomException;
+import com.reactivework.cityexercise.citymodelclasspackage.City;
+import com.reactiveworks.ipl.iplexception.IPLException;
+import com.reactiveworks.ipl.modelclass.Match;
+
+/**
+ * 
+ * This is CityUtil Class.
+ *
+ */
+public class CityUtil  { 
+	private static Logger log = LoggerFactory.getLogger(CityUtil.class); 
+	/**
+	 * This is method for reading all data from file.
+	 * @param path This is path of file from where we read all data.
+	 * @return all data of the file.
+	 * @throws CityCustomException if path is invalid or numberformat exception
+	 */
+	@SuppressWarnings("resource") 
+	public List<City> getCityList (String path) throws CityCustomException{ 
+		log.info("Inside getCityList");
+		List<City> data = new ArrayList<City>();    
+		
+		List<Match> list = new ArrayList<Match>();
+		InputStream is = getClass().getClassLoader().getResourceAsStream("matches.csv");
+		InputStreamReader isr = new InputStreamReader(is);
+
+		if(is == null) {
+			throw new IPLException("File Not Found Exception");
+		}
+		BufferedReader br = new BufferedReader(isr);
+		try {
+			br.readLine();
+		} catch (IOException e) {
+			throw new IPLException("Problem in Reading the Line");
+		}
+		 br.lines().filter(i->i != null).map(i->Pattern.compile(",").split(i))
+		 .forEach((i-> {Match match = new Match();
+						match.setMatchId(Integer.parseInt(i[0]));
+						match.setSeason(Integer.parseInt(i[1]));		
+						list.add(match);
+			}));
+		 
+		 
+		 
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader(path));
+
+			String s = "";	 		
+			City customer = null;
+
+			while(s != null) 
+			{
+				int id;
+				long population;
+				String [] s1 = s.split(",");
+				try {
+					id = Integer.parseInt(s1[0]);
+					population = Long.parseLong(s1[4]);
+
+				}
+				catch(NumberFormatException e) {
+					try {
+						s = br.readLine();
+					} catch (IOException e1) {
+						log.error("error will Occur in CityUtilClass ");
+					}
+					continue; 
+				}		
+				String name = s1[1];
+				String countryCode = s1[2];
+				String city = s1[3];
+				customer = new City(id, name, countryCode, city, population);
+				data.add(customer);
+
+				try {
+					s = br.readLine();
+				} catch (IOException e) {
+					log.error("IoException in CityUtil Class");
+					throw new CityCustomException("Error reading to File",e);
+				} 
+			}
+		} catch (FileNotFoundException e) {
+			log.error("FIleNotFoundException in CityUtil Class");
+			throw new CityCustomException("File Not Found / File Path is not Correct",e);
+		}
+		return data;
+	}
+}
+
+/*
+ 
+   purchased N apples for B and C. Now he wants to share all the apples with his friends.
+One apple typically weighs between 100 and 200 grammes. A naturally wants to protect his pals. Since B and C received an identical quantity of apples, the weight of the apples they received must also be equal.
+A, however, is unable to divide an apple into multiple pieces because he is currently without a knife. If there is a fair way to distribute all the apples among his friends, let him know.
+
+
+A, however, is unable to divide an apple into multiple pieces because he is currently without a knife. If there is a fair way to distribute all the apples among his friends, let him know.
+Input:
+3 100 200 100
+Output:
+Yes
+
+
+Submit your program for evaluation by clicking on the "Submit" button. Also ensure that while printing the output of your program, 
+A if required, you only print the exact output of the program, without any leading or preceding text or remark.
+023/06727 A has purchased N apples for B and C. Now he wants to share all the apples with his friends.
+One apple typically weighs between 100 and 200 grammes. A naturally wants to protect his pals. Since B and C received
+ an identical quantity of apples, the weight of the apples they received must also be equal.
+A, however, is unable to divide an apple into multiple pieces because he is currently without a knife. 
+If there is a fair way to distribute all the apples among his friends, let him know.
+Innut.
+
+ */

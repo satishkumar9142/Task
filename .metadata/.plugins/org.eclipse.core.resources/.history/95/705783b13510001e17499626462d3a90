@@ -1,0 +1,8 @@
+package com.reactiveworks.productuser.model;
+
+public interface Tv extends Product{
+	
+	int displaySize();
+	String displayType(); 
+	boolean isSmartTV();
+}

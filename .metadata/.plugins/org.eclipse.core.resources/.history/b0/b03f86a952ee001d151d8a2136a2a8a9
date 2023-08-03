@@ -1,0 +1,67 @@
+package Java8;
+
+import java.util.function.Function;
+import java.util.function.IntFunction;
+
+import javax.swing.event.InternalFrameAdapter;
+class Student
+{
+	String name;
+	int marks;
+	
+	Student(String name, int marks) {
+		this.name = name;
+		this.marks = marks;
+	}
+}
+public class FunctionPredefineFunctionalInterface {
+	public static void main(String[] args) {
+		
+		IntFunction f = i->i*i;
+		System.out.println(f.apply(4));
+		
+		Function<String,Integer> s1 = s->s.length();
+		System.out.println(s1.apply("abcdefghijklmn"));
+		
+		Function<String, String> s2 = s->s.toUpperCase();
+		System.out.println(s2.apply("abcdefghijklmn"));
+		
+		Function<Student, String> f1 = s ->{
+			int marks = s.marks;
+			String grade = "";
+			if(marks >= 80) grade = "A[Dictinction]";
+			else if(marks >=60) grade="B[First Class]";
+			else if(marks >=50) grade="C[Second Class]";
+			else if(marks >=35) grade="D[Third Class]";
+			else grade = "E[failed]";
+			return grade;
+		};
+		
+		Student [] s  = {		
+						 new Student("Durga",100),
+						 new Student("Sunny",65),
+						 new Student("Bunny",15),
+						 new Student("Chinny",45),
+						 new Student("Vinay",25),
+						 };
+		for(Student s3 : s) {
+			if(s3.marks >= 60)
+			System.out.println("[Student Name=" + s3.name + ",marks=" + s3.marks +"] result = " + f1.apply(s3));	
+		}
+		
+		
+		Function<Integer, Integer> f2 = i->2*i;
+		Function<Integer, Integer> f3 = i->i*i*i;
+		
+		System.out.println(f2.andThen(f3).apply(2));
+		System.out.println(f2.compose(f3).apply(2));
+	}
+}
+
+/*
+     Function Chaining
+     ===================
+     f1.andThen(f2).apply(i); ==> first f1 followed by f2
+     
+     f1.compose(f2).apply(i); ==> first f2 compose then f1
+ */

@@ -1,0 +1,205 @@
+
+package com.reactiveworks.city.service.client;
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the com.reactiveworks.city.service.client package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+    private final static QName _GetCityOfMaxPopulationResponse_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getCityOfMaxPopulationResponse");
+    private final static QName _GetCityNameByIdResponse_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getCityNameByIdResponse");
+    private final static QName _CityCustomException_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "CityCustomException");
+    private final static QName _GetCityOfMinPopulationResponse_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getCityOfMinPopulationResponse");
+    private final static QName _GetCityOfMaxPopulation_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getCityOfMaxPopulation");
+    private final static QName _GetCityOfMinPopulation_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getCityOfMinPopulation");
+    private final static QName _GetListOfCityNameByCodeResponse_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getListOfCityNameByCodeResponse");
+    private final static QName _GetCityNameById_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getCityNameById");
+    private final static QName _GetListOfCityNameByCode_QNAME = new QName("http://services.cityexercise.reactiveworks.com/", "getListOfCityNameByCode");
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.reactiveworks.city.service.client
+     * 
+     */
+    public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetCityOfMaxPopulation }
+     * 
+     */
+    public GetCityOfMaxPopulation createGetCityOfMaxPopulation() {
+        return new GetCityOfMaxPopulation();
+    }
+
+    /**
+     * Create an instance of {@link GetCityOfMinPopulation }
+     * 
+     */
+    public GetCityOfMinPopulation createGetCityOfMinPopulation() {
+        return new GetCityOfMinPopulation();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfCityNameByCodeResponse }
+     * 
+     */
+    public GetListOfCityNameByCodeResponse createGetListOfCityNameByCodeResponse() {
+        return new GetListOfCityNameByCodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCityOfMinPopulationResponse }
+     * 
+     */
+    public GetCityOfMinPopulationResponse createGetCityOfMinPopulationResponse() {
+        return new GetCityOfMinPopulationResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCityNameById }
+     * 
+     */
+    public GetCityNameById createGetCityNameById() {
+        return new GetCityNameById();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfCityNameByCode }
+     * 
+     */
+    public GetListOfCityNameByCode createGetListOfCityNameByCode() {
+        return new GetListOfCityNameByCode();
+    }
+
+    /**
+     * Create an instance of {@link GetCityOfMaxPopulationResponse }
+     * 
+     */
+    public GetCityOfMaxPopulationResponse createGetCityOfMaxPopulationResponse() {
+        return new GetCityOfMaxPopulationResponse();
+    }
+
+    /**
+     * Create an instance of {@link CityCustomException }
+     * 
+     */
+    public CityCustomException createCityCustomException() {
+        return new CityCustomException();
+    }
+
+    /**
+     * Create an instance of {@link GetCityNameByIdResponse }
+     * 
+     */
+    public GetCityNameByIdResponse createGetCityNameByIdResponse() {
+        return new GetCityNameByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link City }
+     * 
+     */
+    public City createCity() {
+        return new City();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityOfMaxPopulationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getCityOfMaxPopulationResponse")
+    public JAXBElement<GetCityOfMaxPopulationResponse> createGetCityOfMaxPopulationResponse(GetCityOfMaxPopulationResponse value) {
+        return new JAXBElement<GetCityOfMaxPopulationResponse>(_GetCityOfMaxPopulationResponse_QNAME, GetCityOfMaxPopulationResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityNameByIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getCityNameByIdResponse")
+    public JAXBElement<GetCityNameByIdResponse> createGetCityNameByIdResponse(GetCityNameByIdResponse value) {
+        return new JAXBElement<GetCityNameByIdResponse>(_GetCityNameByIdResponse_QNAME, GetCityNameByIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CityCustomException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "CityCustomException")
+    public JAXBElement<CityCustomException> createCityCustomException(CityCustomException value) {
+        return new JAXBElement<CityCustomException>(_CityCustomException_QNAME, CityCustomException.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityOfMinPopulationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getCityOfMinPopulationResponse")
+    public JAXBElement<GetCityOfMinPopulationResponse> createGetCityOfMinPopulationResponse(GetCityOfMinPopulationResponse value) {
+        return new JAXBElement<GetCityOfMinPopulationResponse>(_GetCityOfMinPopulationResponse_QNAME, GetCityOfMinPopulationResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityOfMaxPopulation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getCityOfMaxPopulation")
+    public JAXBElement<GetCityOfMaxPopulation> createGetCityOfMaxPopulation(GetCityOfMaxPopulation value) {
+        return new JAXBElement<GetCityOfMaxPopulation>(_GetCityOfMaxPopulation_QNAME, GetCityOfMaxPopulation.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityOfMinPopulation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getCityOfMinPopulation")
+    public JAXBElement<GetCityOfMinPopulation> createGetCityOfMinPopulation(GetCityOfMinPopulation value) {
+        return new JAXBElement<GetCityOfMinPopulation>(_GetCityOfMinPopulation_QNAME, GetCityOfMinPopulation.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListOfCityNameByCodeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getListOfCityNameByCodeResponse")
+    public JAXBElement<GetListOfCityNameByCodeResponse> createGetListOfCityNameByCodeResponse(GetListOfCityNameByCodeResponse value) {
+        return new JAXBElement<GetListOfCityNameByCodeResponse>(_GetListOfCityNameByCodeResponse_QNAME, GetListOfCityNameByCodeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityNameById }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getCityNameById")
+    public JAXBElement<GetCityNameById> createGetCityNameById(GetCityNameById value) {
+        return new JAXBElement<GetCityNameById>(_GetCityNameById_QNAME, GetCityNameById.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListOfCityNameByCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.cityexercise.reactiveworks.com/", name = "getListOfCityNameByCode")
+    public JAXBElement<GetListOfCityNameByCode> createGetListOfCityNameByCode(GetListOfCityNameByCode value) {
+        return new JAXBElement<GetListOfCityNameByCode>(_GetListOfCityNameByCode_QNAME, GetListOfCityNameByCode.class, null, value);
+    }
+
+}

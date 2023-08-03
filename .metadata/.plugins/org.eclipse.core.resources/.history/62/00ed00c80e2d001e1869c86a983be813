@@ -1,0 +1,12 @@
+package com.reactiveworks.client;
+
+public class Client {
+	public static void main(String[] args) {
+	
+		WeatherServicePortTypeImplService service = new WeatherServicePortTypeImplService();
+		GetCurrentTemperatureRq  request = new GetCurrentTemperatureRq();
+		request.setCity("patna");
+		String temp = service.getWeatherServicePortTypeImplPort().getCurrentTemperature(request).getTemperature();
+		System.out.println(temp);
+	}
+}

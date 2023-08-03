@@ -1,0 +1,13 @@
+package com.reactiveworks.city.util;
+
+import java.util.List;
+
+import com.reactiveworks.city.services.City;
+
+public class CityCsvReader {
+	
+	public List<City> getAllDataOfCity(){
+		
+	}
+
+}

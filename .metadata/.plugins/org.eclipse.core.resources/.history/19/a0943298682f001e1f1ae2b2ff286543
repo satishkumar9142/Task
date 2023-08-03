@@ -1,0 +1,224 @@
+package com.reactiveworks.product.util;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+import com.reactiveworks.product.exception.ProductException;
+import com.reactiveworks.product.model.Laptop;
+import com.reactiveworks.product.model.MobileDevice;
+import com.reactiveworks.product.model.TV;
+import com.reactiveworks.product.model.WashingMachine;
+
+public class ProductCsvReader2 {
+	
+	private  Stream<String>  readcsvFiles() throws ProductException {
+
+		BufferedReader br;
+		InputStream is = getClass().getClassLoader().getResourceAsStream("ProductDetail.csv");
+		InputStreamReader streamReader = new InputStreamReader(is);
+		if(is == null) {
+			throw new ProductException("File Not Found Exception");
+		}
+		br = new BufferedReader(streamReader);
+		try { 
+			br.readLine();
+		} catch (IOException e) {
+			throw new ProductException("problem in reading the line");
+		}
+		return br.lines();
+	}
+	
+/*	
+	public List<Laptop> getLaptopData() throws ProductException{
+		List<Laptop> laptop = new ArrayList<>();
+		Stream<String> streamLine = readcsvFiles();
+		streamLine.filter(line->line != null).map(line -> line.split(",")).forEach(splitLine ->{
+			if(splitLine[2].equals("Laptop")) {
+				String productId = splitLine[0];
+				String productName = splitLine[1];
+				String productType = splitLine[2];
+				double price = Double.parseDouble(splitLine[3]);
+				int waranty = Integer.parseInt(splitLine[4]);
+				LocalDate date = null;
+				try {
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					date = LocalDate.parse(splitLine[5], formatter);	
+				}
+				catch(DateTimeParseException e) {
+					e.printStackTrace();
+				}
+				String screenSize = splitLine[6];
+				String os = splitLine[7];
+				int batterySize = Integer.parseInt(splitLine[8]);
+				int numCore = Integer.parseInt(splitLine[9]);
+				int ram = Integer.parseInt(splitLine[10]);
+				String graphics = splitLine[18];
+				laptop.add(new Laptop(productId, productName, productType, price, waranty, date, screenSize, os, batterySize, numCore, ram, graphics));
+
+			}
+		});
+
+		return laptop;
+	}
+
+	public List<MobileDevice> getMobileDeviceData() throws ProductException{
+		List<MobileDevice> mobileDevice = new ArrayList<>();
+		Stream<String> streamLine = readcsvFiles();
+		streamLine.filter(line->line != null).map(line -> line.split(",")).forEach(splitLine ->{
+
+			if(splitLine[2].equals("Mobile")) {
+				String productId = splitLine[0];
+				String productName = splitLine[1];
+				String productType = splitLine[2];
+				double price = Double.parseDouble(splitLine[3]);
+				int waranty = Integer.parseInt(splitLine[4]);
+				LocalDate date = null;
+				try {
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					date = LocalDate.parse(splitLine[5], formatter);	
+				}
+				catch(DateTimeParseException e) {
+					e.printStackTrace();
+				}
+				String screenSize = splitLine[6];
+				String os = splitLine[7];
+				int batterySize = Integer.parseInt(splitLine[8]);
+				int numCore = Integer.parseInt(splitLine[9]);
+				int ram = Integer.parseInt(splitLine[10]);
+				String simType = splitLine[11];
+				mobileDevice.add(new MobileDevice(productId, productName, productType, price, waranty, date, screenSize, os, batterySize, numCore, ram, simType));
+			}
+		});
+		return mobileDevice;
+	}
+
+
+	public List<TV> geTvData() throws ProductException{
+		List<TV> tv = new ArrayList<>();
+		Stream<String> streamLine = readcsvFiles();
+		streamLine.filter(line->line != null).map(line -> line.split(",")).forEach(splitLine ->{
+			if(splitLine[2].equals("TV")) {
+				String productId = splitLine[0];
+				String productName = splitLine[1];
+				String productType = splitLine[2];
+				double price = Double.parseDouble(splitLine[3]);
+				int waranty = Integer.parseInt(splitLine[4]);
+				LocalDate date = null;
+				try {
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					date = LocalDate.parse(splitLine[5], formatter);	
+				}
+				catch(DateTimeParseException e) {
+					e.printStackTrace();
+				}
+				int displaySize = Integer.parseInt(splitLine[12]);
+				String displayType = splitLine[13];
+				boolean isSmartTv = Boolean.parseBoolean(splitLine[14]);
+				tv.add(new TV(productId, productName, productType, price, waranty, date, displaySize, displayType, isSmartTv));
+			}
+		});
+		return tv;
+	}
+
+	public List<WashingMachine> getWashingMachineData() throws ProductException{
+		List<WashingMachine> washingMachine = new ArrayList<>();
+		Stream<String> streamLine = readcsvFiles();
+		streamLine.filter(line->line != null).map(line -> line.split(",")).forEach(splitLine ->{
+			if(splitLine[2].equals("WashinMachine")) {
+				String productId = splitLine[0];
+				String productName = splitLine[1];
+				String productType = splitLine[2];
+				double price = Double.parseDouble(splitLine[3]);
+				int waranty = Integer.parseInt(splitLine[4]);
+				LocalDate date = null;
+				try {
+					DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+					date = LocalDate.parse(splitLine[5], formatter);	
+				}
+				catch(DateTimeParseException e) {
+					e.printStackTrace();
+				}
+				int loadCapacity = Integer.parseInt(splitLine[15]);
+				boolean isAutomatic = Boolean.parseBoolean(splitLine[16]);
+				String doorType = splitLine[17];
+				washingMachine.add(new WashingMachine(productId, productName, productType, price, waranty, date, loadCapacity, isAutomatic, doorType));
+			}
+		});
+		return washingMachine;
+	}
+		
+	*/
+	private static void putAllDataModelClass(String[] splitLine) throws ProductException {
+		List<Laptop> laptop = new ArrayList<>();
+		List<TV> tv = new ArrayList<>();
+		List<MobileDevice> mobileDevice = new ArrayList<>();
+		List<WashingMachine> washingMachine = new ArrayList<>();
+		Laptop lap = null;
+		MobileDevice mob = null;
+		WashingMachine wash = null;
+		TV tvv = null;
+		String productId = splitLine[0];
+		String productName = splitLine[1];
+		String productType = splitLine[2];
+		double price = Double.parseDouble(splitLine[3]);
+		int waranty = Integer.parseInt(splitLine[4]);
+		LocalDate date;
+		try {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		    date = LocalDate.parse(splitLine[5], formatter);	
+		}
+		catch(DateTimeParseException e) {
+			throw new ProductException("Date Formate Is not Correct");
+		}
+		if(productType.equals("Mobile") || productType.equals("Laptop")) {
+			String screenSize = splitLine[6];
+			String os = splitLine[7];
+			int batterySize = Integer.parseInt(splitLine[8]);
+			int numCore = Integer.parseInt(splitLine[9]);
+			int ram = Integer.parseInt(splitLine[10]);
+			if(productType.equals("Mobile")) {
+				String simType = splitLine[11];
+				mob = new MobileDevice(productId, productName, productType, price, waranty, date, screenSize, os, batterySize, numCore, ram, simType);
+				mobileDevice.add(mob);
+			}
+			if(productType.equals("Laptop")) {
+				 String graphics = splitLine[18];
+				 lap = new Laptop(productId, productName, productType, price, waranty, date, screenSize, os, batterySize, numCore, ram, graphics);
+				 laptop.add(lap);
+			}
+		}
+		else {
+			if(productType.equals("TV")) {
+				int displaySize = Integer.parseInt(splitLine[12]);
+				String displayType = splitLine[13];
+				boolean isSmartTv = Boolean.parseBoolean(splitLine[14]);
+				tvv = new TV(productId, productName, productType, price, waranty, date, displaySize, displayType, isSmartTv);
+				tv.add(tvv);
+			}
+			if(productType.equals("WashinMachine")) {
+				int loadCapacity = Integer.parseInt(splitLine[15]);
+				boolean isAutomatic = Boolean.parseBoolean(splitLine[16]);
+				String doorType = splitLine[17];
+				wash = new WashingMachine(productId, productName, productType, price, waranty, date, loadCapacity, isAutomatic, doorType);
+				washingMachine.add(wash);
+			}
+		}
+		
+		public List<Laptop> getLaptop(){
+			return laptop;
+		}
+		System.out.println(laptop);
+		System.out.println(tv);
+		System.out.println(washingMachine);
+		System.out.println(mobileDevice);
+	} 
+}
+

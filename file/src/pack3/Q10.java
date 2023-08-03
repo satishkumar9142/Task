@@ -1,0 +1,55 @@
+package pack3;
+
+import java.io.Externalizable;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+
+class ExternalizableDemo implements Externalizable {
+	String s;
+	int i;
+	int j;
+
+	public ExternalizableDemo() {
+		System.out.println("Public no arg constructor");
+	}
+
+	public ExternalizableDemo(String s, int i, int j) {
+		this.s = s;
+		this.i = i;
+		this.j = j;
+	}
+
+	@Override
+	public void writeExternal(ObjectOutput out) throws IOException {
+		out.writeObject(s);
+		out.writeInt(i);
+	}
+
+	@Override
+	public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+		s = (String) in.readObject();
+		i = (int) in.readInt();
+	}
+}
+
+public class Q10 {
+	public static void main(String[] args) throws Exception {
+		ExternalizableDemo extra = new ExternalizableDemo("abc", 20, 40);
+
+		FileOutputStream fos = new FileOutputStream("abc.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(extra);
+
+		FileInputStream fis = new FileInputStream("abc.txt");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		ExternalizableDemo t1 = (ExternalizableDemo) ois.readObject();
+
+		System.out.println(t1.s + "    " + t1.i + "   " + t1.j);
+
+	}
+}

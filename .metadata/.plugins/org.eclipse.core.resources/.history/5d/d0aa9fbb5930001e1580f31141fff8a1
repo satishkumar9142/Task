@@ -1,0 +1,13 @@
+package com.reactiveworks.product.service;
+
+import java.util.List;
+
+public class ProductServiceImpl implements ProductService{
+
+	@Override
+	public List<Product> getListOfProductFromProductType(String productType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

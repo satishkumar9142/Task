@@ -1,0 +1,19 @@
+package pack3;
+
+import java.util.concurrent.Callable;
+
+class MyCallable implements Callable{
+	int num;
+	public MyCallable() {
+		this.num = num;
+	}
+	
+	@Override
+	public Object call() throws Exception {
+		
+		return null;
+	}
+}
+public class Q16 {
+
+}

@@ -1,0 +1,11 @@
+package com.reactiveworks.productuser.modelinterface;
+
+public interface Product {
+	
+	 String ProductId(); 
+	 String ProductName();
+	 String ProductType();
+	 int price();
+	 int warranty();
+	 String manufactureDate();
+}

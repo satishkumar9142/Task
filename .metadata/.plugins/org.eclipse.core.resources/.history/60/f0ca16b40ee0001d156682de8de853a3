@@ -1,0 +1,30 @@
+package StockTradeReaderImplPackage;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import IStockTradeReaderPackage.IStockTradeReader;
+import StockTradeInvalidFormateExceptionPackage.StockTradeInvalidFormateException;
+import StockTradePackage.StockTrade;
+
+public class StockTradeReaderImpl {
+
+	IStockTradeReader write = new IStockTradeReader();
+	private List<StockTrade> list = new ArrayList<StockTrade>();
+	
+	private void read() {
+		try {
+			list = write.readStockTrades("S:\\WorkSpace\\Cisco.csv");
+		} catch (StockTradeInvalidFormateException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void writeDataLineByLine()
+	{
+		File file = new FileWriter("S:\\WorkSpace\\Stock.csv");
+	}
+
+	
+}

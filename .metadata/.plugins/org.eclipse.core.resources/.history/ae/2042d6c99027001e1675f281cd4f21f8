@@ -1,0 +1,10 @@
+package com.reactiveworks.cxf;
+
+public class MathUtilityImpl implements MathUtility{
+
+	@Override
+	public int getAdd(int a, int b) {
+		// TODO Auto-generated method stub
+		return (a+b);
+	}	
+}

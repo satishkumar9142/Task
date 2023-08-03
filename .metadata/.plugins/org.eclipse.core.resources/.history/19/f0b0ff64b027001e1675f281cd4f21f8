@@ -1,0 +1,12 @@
+package com.reactiveworks.cxf.example;
+
+import javax.jws.WebService;
+
+@WebService(targetNamespace = "http://example.cxf.reactiveworks.com/", portName = "HelloPort", serviceName = "HelloService")
+public class Hello {
+	
+	public String sayHello(String name) {
+		return "Hello From " + name;
+	}
+}
+// wo galti se link copy ho gaya tha

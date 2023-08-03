@@ -1,0 +1,10 @@
+package pack3;
+
+import java.io.Serializable;
+
+class user implements Serializable{
+	
+}
+public class Q3 {
+
+}

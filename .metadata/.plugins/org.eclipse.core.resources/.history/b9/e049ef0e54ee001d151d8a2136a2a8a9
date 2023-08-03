@@ -1,0 +1,14 @@
+package Java8;
+
+import java.util.Iterator;
+
+public class MethodAndConstructorReference {
+	
+	public static void main(String[] args) {
+		Runnable r = ()->{
+			for (int i = 0; i < args.length; i++) {
+				
+			}
+		};
+	}
+}

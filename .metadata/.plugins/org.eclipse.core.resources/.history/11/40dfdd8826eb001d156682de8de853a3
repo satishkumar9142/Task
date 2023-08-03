@@ -1,0 +1,26 @@
+package pack3;
+
+public class PrintJob implements Runnable {
+	String name;
+	public PrintJob(String name) {
+		this.name = name;
+	}
+	@Override
+	public void run() {
+		System.out.println(name + "......job started by "
+				+ "Thread :" + Thread.currentThread().getName());
+		try {
+			Thread.sleep(5000);
+		}
+		catch(InterruptedException e) {
+		}
+		System.out.println(name + "....Job Completed by THread:"
+				+ Thread.currentThread().getName());
+	}
+}
+public class Q15 {
+	public static void main(String[] args) {
+		PrintJob [] jobs = {new PrintJob("Satish"),
+						    new PrintJob("Ravi")};
+	}
+}

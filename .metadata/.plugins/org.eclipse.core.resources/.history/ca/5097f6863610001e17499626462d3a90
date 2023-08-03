@@ -1,0 +1,8 @@
+package com.reactiveworks.productuser.modelinterfaceImpl;
+
+import com.reactiveworks.productuser.modelinterface.MobileDevices;
+
+public class MobileDeviceImpl implements MobileDevices{
+	
+
+}

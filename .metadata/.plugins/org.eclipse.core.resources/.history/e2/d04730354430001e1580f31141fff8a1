@@ -1,0 +1,61 @@
+package com.reactiveworks.product.individualproduct;
+
+import java.util.Map;
+import com.reactiveworks.product.exception.ProductException;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+public class WashingMachine extends Product{
+	
+	@Id
+	int loadCapacity;
+	@Id
+	boolean isAutomatic;
+	@Id
+	String doorType;
+	
+	public WashingMachine() {
+		super();
+	}
+	public int getLoadCapacity() {
+		return loadCapacity;
+	}
+
+	public boolean isAutomatic() {
+		return isAutomatic;
+	}
+
+	public String getDoorType() {
+		return doorType;
+	}
+
+	public void setLoadCapacity(int loadCapacity) {
+		this.loadCapacity = loadCapacity;
+	}
+	public void setAutomatic(boolean isAutomatic) {
+		this.isAutomatic = isAutomatic;
+	}
+	public void setDoorType(String doorType) {
+		this.doorType = doorType;
+	}
+	@Override 
+	public String toString() {
+		return "WashingMachine [loadCapacity=" + loadCapacity + ", isAutomatic=" + isAutomatic + ", doorType="
+				+ doorType + ", productId=" + productId + ", productName=" + productName + ", productType="
+				+ productType + ", price=" + price + ", warranty=" + warranty + ", manufecturedDt=" + manufecturedDt
+				+ "]";
+	}
+
+	public void buildProduct(Map<String,String> map) throws ProductException {
+		super.buildProduct(map);
+		this.doorType = map.get("doorType");
+		try {
+		this.loadCapacity = Integer.parseInt(map.get("loadCapacity"));
+		this.isAutomatic = Boolean.parseBoolean(map.get("isAutomatic"));
+		}
+		catch(NumberFormatException e) {
+			throw new ProductException("Data Type is not in proper for which dataType we want to convert");
+		}
+	}
+}
+

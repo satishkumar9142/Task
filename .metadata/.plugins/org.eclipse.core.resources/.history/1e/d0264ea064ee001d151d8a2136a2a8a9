@@ -1,0 +1,14 @@
+package Java8;
+
+public class Stream {
+
+}
+/*
+   Collection and Stream
+   =======================
+   If we want to represent a group of Objects as a 
+   single entity then we should go for collection.
+   
+   if we want to process Objects from the collection-stream.
+   
+*/

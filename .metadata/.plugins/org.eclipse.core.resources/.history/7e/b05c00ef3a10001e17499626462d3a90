@@ -1,0 +1,11 @@
+package com.reactiveworks.productuser.modelinterface;
+
+public interface ProcessingDevice extends Product{
+	
+	String screenSize();
+	String  os();
+	int batterySize();
+	int numCore();
+	int RAM();
+	
+}

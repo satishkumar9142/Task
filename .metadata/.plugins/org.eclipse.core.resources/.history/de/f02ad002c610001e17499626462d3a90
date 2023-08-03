@@ -1,0 +1,61 @@
+package com.reactiveworks.productuser.modelinterfaceImpl;
+
+import com.reactiveworks.productuser.modelinterface.WashingMachine;
+
+public class WashingMachibeImpl implements WashingMachine {
+
+	@Override
+	public String ProductId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String ProductName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String ProductType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int price() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int warranty() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String manufactureDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int loadCapacity() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isAutomatic() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String doorType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.reactiveworks.productuser.daomysql;
+
+public class DaoMySql {
+
+}

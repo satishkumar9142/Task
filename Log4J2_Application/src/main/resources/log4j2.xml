@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<RollingFile name="file"
+			fileName="S:/WorkSpace/FileAppender/log4j2/SizedBased/app.log"
+			filePattern="S:/WorkSpace/FileAppender/log4j2/SizedBased/app-%i.zip">
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss} [%t] - %msg%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 KB" />
+			</Policies>
+			  <DefaultRolloverStrategy max="5"/>
+    
+		</RollingFile>
+		<Console name="ABC" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss} [%t] - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="pack1" level="debug" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Root level="fatal">
+			<AppenderRef ref="ABC" />
+		</Root>
+	</Loggers>
+</Configuration> 
+

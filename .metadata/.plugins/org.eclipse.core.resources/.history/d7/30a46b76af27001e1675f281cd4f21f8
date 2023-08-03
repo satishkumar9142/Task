@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="HelloService" targetNamespace="http://example.cxf.reactiveworks.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example.cxf.reactiveworks.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://example.cxf.reactiveworks.com/" schemaLocation="hello_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part name="parameters" element="tns:sayHelloResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHello">
+    <wsdl:part name="parameters" element="tns:sayHello">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Hello">
+    <wsdl:operation name="sayHello">
+      <wsdl:input name="sayHello" message="tns:sayHello">
+    </wsdl:input>
+      <wsdl:output name="sayHelloResponse" message="tns:sayHelloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloServiceSoapBinding" type="tns:Hello">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloService">
+    <wsdl:port name="HelloPort" binding="tns:HelloServiceSoapBinding">
+      <soap:address location="http://localhost:8081/BottomUp-Cxf-Hello/services/HelloPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+
+// 

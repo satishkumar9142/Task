@@ -1,0 +1,31 @@
+package pack3;
+
+public class Q11 {
+	public static void main(String[] args) {
+		
+		// datatype
+		
+		byte b1 = 10;   //  -128 to 127
+		short s = 2343;  //  -2 power 15 to 2 power 15 +1
+		int i =1232432;  // -2 power 31 to 2 power 31 +1
+		long l = 12432432L;   // -2 power 63 to 2 power 63 +1
+		float f = 3.3333f;  // 5 to 6 decimal
+		double d = 3.234343432432;  // 15 to 16 decimal
+		char c = 'a';
+		boolean b = true;  // by default false
+		
+		
+		// flow control
+		
+		if(true) {}
+		else {}
+		switch(5) {
+		case 4: 
+		case 3:
+		default : "there are no case availble for the 5.
+		} 
+		
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.reactivework.cityexercise.services;
+
+import java.util.List;
+
+import com.reactivework.cityexercise.exception.CityCustomException;
+import com.reactivework.cityexercise.model.City;
+
+public interface CityServices {
+	
+	public City getCityNameById(int id) throws CityCustomException;
+	public List<City> getCityNameByCode(String cCode) throws CityCustomException;
+	public City maxPopulation();
+	public City minPopulation();
+	
+}

@@ -1,0 +1,22 @@
+package com.reactiveworks.product.service;
+
+import java.util.List;
+
+import com.reactiveworks.product.exception.ProductException;
+import com.reactiveworks.product.util.ProductCsvReader;
+
+public class ProductServiceImpl implements ProductService{
+
+	@Override
+	public List<Product> getListOfProductFromProductType(String productType) {
+		ProductCsvReader csv = new ProductCsvReader();
+		try {
+			List<Product> list = csv.getAllProducts();
+		} catch (ProductException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

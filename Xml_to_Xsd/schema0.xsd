@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Feature-Metainfo" type="Feature-MetainfoType"/>
+  <xs:complexType name="FeatureImplementationType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="resourceName" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FeatureImplementationsType">
+    <xs:sequence>
+      <xs:element type="FeatureImplementationType" name="FeatureImplementation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConfigFileType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="filePath" use="optional"/>
+        <xs:attribute type="xs:string" name="fileName" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="StaticFileConfigurationType">
+    <xs:sequence>
+      <xs:element type="ConfigFileType" name="ConfigFile"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="columnType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="primaryKey" use="optional"/>
+        <xs:attribute type="xs:string" name="required" use="optional"/>
+        <xs:attribute type="xs:string" name="autoIncrement" use="optional"/>
+        <xs:attribute type="xs:short" name="size" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="tableType">
+    <xs:sequence>
+      <xs:element type="columnType" name="column" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="databaseType">
+    <xs:sequence>
+      <xs:element type="tableType" name="table" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DBConfigurationType">
+    <xs:sequence>
+      <xs:element type="databaseType" name="database"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeatureType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="FeatureImplementationsType" name="FeatureImplementations"/>
+      <xs:element type="StaticFileConfigurationType" name="StaticFileConfiguration"/>
+      <xs:element type="DBConfigurationType" name="DBConfiguration"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="vendorName" use="optional"/>
+    <xs:attribute type="xs:float" name="vendorVersion" use="optional"/>
+    <xs:attribute type="xs:string" name="implementationName" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="FeaturesType">
+    <xs:sequence>
+      <xs:element type="FeatureType" name="Feature" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeatureGroupType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="FeaturesType" name="Features"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Feature-MetainfoType">
+    <xs:sequence>
+      <xs:element type="FeatureGroupType" name="FeatureGroup"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="productVersion"/>
+  </xs:complexType>
+</xs:schema>

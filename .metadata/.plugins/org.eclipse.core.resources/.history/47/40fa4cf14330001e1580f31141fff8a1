@@ -1,0 +1,56 @@
+package com.reactiveworks.product.model;
+
+import java.time.LocalDate;
+
+
+public class ProcessingDevice extends Product{
+	String screenSize;
+	String  os;
+	int batterySize;
+	int numCore;
+	int ram;
+	
+	
+	public ProcessingDevice(String productId, String productName, String productType, double price, int warranty,
+			LocalDate manufecturedDt, String screenSize, String os, int batterySize, int numCore, int ram)
+		 {
+		super(productId, productName, productType, price, warranty, manufecturedDt);
+		this.screenSize = screenSize;
+		this.os = os;
+		this.batterySize = batterySize;
+		this.numCore = numCore;
+		this.ram = ram;
+	}
+	public String getScreenSize() {
+		return screenSize;
+	}
+	public String getOs() {
+		return os;
+	}
+	public int getBatterySize() {
+		return batterySize;
+	}
+	public int getNumCore() {
+		return numCore;
+	}
+	public int getRam() {
+		return ram;
+	}
+	public void setScreenSize(String screenSize) {
+		this.screenSize = screenSize;
+	}
+	public void setOs(String os) {
+		this.os = os;
+	}
+	public void setBatterySize(int batterySize) {
+		this.batterySize = batterySize;
+	}
+	public void setNumCore(int numCore) {
+		this.numCore = numCore;
+	}
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+	
+	
+}

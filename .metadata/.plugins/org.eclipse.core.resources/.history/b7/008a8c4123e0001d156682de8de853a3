@@ -1,0 +1,52 @@
+package StockTradeReaderImplPackage;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import IStockTradeReaderPackage.IStockTradeReader;
+import IStockTradeReaderPackage.IstokeTradeReader;
+import StockTradeInvalidFormateExceptionPackage.StockTradeInvalidFormateException;
+import StockTradePackage.StockTrade;
+
+public class StockTradeReaderImpl implements IstokeTradeReader{
+
+	IStockTradeReader write = new IStockTradeReader();
+	private static List<StockTrade> list = new ArrayList<StockTrade>();
+	
+	private void read() {
+		try {
+			list = write.readStockTrades("S:\\WorkSpace\\Cisco.csv");
+		} catch (StockTradeInvalidFormateException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void writeDataLineByLine()
+	{
+		try {
+			FileWriter file = new FileWriter("S:\\WorkSpace\\Stock.csv");
+			BufferedWriter br = new BufferedWriter(file);
+			
+			for(int i =0;i<list.size();i++) {
+				 String sequrity = list.get(i).getSequrity();
+				 String  date = "" +list.get(i).getDate();
+				 String open = "" + list.get(i).getOpen();
+				 String high = "" +list.get(i).getHigh();
+				 String low = "" + list.get(i).getLow();
+				 String close ="" + list.get(i).getClose();
+				 String vol = "" + list.get(i).getVol();
+				String adjClose = "" +list.get(i).getAdjClose();
+				String [] s1 = {sequrity,date,open,high,low,close,vol,adjClose};
+//				br.write(s1);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+}

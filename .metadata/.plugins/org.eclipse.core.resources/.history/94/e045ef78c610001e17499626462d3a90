@@ -1,0 +1,71 @@
+package com.reactiveworks.productuser.model1;
+
+import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.reactiveWork.ProductCategory.CustomException.CustomException;
+
+
+/*
+ * f.) create class WashingMachine(loadCapacity:Int,isAutomatic:boolean,doorType:String) extends Product 
+ */
+/**
+ * 
+ *  Model Of WashingMachine Class Which extends to Product Class Model.
+ *
+ */
+public class WashingMachine extends Product{
+	private static Logger log = LogManager.getLogger();
+	
+	int loadCapacity;
+	boolean isAutomatic;
+	String doorType;
+	public static Logger getLog() {
+		return log;
+	}
+
+	public int getLoadCapacity() {
+		return loadCapacity;
+	}
+
+	public boolean isAutomatic() {
+		return isAutomatic;
+	}
+
+	public String getDoorType() {
+		return doorType;
+	}
+
+	/**
+	 *	 Override toString Method which is used to Print the data which can be store in the class Model.
+	 */
+	@Override 
+	public String toString() {
+		return "WashingMachine [loadCapacity=" + loadCapacity + ", isAutomatic=" + isAutomatic + ", doorType="
+				+ doorType + ", productId=" + productId + ", productName=" + productName + ", productType="
+				+ productType + ", price=" + price + ", warranty=" + warranty + ", manufecturedDt=" + manufecturedDt
+				+ "]";
+	}
+	
+	/**
+	 * 	 buildProduct Method Of WashingMachine model Class Which is used to assign or set the value of class Model Attribute
+	 *   and its parent model by calling super.builproduct method.
+	 *   @param map Send the map which store all data of one single line.
+	 * 	 @throws CustomException if problem in matching the Data Type from which we want to convert.
+	 */
+	public void buildProduct(Map<String,String> map) throws CustomException {
+		log.info("I am inside WashingMachine");
+		super.buildProduct(map);
+		this.doorType = map.get("doorType");
+		try {
+		this.loadCapacity = Integer.parseInt(map.get("loadCapacity"));
+		this.isAutomatic = Boolean.parseBoolean(map.get("isAutomatic"));
+		}
+		catch(NumberFormatException e) {
+			throw new CustomException("Data Type is not in proper for which dataType we want to convert");
+		}
+	}
+}
+

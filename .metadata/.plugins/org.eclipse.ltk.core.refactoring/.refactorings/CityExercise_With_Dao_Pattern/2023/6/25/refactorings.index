@@ -1,0 +1,19 @@
+1687266228328	Delete element
+1687266231798	Delete element
+1687266240311	Delete element
+1687266307049	Rename package 'com.reactivework.cityexercise.citymodelclasspackage'
+1687322455210	Rename package 'com.reactivework.cityexercise.citymainmethodpackage'
+1687322471805	Rename package 'com.reactivework.cityexercise.cityutilpackage'
+1687322489346	Rename package 'com.reactivework.cityexercise.cityservicespackage'
+1687322508449	Rename package 'com.reactivework.cityexercise.citycustomexceptionpackage'
+1687323045093	Delete element
+1687329614934	Delete element
+1687329675225	Delete element
+1687329679758	Delete element
+1687329847441	Delete element
+1687416684078	Rename package 'com.reactivework.cityexercise.util'
+1687416734928	Rename type 'CityDao'
+1687416756250	Rename type 'CityDaoImpl'
+1687416964212	Copy package
+1687417394230	Rename type 'CityDaoWithDB'
+1687417415853	Rename type 'CityDaoWithDBImpl'

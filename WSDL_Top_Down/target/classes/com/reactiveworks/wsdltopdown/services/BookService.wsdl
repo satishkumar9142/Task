@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="<a class="vglnk" href="http://schemas.xmlsoap.org/wsdl/" rel="nofollow"><span>http</span><span>://</span><span>schemas</span><span>.</span><span>xmlsoap</span><span>.</span><span>org</span><span>/</span><span>wsdl</span><span>/</span></a>"
+    xmlns:xsd="<a class="vglnk" href="http://www.w3.org/2001/XMLSchema" rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>w3</span><span>.</span><span>org</span><span>/</span><span>2001</span><span>/</span><span>XMLSchema</span></a>" xmlns:soap="<a class="vglnk" href="http://schemas.xmlsoap.org/wsdl/soap/" rel="nofollow"><span>http</span><span>://</span><span>schemas</span><span>.</span><span>xmlsoap</span><span>.</span><span>org</span><span>/</span><span>wsdl</span><span>/</span><span>soap</span><span>/</span></a>"
+    targetNamespace="<a class="vglnk" href="http://benchresources.in/services/BookService/" rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>services</span><span>/</span><span>BookService</span><span>/</span></a>"
+    xmlns:tns="<a class="vglnk" href="http://benchresources.in/services/BookService/" rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>services</span><span>/</span><span>BookService</span><span>/</span></a>" xmlns:book="<a class="vglnk" href="http://benchresources.in/entities/Book" rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>entities</span><span>/</span><span>Book</span></a>"
+    name="BookService">
+ 
+    <wsdl:types>
+        <xsd:schema targetNamespace="<a class="vglnk" href="http://benchresources.in/services/BookService/" rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>services</span><span>/</span><span>BookService</span><span>/</span></a>">
+            <xsd:import namespace="<a class="vglnk" href="http://benchresources.in/entities/Book" rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>entities</span><span>/</span><span>Book</span></a>"
+                schemaLocation="../entities/book.xsd" />
+        </xsd:schema>
+    </wsdl:types>
+ 
+    <wsdl:message name="BookRequest">
+        <wsdl:part element="book:BookRequestType" name="parameters" />
+    </wsdl:message>
+    <wsdl:message name="BookResponse">
+        <wsdl:part element="book:BookResponseType" name="parameters" />
+    </wsdl:message>
+ 
+    <wsdl:portType name="IBookService">
+        <wsdl:operation name="getBookByISDNRequestNumber">
+            <wsdl:input message="tns:BookRequest" />
+            <wsdl:output message="tns:BookResponse" />
+        </wsdl:operation>
+    </wsdl:portType>
+ 
+    <wsdl:binding name="BookServiceSOAPBinding" type="tns:IBookService">
+        <soap:binding style="document"
+            transport="<a class="vglnk" href="http://schemas.xmlsoap.org/soap/http" rel="nofollow"><span>http</span><span>://</span><span>schemas</span><span>.</span><span>xmlsoap</span><span>.</span><span>org</span><span>/</span><span>soap</span><span>/</span><span>http</span></a>" />
+        <wsdl:operation name="getBookByISDNRequestNumber">
+            <soap:operation soapAction="" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+ 
+    <wsdl:service name="BookService">
+        <wsdl:port name="BookServicePort" binding="tns:BookServiceSOAPBinding">
+            <soap:address
+                location="<a class="vglnk" href="http://localhost:8080/ApacheCXF-JAX-WS-Top-Down-Security-Interceptors/services/book/BookService" rel="nofollow"><span>http</span><span>://</span><span>localhost</span><span>:</span><span>8080</span><span>/</span><span>ApacheCXF</span><span>-</span><span>JAX</span><span>-</span><span>WS</span><span>-</span><span>Top</span><span>-</span><span>Down</span><span>-</span><span>Security</span><span>-</span><span>Interceptors</span><span>/</span><span>services</span><span>/</span><span>book</span><span>/</span><span>BookService</span></a>" />
+        </wsdl:port>
+    </wsdl:service>
+ 
+</wsdl:definitions>

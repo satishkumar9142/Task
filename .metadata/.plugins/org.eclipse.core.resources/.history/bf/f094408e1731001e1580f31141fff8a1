@@ -1,0 +1,19 @@
+package com.reactiveworks.stocktrade.service;
+
+import java.util.List;
+import java.util.Map;
+
+import com.reactiveworks.stocktrade.exception.StockTradeInvalidFormateException;
+import com.reactiveworks.stocktrade.model.StockTrade;
+
+
+public interface IStockTradeReader {
+	
+	public List<StockTrade> readStockTrades() throws StockTradeInvalidFormateException;
+
+	public StockTrade getMaxVolumeTrade();
+	
+	public StockTrade getMinVolumeTrade();
+	
+	public Map<String,Double> getDailyTradingDifferential();	
+}

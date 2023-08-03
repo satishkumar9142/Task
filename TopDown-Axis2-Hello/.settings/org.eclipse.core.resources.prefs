@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/com/tutorialspoint/helloworld/Greetings.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/GreetingsResponse.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/HelloWorldPortType.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/HelloWorldService.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/HelloWorldServiceLocator.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/HelloWorldSoapBindingImpl.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/HelloWorldSoapBindingSkeleton.java=UTF-8
+encoding//src/com/tutorialspoint/helloworld/HelloWorldSoapBindingStub.java=UTF-8
+encoding/<project>=UTF-8

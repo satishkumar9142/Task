@@ -1,0 +1,59 @@
+package com.reactivework.mysqldemo.cassandradatabase;
+
+import java.awt.print.Book;
+import java.util.List;
+
+import com.datastax.driver.core.ResultSet;
+import com.datastax.driver.core.Session;
+
+public class CreatingaColumnFamily {
+	private static final String TABLE_NAME = "books";
+	private static final Object TABLE_NAME_BY_TITLE = null;
+	private Session session;
+
+	public void createTable() {
+		StringBuilder sb = new StringBuilder("CREATE TABLE IF NOT EXISTS ")
+				.append(TABLE_NAME).append("(")
+				.append("id uuid PRIMARY KEY, ")
+				.append("title text,")
+				.append("subject text);");
+
+		String query = sb.toString();
+		session.execute(query);
+	}
+	public void alterTablebooks(String columnName, String columnType) {
+	    StringBuilder sb = new StringBuilder("ALTER TABLE ")
+	      .append(TABLE_NAME).append(" ADD ")
+	      .append(columnName).append(" ")
+	      .append(columnType).append(";");
+
+	    String query = sb.toString();
+	    session.execute(query);
+	}
+	public void insertbookByTitle(Book book) {
+	    StringBuilder sb = new StringBuilder("INSERT INTO ")
+	      .append(TABLE_NAME_BY_TITLE).append("(id, title) ")
+	      .append("VALUES (").append(((Object) book).getId())
+	      .append(", '").append((book.getTitle()).append("');"));
+
+	    String query = sb.toString();
+	    session.execute(query);
+	}
+	public List<Book> selectAll() {
+	    StringBuilder sb = 
+	      new StringBuilder("SELECT * FROM ").append(TABLE_NAME);
+
+	    String query = sb.toString();
+	    ResultSet rs = session.execute(query);
+
+	    List<Book> books = new ArrayList<Book>();
+
+	    rs.forEach(r -> {
+	        books.add(new Book(
+	          r.getUUID("id"), 
+	          r.getString("title"),  
+	          r.getString("subject")));
+	    });
+	    return books;
+	}
+}

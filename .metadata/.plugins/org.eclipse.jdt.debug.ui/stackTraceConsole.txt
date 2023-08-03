@@ -1,0 +1,4 @@
+for(int col = 1;col < 2*size-1;col++) {
+//				System.out.print((row + col >= size + 1) && (row >= col - size + 1)? "# " :"  ");
+//			}
+//			System.out.println();

@@ -1,0 +1,103 @@
+package pack1;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class DataFromFile {
+
+	static List<Customer> list = new ArrayList<>();
+	
+	public static void main(String[] args) throws Exception{
+
+		FileReader fr = new FileReader("S:\\aaa\\CityExercise.csv");
+		BufferedReader br = new BufferedReader(fr);
+
+		String s = br.readLine();
+		Customer customer = null;
+
+		s = br.readLine();
+       System.out.println(s);
+		while(s != null) {
+			String [] s1 = s.split(",");
+			int id = Integer.parseInt(s1[0]);
+			String name = s1[1];
+			String countryCode = s1[2];
+			String city = s1[3];
+			Long population = Long.parseLong(s1[4]);
+			
+			customer = new Customer(id, name, countryCode, city, population);
+			list.add(customer);
+			
+			s = br.readLine();
+		}
+
+			//	System.out.println(list);
+			//	Scanner sc = new Scanner(System.in);
+				System.out.println("enter the id to get city");
+			//	int id = sc.nextInt();
+				int id = 64;
+				CityName(id);
+				System.out.println("===================");
+				System.out.println("Get by Country Code");
+			//	String code = sc.next();
+				CityNameByCode("\"NLD\"");
+				System.out.println("===================");
+				System.out.println("min customer with population");
+				minPopulattion();
+				System.out.println("===================");
+				System.out.println("max customer with population");
+				maxPopulation();
+
+	}
+
+	static void CityName(int id){
+
+		for(int i =0;i<list.size();i++) {
+			if(list.get(i).getId() == id) {
+				System.out.println(list.get(i));
+			}
+		}
+	}
+	
+	static void CityNameByCode(String cCode) {
+
+		for(int i =0;i<list.size();i++) {
+			String s = list.get(i).getCouCode();
+		//	String s1 =s.substring(1,s.length()-1);
+			if(s.equals(cCode)) {
+			System.out.println(list.get(i));		
+			}
+		}
+	}
+	
+	static void maxPopulation() 
+	{
+		Customer city =null;
+		long max = Long.MIN_VALUE; 
+		for(int i =0;i<list.size();i++) {
+			long population = list.get(i).getPopulation();
+			if(max < population) {
+				max = population;
+				city = list.get(i);
+			}
+		}
+		System.out.println(city);
+	}
+	
+	static void minPopulattion() 
+	{
+		Customer city =null;
+		long min = Long.MAX_VALUE; 
+		for(int i =0;i<list.size();i++) {
+			long population = list.get(i).getPopulation();
+			if(min > population) {
+				min = population;
+				city = list.get(i);
+			}
+		}
+		System.out.println(city);
+	}
+}

@@ -1,0 +1,39 @@
+package pack1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CityServicesTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testCityServices() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCityName() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testCityNameByCode() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMaxPopulation() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMinPopulation() {
+		fail("Not yet implemented");
+	}
+
+}

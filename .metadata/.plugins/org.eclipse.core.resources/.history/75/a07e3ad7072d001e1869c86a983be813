@@ -1,0 +1,9 @@
+package com.reactiveworks.services;
+
+public class WeatherServicePublished {
+	
+	public static void main(String[] args) {
+	 
+		WeatherServicePortTyoeImpl 
+	}
+}

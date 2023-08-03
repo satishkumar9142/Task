@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="S:\WorkSpace\FileHandling\projectB"/>
+			<item value="S:\WorkSpace\projectA"/>
+			<item value="S:\WorkSpace\FileHandling\myapp1"/>
+			<item value="S:\WorkSpace\myproject\com.project"/>
+			<item value="S:\WorkSpace\mavenProject\my-app"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+			<item value="jira"/>
+		</list>
+		<list key="issueManagementUrl">
+			<item value="https://hibernate.atlassian.net/browse/HHH"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="S:\WorkSpace\FileHandling\BottomUp-Tomcat9-J2EE-Axis2-StockTrade\src\main\java\com\reactiveworks\stocktrade\service\StockTradeReaderImpl.java"/>
+			<item value="S:\WorkSpace\FileHandling"/>
+			<item value="S:\WorkSpace\FileHandling\BottomUp-Axis2-Operions-Tomcat10\src\main\webapp\WEB-INF\web.xml"/>
+			<item value="S:\WorkSpace\FileHandling\JacksonApi\src\main\java"/>
+			<item value="S:\WorkSpace\FileHandling\JaxB\src\main\java"/>
+			<item value="S:\WorkSpace\FileHandling\Factory_Pattern\src\main\java"/>
+			<item value="S:\WorkSpace\FileHandling\Bank_Mutli_Module_Maven_project"/>
+			<item value="S:\WorkSpace\FileHandling\MavenProfiles"/>
+			<item value="S:\WorkSpace\FileHandling\project1"/>
+			<item value="S:\WorkSpace\FileHandling\projectB"/>
+			<item value="S:\WorkSpace\FileHandling\file"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="838"/>
+		<item key="x" value="1200"/>
+		<item key="y" value="0"/>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="client"/>
+			<item value="services"/>
+			<item value="Module_2_CreditCard"/>
+			<item value="Module2_CreditCard"/>
+			<item value="Module_1_InterNetBanking"/>
+			<item value="Module1_Internet_Banking"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="com.reactiveworks.stocktrade"/>
+			<item value="com.reactiveworks.product"/>
+			<item value="com.reactiveworks.productexercise3"/>
+			<item value="com.reactiveworks.productexercise"/>
+			<item value="com.reactiveworks.cityexercise"/>
+			<item value="com.reactiveworks"/>
+			<item value="com.reactiveworks.topdown"/>
+			<item value="com.reactiveworks.tomcat10"/>
+			<item value="com.reactivework.tomcat10"/>
+			<item value="com.reactiveworks.practice"/>
+			<item value="BottomUp-Tomcat10-Hello"/>
+			<item value="BottomUp-Axis2-Hello-Tomcat10"/>
+			<item value="CityExcercise"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="TopDown-Tomcat9-J2EE-Axis2-StockTrade"/>
+			<item value="BottomUp-Tomcat9-J2EE-Axis2-StockTrade"/>
+			<item value="TopDown-Tomcat10-JakartaEE9-ProductExercise"/>
+			<item value="TopDown-Tomcat10-JakartaEE9-CityExercise"/>
+			<item value="BottomUp-Tomcat10-Jakarta-ProductExercise4"/>
+			<item value="BottomUp-Tomcat10-JakartaEE9-ProductExercise3"/>
+			<item value="BottomUp-Tomcat10-JakartaEE9-ProductExercise"/>
+			<item value="BottomUp-Tomcat10-JakartaEE9-CityExercise"/>
+			<item value="TopDown-Tomcat10-Hello1"/>
+			<item value="TopDown-Webservices-Tomcat10"/>
+			<item value="TopDown-Tomcat10-Hello"/>
+			<item value="BottomUp-Tomcat10-Hello"/>
+			<item value="BottomUp-Tomcat110-Hello"/>
+			<item value="BottomUp-Cxf-Tomcat10-Hello1"/>
+			<item value="BottomUp-Cxf-Tomcat10-Hello"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

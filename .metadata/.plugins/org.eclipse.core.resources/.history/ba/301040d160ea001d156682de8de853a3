@@ -1,0 +1,23 @@
+package pack3;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class A implements Serializable{
+	int i =10;
+}
+class B  extends A{
+	int j =20;
+}
+public class Q9 {
+	public static void main(String[] args) throws Exception{
+		B b = new B();
+		FileOutputStream fos = new FileOutputStream("abc.txt");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(b);
+		
+		
+		
+	}
+}

@@ -1,0 +1,39 @@
+package pack1;
+
+import static org.junit.Assert.fail;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CityServicesTest {
+
+	private List<Customer> Cust;
+
+	public CityServicesTest(List<Customer> Cust) {
+		this.Cust = Cust;
+	}
+
+	CityServices service = new CityServices(Cust);
+
+	String maxCustomer;
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testMaxPopulation() {
+		maxCustomer = "" + service.maxPopulation();
+		String[] split = maxCustomer.split(",");
+		Integer id = Integer.parseInt(split[0]);
+		System.out.println(id);
+	}
+
+	@Test
+	public void testMinPopulation() {
+		fail("Not yet implemented");
+	}
+
+}

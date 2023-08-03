@@ -1,0 +1,21 @@
+package com.reactiveworks.client;
+
+import com.reactiveworks.client.NewOperation.Arg0;
+import com.reactiveworks.client.NewOperationResponse.Return;
+
+import jakarta.xml.ws.Response;
+
+public class Client implements OperationImpl {
+
+	@Override
+	public Return newOperation(Arg0 arg0) {
+		NewOperation request = new NewOperation();
+		request.arg0.setA(10);
+		request.arg0.setB(16);
+		ObjectFactory factory = new ObjectFactory();
+		NewOperationResponse response = factory.createNewOperationResponse();
+		response._return.setResult(request.arg0);
+		return null;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.reactiveworks.bottomupcxf;
+
+public class CalculatorImpl implements Calculator{
+	
+	@Override
+	public int getAdd(int a, int b) {
+		// TODO Auto-generated method stub
+		return (a+b);
+	}
+
+}

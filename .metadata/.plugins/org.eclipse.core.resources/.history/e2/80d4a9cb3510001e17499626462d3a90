@@ -1,0 +1,5 @@
+package com.reactiveworks.productuser.model;
+
+public interface WashingMachine extends {
+
+}

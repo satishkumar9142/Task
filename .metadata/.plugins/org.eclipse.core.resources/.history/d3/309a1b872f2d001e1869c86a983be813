@@ -1,0 +1,17 @@
+package com.reactivework.cityexercise.exception;
+
+import com.reactivework.cityexercise.services.CityServices;
+import com.reactivework.cityexercise.services.CityServicesImpl;
+
+public class Client {
+	public static void main(String[] args) {
+	 
+		try {
+			CityServices services = new CityServicesImpl();
+			service
+		} catch (CityCustomException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

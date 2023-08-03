@@ -1,0 +1,21 @@
+package pack3;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class A implements Serializable{
+	int i =10;
+	int j =20;
+}
+public class Q2 {
+	public static void main(String[] args) throws IOException {
+		A a1 = new A();
+		FileOutputStream f1 = new FileOutputStream("ABC.ser");
+		ObjectOutputStream oos = new ObjectOutputStream(f1);
+		oos.writeObject(a1);
+		System.out.println("done");
+		
+	}
+}

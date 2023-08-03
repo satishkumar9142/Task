@@ -1,0 +1,14 @@
+package pack3;
+
+import java.io.Serializable;
+
+class User implements Serializable{
+	String userName = "rajsatish226@gmail.com";
+	transient String pass = "Satish09098";
+}
+public class Q3 {
+	public static void main(String[] args) {
+		User user = new User();
+		System.out.println(user.userName + "    " + );
+	}
+}

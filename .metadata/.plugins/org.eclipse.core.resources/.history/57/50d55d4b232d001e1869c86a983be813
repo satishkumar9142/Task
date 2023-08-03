@@ -1,0 +1,28 @@
+package com.reactiveworks.client;
+
+import com.reactiveworks.client.NewOperation.Arg0;
+import com.reactiveworks.client.NewOperationResponse.Return;
+
+public class Client implements OperationImpl {
+
+	@Override
+	public Return newOperation(Arg0 arg0) {
+		NewOperation request = new NewOperation();
+		request.arg0.setA(10);
+		request.arg0.setB(16);
+		ObjectFactory factory = new ObjectFactory();
+		NewOperationResponse response = factory.createNewOperationResponse();
+		response._return.setResult(request.arg0.getA() + request.arg0.getB());
+		return response._return;
+	}
+	
+	public static void main(String[] args) {
+		
+		Client client = new Client();
+		NewOperation request = new NewOperation();
+		request.arg0.setA(10);
+		request.arg0.setB(16);
+		int result = client.newOperation(request.arg0);
+	}
+
+}

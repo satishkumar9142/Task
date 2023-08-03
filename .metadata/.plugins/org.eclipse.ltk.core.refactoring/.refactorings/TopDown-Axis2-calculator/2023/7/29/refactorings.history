@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;TopDown-Axis2-calculator&apos;&#x0D;&#x0A;- Original project: &apos;TopDown-Axis2-calculator&apos;&#x0D;&#x0A;- Original element: &apos;com.reactiveworks.soapaxis2.CalculatorServer.java&apos;" description="Delete element" element1="/src&lt;com.reactiveworks.soapaxis2{CalculatorServer.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1689836441023" subPackages="false" version="1.0"/>
+</session>

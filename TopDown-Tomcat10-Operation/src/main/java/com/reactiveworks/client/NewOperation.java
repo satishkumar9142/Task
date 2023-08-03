@@ -1,0 +1,136 @@
+
+package com.reactiveworks.client;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for newOperation complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="newOperation">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="arg0" minOccurs="0">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="a" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *                   &lt;element name="b" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "newOperation", namespace = "http://services.reactiveworks.com/", propOrder = {
+    "arg0"
+})
+public class NewOperation {
+
+    protected NewOperation.Arg0 arg0;
+
+    /**
+     * Gets the value of the arg0 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NewOperation.Arg0 }
+     *     
+     */
+    public NewOperation.Arg0 getArg0() {
+        return arg0;
+    }
+
+    /**
+     * Sets the value of the arg0 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NewOperation.Arg0 }
+     *     
+     */
+    public void setArg0(NewOperation.Arg0 value) {
+        this.arg0 = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="a" type="{http://www.w3.org/2001/XMLSchema}int"/>
+     *         &lt;element name="b" type="{http://www.w3.org/2001/XMLSchema}int"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "a",
+        "b"
+    })
+    public static class Arg0 {
+
+        protected int a;
+        protected int b;
+
+        /**
+         * Gets the value of the a property.
+         * 
+         */
+        public int getA() {
+            return a;
+        }
+
+        /**
+         * Sets the value of the a property.
+         * 
+         */
+        public void setA(int value) {
+            this.a = value;
+        }
+
+        /**
+         * Gets the value of the b property.
+         * 
+         */
+        public int getB() {
+            return b;
+        }
+
+        /**
+         * Sets the value of the b property.
+         * 
+         */
+        public void setB(int value) {
+            this.b = value;
+        }
+
+    }
+
+}

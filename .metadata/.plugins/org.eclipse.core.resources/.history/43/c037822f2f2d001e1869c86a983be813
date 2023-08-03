@@ -1,0 +1,45 @@
+package com.reactivework.cityexercise.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.reactivework.cityexercise.exception.CityCustomException;
+import com.reactivework.cityexercise.model.City;
+import com.reactivework.cityexercise.util.CityCsvReader;
+
+public class CityServicesImpl implements CityServices {
+
+	private List<City> list;
+	public CityServicesImpl() {
+		CityCsvReader csv = new CityCsvReader();
+		
+		this.list = list; 
+	}
+	
+	public City CityName(int id) throws CityCustomException {
+		
+		List<City> searchId = list.stream().filter(i->i.getId()== id).collect(Collectors.toList());
+		if(!searchId.isEmpty())
+		return searchId.get(0);
+		throw new CityCustomException("Id Not Found Exception",new CityCustomException());
+	}
+
+	public List<City> CityNameByCode(String cCode) throws CityCustomException {
+		List<City> cityNameByCouCode = list.stream().filter(i-> i.getCouCode().equals(cCode)).collect(Collectors.toList());
+		if(cityNameByCouCode.isEmpty()) {
+			throw new CityCustomException("Country Code is Invalid",new CityCustomException());
+		}	 
+		return cityNameByCouCode;
+	}
+	
+	public City maxPopulation() 
+	{ 
+		 return list.stream().max((a,b)->a.getPopulation()>b.getPopulation()?+1: -1).get();
+	}
+
+	public City minPopulation() 
+	{
+		return list.stream().min((a,b)->a.getPopulation()>b.getPopulation()?+1: -1).get();
+	}
+}	
+

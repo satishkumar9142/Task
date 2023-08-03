@@ -1,0 +1,14 @@
+1687422008988	Rename package 'com.reactiveworks.productuser.crud'
+1687422032494	Rename type 'ProductDao'
+1687422052287	Rename type 'ProductImplDao'
+1687422065395	Rename type 'ProductDaodb'
+1687424654730	Rename type 'CustomException'
+1687424716079	Delete element
+1687424720831	Delete element
+1687424790522	Rename package 'com.reactiveworks.productuser.daowithdb'
+1687430552826	Copy compilation unit
+1687430639584	Copy compilation unit
+1687432727640	Copy file
+1687497308213	Delete element
+1687497331983	Rename type 'Dao'
+1687497558757	Rename type 'ProductDaoFactory'

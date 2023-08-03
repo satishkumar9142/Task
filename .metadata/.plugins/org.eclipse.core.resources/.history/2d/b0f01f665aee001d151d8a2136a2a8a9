@@ -1,0 +1,18 @@
+package Java8;
+class Sample{
+	Sample(){
+		System.out.println("Sample class Constructor Execution...");
+	}
+}
+interface I2{
+	public Sample get();
+}
+public class MethodReferenceandConstructor {
+	
+	public static void main(String[] args) {
+		
+		I2 i = Sample::new;
+		Sample s1 = i.get();
+		Sample s2 = i.get();
+	}
+}

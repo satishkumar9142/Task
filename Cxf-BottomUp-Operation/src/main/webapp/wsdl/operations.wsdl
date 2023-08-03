@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="OperationsService" targetNamespace="http://cxf.reactiveworks.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://cxf.reactiveworks.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://cxf.reactiveworks.com/" schemaLocation="operations_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getAddResponse">
+    <wsdl:part name="parameters" element="tns:getAddResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAdd">
+    <wsdl:part name="parameters" element="tns:getAdd">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Operations">
+    <wsdl:operation name="getAdd">
+      <wsdl:input name="getAdd" message="tns:getAdd">
+    </wsdl:input>
+      <wsdl:output name="getAddResponse" message="tns:getAddResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OperationsServiceSoapBinding" type="tns:Operations">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAdd">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAdd">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAddResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OperationsService">
+    <wsdl:port name="OperationsPort" binding="tns:OperationsServiceSoapBinding">
+      <soap:address location="http://localhost:8082/Cxf-BottomUp-Operation/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

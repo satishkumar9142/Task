@@ -1,0 +1,11 @@
+package com.reactiveworks.product.services;
+
+import com.reactiveworks.product.exception.ProductException;
+
+public class Client {
+	public static void main(String[] args) throws ProductException {
+		
+		ProductService product = new ProductService();
+		System.out.println(product.getProductForType("Latop"));
+	}
+}

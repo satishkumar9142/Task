@@ -1,0 +1,5 @@
+package com.reactiveworks.city.service1;
+
+public class CityServiceImpl implements CityService {
+
+}

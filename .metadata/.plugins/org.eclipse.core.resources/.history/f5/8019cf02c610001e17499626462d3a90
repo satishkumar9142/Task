@@ -1,0 +1,66 @@
+package com.reactiveworks.productuser.modelinterfaceImpl;
+
+import com.reactiveworks.productuser.modelinterface.Laptop;
+
+public class LaptopImpl implements Laptop{
+
+	@Override
+	public String screenSize() {
+		return null;
+	}
+
+	@Override
+	public String os() {
+		return null;
+	}
+
+	@Override
+	public int batterySize() {
+		return 0;
+	}
+
+	@Override
+	public int numCore() {
+		return 0;
+	}
+
+	@Override
+	public int RAM() {
+		return 0;
+	}
+
+	@Override
+	public String ProductId() {
+		return null;
+	}
+
+	@Override
+	public String ProductName() {
+		return null;
+	}
+
+	@Override
+	public String ProductType() {
+		return null;
+	}
+
+	@Override
+	public int price() {
+		return 0;
+	}
+
+	@Override
+	public int warranty() {
+		return 0;
+	}
+
+	@Override
+	public String manufactureDate() {
+		return null;
+	}
+
+	@Override
+	public String graphicCard() {
+		return null;
+	}
+}

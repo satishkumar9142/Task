@@ -1,0 +1,18 @@
+package Java8;
+
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+
+public class CompletableFuturePractice {
+
+	public static void main(String[] args) {
+		 calculateAsynce();
+	}
+	private static void calculateAsynce() {
+		CompletableFuture<String> completableFuture = new CompletableFuture<>();
+		
+		Executors.newCachedThreadPool().submit(()->{
+			Thread.sleep(20);
+		});
+	}
+}

@@ -1,0 +1,23 @@
+ package com.reactiveworks.productuser.model;
+
+import java.util.Map;
+
+import com.reactiveWork.ProductCategory.CustomException.CustomException;
+
+
+/**
+ * 
+ * Model Of Laptop Class Which extends to ProcessingDevice Class Model.
+ *
+ */
+public class Laptop extends ProcessingDevice{
+	
+	String graphicCard;
+	
+	public String getGraphicCard() {
+		return graphicCard;
+	}
+
+	
+
+}

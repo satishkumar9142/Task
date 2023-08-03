@@ -1,0 +1,10 @@
+package pack3;
+
+import java.util.concurrent.Callable;
+
+class MyCallable implements Callable{
+	
+}
+public class Q16 {
+
+}

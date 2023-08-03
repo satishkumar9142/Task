@@ -1,0 +1,113 @@
+package Java8;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class StreamAPI { 
+	public static void main(String[] args) {
+		ArrayList<Integer>  list = new ArrayList<Integer>();
+		ArrayList<String> name = new ArrayList<String>();
+		list.add(10);
+		list.add(70);
+		list.add(23);
+		list.add(33);
+		list.add(45);
+		list.add(55);
+
+
+		name.add("Satish");
+		name.add("umar");
+		name.add("Akash");
+		name.add("Rohan");
+		name.add("Sumit");
+		name.add("Rajiv");
+
+
+		System.out.println(list);
+		List<Integer> filterasPositiveNumber = list.stream().filter(i->i%2==0).collect(Collectors.toList());  //stream filter collect(Collectors.toList())
+		List<Integer> add5InAllPeople = list.stream().map(i->i+5).collect(Collectors.toList());// stream().map().collect(Collectors.toList());
+		
+		List<Integer> list1 = list.parallelStream().filter(i->i%2==0).collect(Collectors.toList());
+		System.out.println(list1);
+		long NoOfpeopleLessThan35 = list.stream().filter(i->i<35).count();
+
+		List<Integer> sorted = list.stream().sorted((a,b)->a-b).collect(Collectors.toList());
+		System.out.println(filterasPositiveNumber);
+		System.out.println(add5InAllPeople);
+		System.out.println(NoOfpeopleLessThan35);
+		System.out.println(sorted);
+		System.out.println(name);
+		List<String> namesorted = name.stream().sorted((a,b)->b.length()-a.length()).collect(Collectors.toList());
+		System.out.println(namesorted);
+		int min = list.stream().min((a,b)-> a-b).get();
+		int max = list.stream().max((a,b)-> a-b).get();
+		System.out.println(min);
+		System.out.println(max);
+		System.out.println("============");
+//		for(int a : list) {
+//			System.out.println(a);
+//		}
+		Consumer<Integer> c = i->{
+			System.out.println("The Square of" +i + " is : " + (i*i));
+		};
+//		list.stream().forEach(System.out::println);
+		list.stream().forEach(c);
+		
+		Integer [] b = list.stream().toArray(Integer [] :: new);
+		System.out.println(Arrays.toString(b));
+		
+		List<Integer> list2 = new ArrayList<>();
+		list2 = List.of(2,3,4,5,6,7,7,8,8,10,11,12,13,14);
+	//	list2.add(456);
+		System.out.println(list2);
+		
+		List<Integer> list3 =  Arrays.asList(4,5,6,7,8,9,10,11,12,13,14);
+		System.out.println(list3);
+		
+		List<Integer> filterOddList2 = list2.stream().filter(i-> i%2 == 1).collect(Collectors.toList());
+		System.out.println(filterOddList2);
+		
+		
+		String [] names = {"ABC","AJSHJ","JSJDJKSN","HBHJS","SJHJ","DHSD","SJHD"};
+		
+		List<String> namesList = Stream.of(names).filter(i->i.startsWith("S")).collect(Collectors.toList());
+		System.out.println(namesList);
+		
+		List<Integer> 
+
+		
+	}
+}
+
+/*
+   Collection and Stream
+   =======================
+   If we want to represent a group of Objects as a 
+   single entity then we should go for collection.
+
+   if we want to process Objects from the collection-stream. 
+
+   Stream s = c.stream(); 
+   java.util.stream package
+   
+   stream()
+   filter()
+   map()
+   collect()
+   count()
+   sorted()
+   sorted(comparator)
+   min(Comparator)
+   max(Comparator)
+   forEach()
+   toArray()
+   ----------------------------------
+   Stream.of():
+   
+
+ */

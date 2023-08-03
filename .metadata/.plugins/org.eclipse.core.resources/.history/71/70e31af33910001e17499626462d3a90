@@ -1,0 +1,8 @@
+package com.reactiveworks.productuser.modelinterface;
+
+public interface WashingMachine extends Product{
+	int loadCapacity();
+	boolean isAutomatic();
+	String doorType();
+
+}

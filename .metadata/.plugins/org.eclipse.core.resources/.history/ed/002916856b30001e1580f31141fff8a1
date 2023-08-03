@@ -1,0 +1,12 @@
+package com.reactiveworks.product.service.client;
+
+import java.util.List;
+
+public class Client {
+	public static void main(String[] args) {
+	
+		ProductServiceImplService service = new ProductServiceImplService();
+		ProductServiceImpl list = service.getProductServiceImplPort();
+		List<Product> product = list.getListOfProductFromProductType("Laptop");
+	}
+}

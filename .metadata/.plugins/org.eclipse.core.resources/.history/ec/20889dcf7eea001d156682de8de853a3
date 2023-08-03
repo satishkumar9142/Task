@@ -1,0 +1,11 @@
+package pack3;
+
+import java.io.Serializable;
+
+class Dog implements Serializable{
+	
+}
+public class Q12 {
+	
+
+}

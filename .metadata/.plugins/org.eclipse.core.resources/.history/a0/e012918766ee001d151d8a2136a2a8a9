@@ -1,0 +1,32 @@
+package Java8;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Stream {
+	public static void main(String[] args) {
+	 ArrayList<Integer>  list = new ArrayList();
+	 list.add(0);
+	 list.add(1);
+	 list.add(2);
+	 list.add(3);
+	 list.add(4);
+	 list.add(5);
+	 System.out.println(list);
+	 List<Integer> list2 = list.stream().map(i->i+5).collect(Collectors.toList());
+	 System.out.println(list2);
+	}
+}
+/*
+   Collection and Stream
+   =======================
+   If we want to represent a group of Objects as a 
+   single entity then we should go for collection.
+   
+   if we want to process Objects from the collection-stream. 
+   
+   Stream s = c.stream(); 
+   java.util.stream package
+   
+*/

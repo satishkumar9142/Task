@@ -1,0 +1,9 @@
+package StockTradeReaderImplPackage;
+
+import IStockTradeReaderPackage.IStockTradeReader;
+
+public class StockTradeReaderImpl {
+
+	IStockTradeReader write = new IStockTradeReader();
+	
+}

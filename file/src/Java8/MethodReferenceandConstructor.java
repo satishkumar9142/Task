@@ -1,0 +1,21 @@
+package Java8;
+class Sample{
+	Sample(String s){
+		System.out.println("Sample class Constructor Execution with argument..." + s);
+	}
+//	Sample(){
+//		System.out.println("Sample class Constructor no argument...");
+//	}
+}
+interface I2{
+	public Sample get(String s);
+}
+public class MethodReferenceandConstructor {
+	
+	public static void main(String[] args) {
+		
+		I2 i = Sample::new;
+		i.get("Satish");
+		i.get("Akash");
+	}
+}

@@ -1,0 +1,22 @@
+package Java8;
+
+interface I1{
+	public void add(int a, int b);
+	
+	public sample get();
+}
+public class MethodReferce_DoubleColon {
+	
+	public static void sum(int x, int y) {
+		System.out.println("The sum : " + (x+y));
+	}
+	public static void main(String[] args) {
+		
+		I1 x = (a,b)-> System.out.println("The Sum : " + (a+b));
+		x.add(14, 20);
+		
+		I1 y = MethodReferce_DoubleColon::sum;
+		y.add(15, 30); 	
+		
+	}
+}

@@ -1,0 +1,154 @@
+
+package com.reactiveworks.product.service1;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for ProcessingDevice complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="ProcessingDevice">
+ *   &lt;complexContent>
+ *     &lt;extension base="{http://www.example.org/productService/}Product">
+ *       &lt;sequence>
+ *         &lt;element name="screenSize" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="os" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="batterySize" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="numCore" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="ram" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *       &lt;/sequence>
+ *     &lt;/extension>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ProcessingDevice", propOrder = {
+    "screenSize",
+    "os",
+    "batterySize",
+    "numCore",
+    "ram"
+})
+@XmlSeeAlso({
+    Laptop.class,
+    MobileDevice.class
+})
+public class ProcessingDevice
+    extends Product
+{
+
+    @XmlElement(required = true)
+    protected String screenSize;
+    @XmlElement(required = true)
+    protected String os;
+    protected int batterySize;
+    protected int numCore;
+    protected int ram;
+
+    /**
+     * Gets the value of the screenSize property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getScreenSize() {
+        return screenSize;
+    }
+
+    /**
+     * Sets the value of the screenSize property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setScreenSize(String value) {
+        this.screenSize = value;
+    }
+
+    /**
+     * Gets the value of the os property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOs() {
+        return os;
+    }
+
+    /**
+     * Sets the value of the os property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOs(String value) {
+        this.os = value;
+    }
+
+    /**
+     * Gets the value of the batterySize property.
+     * 
+     */
+    public int getBatterySize() {
+        return batterySize;
+    }
+
+    /**
+     * Sets the value of the batterySize property.
+     * 
+     */
+    public void setBatterySize(int value) {
+        this.batterySize = value;
+    }
+
+    /**
+     * Gets the value of the numCore property.
+     * 
+     */
+    public int getNumCore() {
+        return numCore;
+    }
+
+    /**
+     * Sets the value of the numCore property.
+     * 
+     */
+    public void setNumCore(int value) {
+        this.numCore = value;
+    }
+
+    /**
+     * Gets the value of the ram property.
+     * 
+     */
+    public int getRam() {
+        return ram;
+    }
+
+    /**
+     * Sets the value of the ram property.
+     * 
+     */
+    public void setRam(int value) {
+        this.ram = value;
+    }
+
+}

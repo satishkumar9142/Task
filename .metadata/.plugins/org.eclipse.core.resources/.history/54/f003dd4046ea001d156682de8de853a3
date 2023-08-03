@@ -1,0 +1,34 @@
+package pack3;
+
+public class Q8 {
+
+	public static void main(String[] args)
+	{
+		int var;
+
+	// Here we will not be having body of this method
+		// in our java code her
+		NameOfDLLFile obj = new NameOfDLLFile();
+
+		obj.var = null;
+
+		System.out.println("Before native method: var = "
+				+ var);
+
+		obj.test();
+
+		System.out.println("After native method: var = "
+				+ var);
+	}
+
+	public native void test()
+	{
+
+		static
+		{
+			System.loadLibrary("NameOfDLLFile");
+		}
+
+	}
+
+}

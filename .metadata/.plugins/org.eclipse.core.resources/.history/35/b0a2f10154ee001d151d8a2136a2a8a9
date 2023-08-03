@@ -1,0 +1,8 @@
+package Java8;
+
+public class MethodAndConstructorReference {
+	
+	public static void main(String[] args) {
+		
+	}
+}

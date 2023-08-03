@@ -1,0 +1,13 @@
+package com.reactiveworks.services;
+
+import jakarta.xml.ws.Endpoint;
+
+public class WeatherServicePublished {
+	
+	public static void main(String[] args) {
+	 
+		WeatherServicePortTyoeImpl impl = new WeatherServicePortTyoeImpl();
+		Endpoint.publish("http://", impl)
+		
+	}
+}

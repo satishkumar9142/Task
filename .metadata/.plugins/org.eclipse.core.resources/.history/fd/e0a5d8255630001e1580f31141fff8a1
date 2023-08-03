@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/productService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="productService" targetNamespace="http://www.example.org/productService/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/productService/">
+      <xsd:element name="getListOfProductFromProductType">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="productType" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListOfProductFromProductTypeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+                        <xsd:element name="listOfProduct" type="tns:Product" />
+                    </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="Product">
+      	<xsd:sequence>
+      		<xsd:element name="productId" type="xsd:string"></xsd:element>
+      		<xsd:element name="productName" type="xsd:string"></xsd:element>
+      		<xsd:element name="productType" type="xsd:string"></xsd:element>
+                    <xsd:element name="price" type="xsd:double"></xsd:element>
+                    <xsd:element name="warranty" type="xsd:int"></xsd:element>
+      		<xsd:element name="manufactureDate" type="xsd:date"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="ProcessingDevice">
+      	<xsd:sequence>
+      		<xsd:element name="screenSize" type="xsd:string"></xsd:element>
+      		<xsd:element name="os" type="xsd:string"></xsd:element>
+      		<xsd:element name="batterySize" type="xsd:int"></xsd:element>
+      		<xsd:element name="numCore" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      
+            <xsd:complexType name="TV"></xsd:complexType>
+        
+            <xsd:complexType name="Laptop"></xsd:complexType>
+        
+            <xsd:complexType name="MobileDevice"></xsd:complexType>
+        
+            <xsd:complexType name="WashingMachine"></xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getListOfProductFromProductTypeRequest">
+    <wsdl:part element="tns:getListOfProductFromProductType" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getListOfProductFromProductTypeResponse">
+    <wsdl:part element="tns:getListOfProductFromProductTypeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="productService">
+    <wsdl:operation name="getListOfProductFromProductType">
+      <wsdl:input message="tns:getListOfProductFromProductTypeRequest"/>
+      <wsdl:output message="tns:getListOfProductFromProductTypeResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="productServiceSOAP" type="tns:productService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getListOfProductFromProductType">
+      <soap:operation soapAction="http://www.example.org/productService/getListOfProductFromProductType"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="productService">
+    <wsdl:port binding="tns:productServiceSOAP" name="productServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

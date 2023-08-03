@@ -1,0 +1,25 @@
+package Java8;
+class Student1{
+	String name;
+	int rollno;
+	int marks;
+	int age;
+	public Student1(String name, int rollno, int marks, int age) {
+		super();
+		this.name = name;
+		this.rollno = rollno;
+		this.marks = marks;
+		this.age = age;
+	}
+}
+interface I3{
+	
+	public Student1 get(String name, int rollno,int marks, int age);
+}
+public class MethodRefenceThroughConstructor {
+
+	public static void main(String[] args) {
+		I3 s = Student1::new;
+		i.get
+	}
+}

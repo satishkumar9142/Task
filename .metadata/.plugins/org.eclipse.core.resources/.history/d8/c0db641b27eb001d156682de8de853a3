@@ -1,0 +1,39 @@
+package pack3;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class PrintJob implements Runnable {
+	String name;
+	public PrintJob(String name) {
+		this.name = name;
+	}
+	@Override
+	public synchronized void run() {
+		System.out.println(name + "......job started by "
+				+ "Thread :" + Thread.currentThread().getName());
+		try {
+			Thread.sleep(1000);
+		}
+		catch(InterruptedException e) {
+		}
+		System.out.println(name + "....Job Completed by THread:"
+				+ Thread.currentThread().getName());
+	}
+}
+public class Q15 {
+	public static void main(String[] args) {
+		PrintJob [] jobs = {new PrintJob("Satish"),
+						    new PrintJob("Ravi"),
+						    new PrintJob("Shiva"),
+						    new PrintJob("Anil"),
+						    new PrintJob("Suresh"),
+						    new PrintJob("Pawan")};
+		
+		ExecutorService service = Executors.newFixedThreadPool(2);
+		for(PrintJob job : jobs) {
+			service.submit(job);
+		}
+		service.shutdown();
+	}
+}

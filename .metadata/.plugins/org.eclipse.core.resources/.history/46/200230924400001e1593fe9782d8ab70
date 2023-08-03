@@ -1,0 +1,5 @@
+package com.reactivework.mysqldemo.cassandradatabase;
+
+public class CassandraConnector {
+
+}

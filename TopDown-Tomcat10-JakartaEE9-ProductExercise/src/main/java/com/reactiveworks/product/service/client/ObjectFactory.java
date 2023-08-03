@@ -1,0 +1,119 @@
+
+package com.reactiveworks.product.service.client;
+
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the com.reactiveworks.product.service.client package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+    private final static QName _GetListOfProductFromProductTypeResponse_QNAME = new QName("http://service.product.reactiveworks.com/", "getListOfProductFromProductTypeResponse");
+    private final static QName _GetListOfProductFromProductType_QNAME = new QName("http://service.product.reactiveworks.com/", "getListOfProductFromProductType");
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.reactiveworks.product.service.client
+     * 
+     */
+    public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetListOfProductFromProductType }
+     * 
+     */
+    public GetListOfProductFromProductType createGetListOfProductFromProductType() {
+        return new GetListOfProductFromProductType();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfProductFromProductTypeResponse }
+     * 
+     */
+    public GetListOfProductFromProductTypeResponse createGetListOfProductFromProductTypeResponse() {
+        return new GetListOfProductFromProductTypeResponse();
+    }
+
+    /**
+     * Create an instance of {@link WashingMachine }
+     * 
+     */
+    public WashingMachine createWashingMachine() {
+        return new WashingMachine();
+    }
+
+    /**
+     * Create an instance of {@link Laptop }
+     * 
+     */
+    public Laptop createLaptop() {
+        return new Laptop();
+    }
+
+    /**
+     * Create an instance of {@link TV }
+     * 
+     */
+    public TV createTV() {
+        return new TV();
+    }
+
+    /**
+     * Create an instance of {@link MobileDevice }
+     * 
+     */
+    public MobileDevice createMobileDevice() {
+        return new MobileDevice();
+    }
+
+    /**
+     * Create an instance of {@link Product }
+     * 
+     */
+    public Product createProduct() {
+        return new Product();
+    }
+
+    /**
+     * Create an instance of {@link ProcessingDevice }
+     * 
+     */
+    public ProcessingDevice createProcessingDevice() {
+        return new ProcessingDevice();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListOfProductFromProductTypeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.product.reactiveworks.com/", name = "getListOfProductFromProductTypeResponse")
+    public JAXBElement<GetListOfProductFromProductTypeResponse> createGetListOfProductFromProductTypeResponse(GetListOfProductFromProductTypeResponse value) {
+        return new JAXBElement<GetListOfProductFromProductTypeResponse>(_GetListOfProductFromProductTypeResponse_QNAME, GetListOfProductFromProductTypeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListOfProductFromProductType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.product.reactiveworks.com/", name = "getListOfProductFromProductType")
+    public JAXBElement<GetListOfProductFromProductType> createGetListOfProductFromProductType(GetListOfProductFromProductType value) {
+        return new JAXBElement<GetListOfProductFromProductType>(_GetListOfProductFromProductType_QNAME, GetListOfProductFromProductType.class, null, value);
+    }
+
+}

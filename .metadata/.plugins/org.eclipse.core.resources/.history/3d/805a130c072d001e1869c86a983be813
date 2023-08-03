@@ -1,0 +1,12 @@
+package com.reactiveworks.services;
+
+public class WeatherServicePortTyoeImpl implements WeatherServicePortType {
+
+	@Override
+	public GetCurrentTemperatureRs getCurrentTemperature(GetCurrentTemperatureRq parameters) {
+		
+		
+		return null;
+	}
+
+}

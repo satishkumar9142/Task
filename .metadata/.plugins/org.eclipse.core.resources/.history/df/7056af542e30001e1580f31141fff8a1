@@ -1,0 +1,38 @@
+package com.reactiveworks.product.individualproduct;
+
+import java.util.Map;
+
+import com.reactiveworks.product.exception.ProductException;
+
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("BOOK")
+public class MobileDevice extends ProcessingDevice {
+	
+	String simType;
+	  
+	public String getSimType() {
+		return simType;
+	}
+	
+	public void setSimType(String simType) {
+		this.simType = simType;
+	}
+
+	public MobileDevice() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "MobileDevice [simType=" + simType + ", screenSize=" + screenSize + ", os=" + os + ", batterySize="
+				+ batterySize + ", numCore=" + numCore + ", RAM=" + RAM + ", productId=" + productId + ", productName="
+				+ productName + ", productType=" + productType + ", price=" + price + ", warranty=" + warranty
+				+ ", manufecturedDt=" + manufecturedDt + "]";
+	}
+		public void buildProduct(Map<String,String> map) throws ProductException {
+		super.buildProduct(map);
+		this.simType = map.get("SIMtYPE");
+	}
+}

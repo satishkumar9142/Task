@@ -1,0 +1,99 @@
+  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Maven-Profiles</groupId>
+  <artifactId>Maven-Profiles</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+ 
+ 
+ <profiles>
+	 
+<!-- profile for local -->
+
+	 <profile>
+		 <id>local</id>
+		 <build>
+			 <finalName>${project.artifactId}-local</finalName>
+			    <plugins>
+			      <plugin>
+			        <artifactId>maven-antrun-plugin</artifactId>
+			         <version>1.4</version>
+			         <executions>
+			           <execution>
+		            <phase>process-resources</phase>  
+			            <configuration>
+			               <tasks>
+			                 <copy file="src/main/resources/local.txt"
+			                   toFile="src/main/resources/profile.txt" overwrite="true" />
+			              </tasks>
+			            </configuration>
+			            <goals>
+			              <goal>run</goal>
+			            </goals>
+			          </execution>
+			        </executions>
+			      </plugin>
+			   </plugins>
+			 </build>
+	 </profile>
+	 
+  <!-- profile for test -->
+
+	 <profile>
+		 <id>test</id>
+		 
+		  <build>
+			   <finalName>${project.artifactId}-test</finalName>
+				    <plugins>
+				      <plugin>
+				        <artifactId>maven-antrun-plugin</artifactId>
+				         <version>1.4</version>
+				         <executions>
+				          <execution>
+				            <phase>process-resources</phase>
+				            <configuration>
+				               <tasks>
+				                 <copy file="src/main/resources/test.txt"
+			                   toFile="src/main/resources/profile.txt" overwrite="true" />
+				              </tasks>
+				            </configuration>
+				            <goals>
+				              <goal>run</goal>
+				            </goals>
+				          </execution>
+				        </executions>
+				      </plugin>
+				   </plugins>
+ 			</build>
+	 </profile>
+	 
+<!-- profile for prod-->
+
+	 <profile>
+		 <id>prod</id>
+		 <build>
+			  <finalName>${project.artifactId}-prod</finalName>
+				    <plugins>
+				      <plugin>
+				        <artifactId>maven-antrun-plugin</artifactId>
+				         <version>1.4</version>
+				         <executions>
+				          <execution>
+				            <phase>process-resources</phase>
+				            <configuration>
+				               <tasks>
+				                 <copy file="src/main/resources/prod.txt"
+			                   toFile="src/main/resources/profile.txt" overwrite="true" />
+				              </tasks>
+				            </configuration>
+				            <goals>
+				              <goal>run</goal>
+				            </goals>
+				          </execution>
+				        </executions>
+				      </plugin>
+				   </plugins>
+ 			</build>
+	 </profile>
+ </profiles>
+  
+</project>

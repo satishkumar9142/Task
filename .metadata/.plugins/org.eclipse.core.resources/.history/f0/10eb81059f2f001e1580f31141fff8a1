@@ -1,0 +1,51 @@
+package com.reactiveworks.product.individualproduct;
+
+import java.util.Map;
+
+import com.reactiveworks.product.exception.ProductException;
+
+
+
+public class ProcessingDevice extends Product{
+	String screenSize;
+	String  os;
+	int batterySize;
+	int numCore;
+	int RAM;
+	public ProcessingDevice() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String getScreenSize() {
+		return screenSize;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public int getBatterySize() {
+		return batterySize;
+	}
+
+	public int getNumCore() {
+		return numCore;
+	}
+
+	public int getRAM() {
+		return RAM;
+	}
+	public void buildProduct(Map<String,String> map) throws  ProductException{
+		super.buildProduct(map);
+		this.screenSize = map.get("ScreenSize");
+		this.os = map.get("OS"); 
+		try {
+			this.batterySize = Integer.parseInt(map.get("BatterySize"));
+			this.numCore = Integer.parseInt(map.get("NumCore"));
+			this.RAM = Integer.parseInt(map.get("RAM"));
+		}
+		catch(NumberFormatException e) {
+			throw new ProductException("Data Type is not in proper for which dataType we want to convert");
+		}
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;operations.wsdl&apos; to &apos;Cxf-BottomUp-Operations-Client&apos;&#x0D;&#x0A;- Original project: &apos;Cxf-BottomUp-Operation&apos;&#x0D;&#x0A;- Destination element: &apos;Cxf-BottomUp-Operations-Client&apos;&#x0D;&#x0A;- Original element: &apos;operations.wsdl&apos;" description="Copy file" element1="src/main/webapp/wsdl/operations.wsdl" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1690273384935" target="/Cxf-BottomUp-Operations-Client" units="0" version="1.0"/>
+</session>

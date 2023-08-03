@@ -1,0 +1,16 @@
+package pack3;
+
+public class Q8 {
+
+	public static void main(String[] args) {
+		Runnable runnable = new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+	}
+
+}

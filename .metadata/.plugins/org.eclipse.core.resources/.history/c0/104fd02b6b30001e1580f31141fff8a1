@@ -1,0 +1,5 @@
+package com.reactiveworks.product.service.client;
+
+public class Client {
+
+}

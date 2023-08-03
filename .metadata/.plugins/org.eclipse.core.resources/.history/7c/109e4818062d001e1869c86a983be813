@@ -1,0 +1,2 @@
+@jakarta.xml.bind(namespace = "http://www.example.org/WeatherService/")
+package com.reactiveworks.services;

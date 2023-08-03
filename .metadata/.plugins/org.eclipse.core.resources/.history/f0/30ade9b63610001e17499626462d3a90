@@ -1,0 +1,7 @@
+package com.reactiveworks.productuser.modelinterfaceImpl;
+
+import com.reactiveworks.productuser.modelinterface.Tv;
+
+public class TvImpl implements Tv{
+
+}

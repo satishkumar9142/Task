@@ -1,0 +1,54 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://example.cxf.reactiveworks.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://example.cxf.reactiveworks.com/">
+<xsd:element name="getDivide" type="tns:getDivide"/>
+<xsd:complexType name="getDivide">
+<xsd:sequence>
+<xsd:element name="arg0" type="xsd:int"/>
+<xsd:element name="arg1" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getDivideResponse" type="tns:getDivideResponse"/>
+<xsd:complexType name="getDivideResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:double"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getSubtract" type="tns:getSubtract"/>
+<xsd:complexType name="getSubtract">
+<xsd:sequence>
+<xsd:element name="arg0" type="xsd:int"/>
+<xsd:element name="arg1" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getSubtractResponse" type="tns:getSubtractResponse"/>
+<xsd:complexType name="getSubtractResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getMultiply" type="tns:getMultiply"/>
+<xsd:complexType name="getMultiply">
+<xsd:sequence>
+<xsd:element name="arg0" type="xsd:int"/>
+<xsd:element name="arg1" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getMultiplyResponse" type="tns:getMultiplyResponse"/>
+<xsd:complexType name="getMultiplyResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getAdd" type="tns:getAdd"/>
+<xsd:complexType name="getAdd">
+<xsd:sequence>
+<xsd:element name="arg0" type="xsd:int"/>
+<xsd:element name="arg1" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getAddResponse" type="tns:getAddResponse"/>
+<xsd:complexType name="getAddResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

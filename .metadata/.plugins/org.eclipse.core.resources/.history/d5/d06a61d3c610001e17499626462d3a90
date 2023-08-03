@@ -1,0 +1,44 @@
+package com.reactiveworks.productuser.model;
+
+public class ProcessingDevice extends Product{
+	private static Logger log = LogManager.getLogger();
+	String screenSize;
+	String  os;
+	int batterySize;
+	int numCore;
+	int RAM;
+
+	public String getScreenSize() {
+		return screenSize;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public int getBatterySize() {
+		return batterySize;
+	}
+
+	public int getNumCore() {
+		return numCore;
+	}
+
+	public int getRAM() {
+		return RAM;
+	}
+	public void buildProduct(Map<String,String> map) throws  CustomException{
+		log.info("I am inside ProcessingDevice");
+		super.buildProduct(map);
+		this.screenSize = map.get("ScreenSize");
+		this.os = map.get("OS"); 
+		try {
+			this.batterySize = Integer.parseInt(map.get("BatterySize"));
+			this.numCore = Integer.parseInt(map.get("NumCore"));
+			this.RAM = Integer.parseInt(map.get("RAM"));
+		}
+		catch(NumberFormatException e) {
+			throw new CustomException("Data Type is not in proper for which dataType we want to convert");
+		}
+	}
+}

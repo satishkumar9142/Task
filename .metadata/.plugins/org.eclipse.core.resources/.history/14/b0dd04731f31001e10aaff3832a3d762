@@ -1,0 +1,63 @@
+package com.reactiveworks.stocktrade.services;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.reactiveworks.stocktrade.exception.StockTradeInvalidFormateException;
+import com.reactiveworks.stocktrade.model.StockTrade;
+
+
+public class StockTradeServiceImpl implements StockTradeService {
+
+	private static List<StockTrade> stockList;
+	public StockTradeServiceImpl() throws StockTradeInvalidFormateException {
+		stockList = new ArrayList<StockTrade>();
+		stockList = readStockTrade();
+	}
+	
+	@Override
+	public StockTrade getMaximumVolTrade() {
+		StockTrade trade = new StockTrade();
+		double max = Double.MIN_VALUE;
+		for(int i =0;i<stockList.size();i++) {
+			if(max < stockList.get(i).getVol()) {
+				max = stockList.get(i).getVol();
+				trade = stockList.get(i);
+			}
+		}
+		return trade;
+	}
+
+	@Override
+	public StockTrade getMinimumVolTrade() {
+		StockTrade trade = new StockTrade();
+		double min = Double.MAX_VALUE;
+		for(int i =0;i<stockList.size();i++) {
+			if(min > stockList.get(i).getVol()) {
+				min = stockList.get(i).getVol();
+				trade = stockList.get(i);
+			}
+		}
+		return trade;
+	}
+
+	@Override
+	public List<String> getDailyTradingDiff() {
+		Map<String, Double> map = new LinkedHashMap<String, Double>();
+		List<String> diff = new ArrayList<String>();
+		for(int i =0;i<stockList.size();i++) {
+			map.put(stockList.get(i).getDate(), (stockList.get(i).getHigh()-stockList.get(i).getLow()));
+			diff.add(stockList.get(i).getDate()+ "=" + (stockList.get(i).getHigh()-stockList.get(i).getLow()));
+		}
+		return null;
+	}
+
+	@Override
+	public List<StockTrade> readStockTrade() {
+		
+		return null;
+	}
+
+}

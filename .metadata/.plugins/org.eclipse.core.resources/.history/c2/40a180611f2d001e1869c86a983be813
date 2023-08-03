@@ -1,0 +1,118 @@
+
+package com.reactiveworks.client;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for newOperationResponse complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="newOperationResponse">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="return" minOccurs="0">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "newOperationResponse", namespace = "http://services.reactiveworks.com/", propOrder = {
+    "_return"
+})
+public class NewOperationResponse {
+
+    @XmlElement(name = "return")
+    protected NewOperationResponse.Return _return;
+
+    /**
+     * Gets the value of the return property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NewOperationResponse.Return }
+     *     
+     */
+    public NewOperationResponse.Return getReturn() {
+        return _return;
+    }
+
+    /**
+     * Sets the value of the return property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NewOperationResponse.Return }
+     *     
+     */
+    public void setReturn(NewOperationResponse.Return value) {
+        this._return = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="result" type="{http://www.w3.org/2001/XMLSchema}int"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "result"
+    })
+    public static class Return {
+
+        protected int result;
+
+        /**
+         * Gets the value of the result property.
+         * 
+         */
+        public int getResult() {
+            return result;
+        }
+
+        /**
+         * Sets the value of the result property.
+         * 
+         */
+        public void setResult(int value) {
+            this.result = value;
+        }
+
+    }
+
+}

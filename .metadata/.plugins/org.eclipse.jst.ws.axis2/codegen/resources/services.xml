@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) --><serviceGroup>
+    <service name="stockTradeService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.stocktradeservice.StockTradeServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.example.www.stocktradeservice.StockTradeServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="getMinimumVolTrade" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/stockTradeService/">
+            <actionMapping>http://www.example.org/stockTradeService/getMinimumVolTrade</actionMapping>
+            <outputActionMapping>http://www.example.org/stockTradeService/stockTradeService/getMinimumVolTradeResponse</outputActionMapping>
+        </operation>
+        <operation name="getMaximumVolTrade" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/stockTradeService/">
+            <actionMapping>http://www.example.org/stockTradeService/getMaximumVolTrade</actionMapping>
+            <outputActionMapping>http://www.example.org/stockTradeService/stockTradeService/getMaximumVolTradeResponse</outputActionMapping>
+        </operation>
+        <operation name="readStockTrade" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/stockTradeService/">
+            <actionMapping>http://www.example.org/stockTradeService/readStockTrade</actionMapping>
+            <outputActionMapping>http://www.example.org/stockTradeService/stockTradeService/readStockTradeResponse</outputActionMapping>
+        </operation>
+        <operation name="getDailyTradingDiff" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/stockTradeService/">
+            <actionMapping>http://www.example.org/stockTradeService/getDailyTradingDiff</actionMapping>
+            <outputActionMapping>http://www.example.org/stockTradeService/stockTradeService/getDailyTradingDiffResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

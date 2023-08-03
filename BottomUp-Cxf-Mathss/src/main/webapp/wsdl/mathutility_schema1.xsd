@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://example.reactiveworks.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://example.reactiveworks.com/">
+<xs:element name="factorial" type="tns:factorial"/>
+<xs:element name="factorialResponse" type="tns:factorialResponse"/>
+<xs:element name="getAdd" type="tns:getAdd"/>
+<xs:element name="getAddResponse" type="tns:getAddResponse"/>
+<xs:complexType name="getAdd">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAddResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="factorial">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="factorialResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

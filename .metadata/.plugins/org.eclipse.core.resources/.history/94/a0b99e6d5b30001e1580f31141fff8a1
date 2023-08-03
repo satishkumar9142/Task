@@ -1,0 +1,96 @@
+
+package com.reactiveworks.product.service1;
+
+import javax.xml.bind.annotation.XmlRegistry;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the com.reactiveworks.product.service1 package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.reactiveworks.product.service1
+     * 
+     */
+    public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetListOfProductFromProductType }
+     * 
+     */
+    public GetListOfProductFromProductType createGetListOfProductFromProductType() {
+        return new GetListOfProductFromProductType();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfProductFromProductTypeResponse }
+     * 
+     */
+    public GetListOfProductFromProductTypeResponse createGetListOfProductFromProductTypeResponse() {
+        return new GetListOfProductFromProductTypeResponse();
+    }
+
+    /**
+     * Create an instance of {@link Product }
+     * 
+     */
+    public Product createProduct() {
+        return new Product();
+    }
+
+    /**
+     * Create an instance of {@link WashingMachine }
+     * 
+     */
+    public WashingMachine createWashingMachine() {
+        return new WashingMachine();
+    }
+
+    /**
+     * Create an instance of {@link Laptop }
+     * 
+     */
+    public Laptop createLaptop() {
+        return new Laptop();
+    }
+
+    /**
+     * Create an instance of {@link TV }
+     * 
+     */
+    public TV createTV() {
+        return new TV();
+    }
+
+    /**
+     * Create an instance of {@link MobileDevice }
+     * 
+     */
+    public MobileDevice createMobileDevice() {
+        return new MobileDevice();
+    }
+
+    /**
+     * Create an instance of {@link ProcessingDevice }
+     * 
+     */
+    public ProcessingDevice createProcessingDevice() {
+        return new ProcessingDevice();
+    }
+
+}

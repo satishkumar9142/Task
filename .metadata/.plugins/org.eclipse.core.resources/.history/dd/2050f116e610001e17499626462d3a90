@@ -1,0 +1,30 @@
+
+package com.reactiveworks.productuser.mainmethod;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.reactiveworks.productuser.daofactory.ProductDaoFactory;
+import com.reactiveworks.productuser.daointerface.Dao;
+import com.reactiveworks.productuser.exception.ProductException;
+import com.reactiveworks.productuser.model.Product;
+
+public class ProductDetails {
+	private static Logger log = LogManager.getLogger(ProductDetails.class);
+
+	public static void main(String[] args) {
+		List<Product> list = new ArrayList<>();
+		
+		Dao dao = ProductDaoFactory.getCityDAO("jdbc");
+		try {
+			dao.getAlldatafromCSV();
+		} catch (ProductException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

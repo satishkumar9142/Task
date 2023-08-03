@@ -1,0 +1,30 @@
+package pack1;
+
+import static org.junit.Assert.*;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class CityServicesTest {
+     private static Logger log = LoggerFactory.getLogger(CityServicesTest.class);
+	
+	@Before
+	public void setUp() throws Exception {
+		System.out.println("Running before setUp");
+	}
+	
+	@Test
+	public void testMaxPopulation() {
+		
+	}
+	
+	@Test
+	public void testMinPopulation() {
+		log.error("error");
+	}
+
+}

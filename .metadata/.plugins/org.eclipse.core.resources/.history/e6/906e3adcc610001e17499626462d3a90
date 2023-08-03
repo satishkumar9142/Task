@@ -1,0 +1,34 @@
+package com.reactiveworks.productuser.model;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
+
+public class ProcessingDevice extends Product{
+	private static Logger log = LogManager.getLogger();
+	String screenSize;
+	String  os;
+	int batterySize;
+	int numCore;
+	int RAM;
+
+	public String getScreenSize() {
+		return screenSize;
+	}
+
+	public String getOs() {
+		return os;
+	}
+
+	public int getBatterySize() {
+		return batterySize;
+	}
+
+	public int getNumCore() {
+		return numCore;
+	}
+
+	public int getRAM() {
+		return RAM;
+	}
+
+}

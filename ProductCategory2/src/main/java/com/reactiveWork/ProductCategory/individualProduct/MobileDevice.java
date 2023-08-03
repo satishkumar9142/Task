@@ -1,0 +1,44 @@
+package com.reactiveWork.ProductCategory.individualProduct;
+
+import java.util.Map;
+
+import com.reactiveWork.ProductCategory.CustomException.CustomException;
+
+
+/*
+ *  c.) Create a class MobileDevice(simType:String) that extends ProcessingDevice
+
+ */
+/**
+ * 
+ * Model Of MobileDevice Class Which extends to ProcessingDevice Class Model.
+ *
+ */
+public class MobileDevice extends ProcessingDevice {
+	
+	String simType;
+	  
+	public String getSimType() {
+		return simType;
+	}
+	/**
+	 * Override toString Method which is used to Print the data which can be store in the class Model.
+	 */
+	@Override
+	public String toString() {
+		return "MobileDevice [simType=" + simType + ", screenSize=" + screenSize + ", os=" + os + ", batterySize="
+				+ batterySize + ", numCore=" + numCore + ", RAM=" + RAM + ", productId=" + productId + ", productName="
+				+ productName + ", productType=" + productType + ", price=" + price + ", warranty=" + warranty
+				+ ", manufecturedDt=" + manufecturedDt + "]";
+	}
+	/**
+	 * buildProduct Method Of MobileDevice model Class Which is used to assign or set the value of class Model Attribute
+	 * and its parent model by calling super.builproduct method.
+	 * @param map Send the map which store all data of one single line.
+	 * @throws CustomException if problem in matching the Data Type from which we want to convert.
+	 */
+	public void buildProduct(Map<String,String> map) throws CustomException {
+		super.buildProduct(map);
+		this.simType = map.get("SIMtYPE");
+	}
+}

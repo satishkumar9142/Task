@@ -1,0 +1,22 @@
+ package com.reactiveworks.product.individualproduct;
+
+import java.util.Map;
+
+import com.reactiveworks.product.exception.ProductException;
+
+
+
+public class Laptop extends ProcessingDevice{
+	String graphicCard;
+	
+	public String getGraphicCard() {
+		return graphicCard;
+	}
+	public void setGraphicCard(String graphicCard) {
+		this.graphicCard = graphicCard;
+	}
+	public void buildProduct(Map<String,String> map) throws ProductException {
+		super.buildProduct(map);
+		this.graphicCard = map.get("GraphicsCard");
+	}
+}

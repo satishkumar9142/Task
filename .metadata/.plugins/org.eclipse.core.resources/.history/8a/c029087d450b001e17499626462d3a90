@@ -1,0 +1,71 @@
+package com.reactivework.cityexercise.cityservicespackage;
+
+import java.io.FileNotFoundException;
+
+import com.reactivework.cityexercise.cityutilpackage.R2DBC_Connection;
+
+import io.r2dbc.spi.Connection;
+import reactor.core.publisher.Mono;
+
+public class CRUDOperationWithR2DBC {
+	/*
+	 * private Integer id;
+	private String name;
+	private String couCode;
+	private String city;
+	private long population;
+	public void Create()  {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		String createSql = 
+				"CREATE TABLE CityE (" + 
+						"id INT PRIMARY KEY,"+
+						"CountryCode VARCHAR(255),"+
+						"City VARCHAR(255)," +
+						"age INTEGER)";
+
+		connectionMono.flatMapMany(connection -> connection.createStatement(createSql).execute()).blockLast();
+	}
+
+	public void Insert() throws FileNotFoundException {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		String insertSql = 
+				"INSERT INTO Employee2my(first_name, last_name, age)"+
+						"VALUES" +
+						"('Hello', 'Kitty', 20)," +
+						"('Hantsy', 'Bai', 40)";
+
+		connectionMono.flatMapMany(connection -> connection.createStatement(insertSql).execute()).blockLast();
+	}
+
+
+	public void Update() throws FileNotFoundException {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		String updateSql = 
+				" Update Employee2my set first_name = 'Hi' where id =1;";
+
+		connectionMono.flatMapMany(connection -> connection.createStatement(updateSql).execute()).blockLast();
+	}
+
+	public void Delete() throws FileNotFoundException {
+
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+
+		String updateSql = 
+				" Delete from Employee2my where id =1;";
+
+		connectionMono.flatMapMany(connection -> connection.createStatement(updateSql).execute()).blockLast();
+	}
+
+	public void Read() throws FileNotFoundException {
+		R2DBC_Connection conn = new  R2DBC_Connection();
+		Mono<Connection> connectionMono = Mono.from(conn.getConnection().create());
+		connectionMono.flatMapMany(connection -> connection.createStatement("select * from Employee2my").execute())
+		.flatMap(result -> result.map((row, rowMetadata) -> {
+			return "ID: " + row.get("id") + ", Name: " + row.get("first_Name") + ", age: " + row.get("age");
+		})).doOnNext(log::info).blockLast();
+	} */
+}

@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:tem="http://tempuri.org/" xmlns:key="http://schemas.datacontract.org/2004/07/Key2Act.OnPremiseServices.TTTrx.eTimeTrackService/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <tem:InsertTransaction>
+      <tem:Tenant>Two, Inc.</tem:Tenant>
+      <tem:Companydbname>GPDAT</tem:Companydbname>
+      <tem:trx/>
+    </tem:InsertTransaction>
+  </soapenv:Body>
+</soapenv:Envelope>

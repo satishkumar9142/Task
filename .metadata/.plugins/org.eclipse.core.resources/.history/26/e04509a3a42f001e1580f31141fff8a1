@@ -1,0 +1,34 @@
+package com.reactiveworks.product.services;
+
+import java.util.List;
+
+
+import com.reactiveworks.product.exception.ProductException;
+import com.reactiveworks.product.model.Laptop;
+import com.reactiveworks.product.util.ProductCsvReader2;
+
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebService;
+
+@WebService
+public class ProductService2 {
+	
+	@WebMethod
+	public List<Laptop> || List<TV> getProductForType(String productType) throws ProductException{
+		ProductCsvReader2 csv = new ProductCsvReader2();
+
+		if(productType.equals("Laptop")) {
+			return csv.getLaptopData();
+		}
+//		if(productType.equals("TV")) {
+//			return csv.geTvData(); 
+//		}
+//		if(productType.equals("Mobile")) {
+//			return csv.getMobileDeviceData();
+//		}
+//		if(productType.equals("WashinMachine")) {
+//			return csv.getWashingMachineData();
+//		}
+		return null;
+	}
+} 

@@ -1,0 +1,43 @@
+package com.reactiveworks.cityexercisewithcassandra.util;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+
+
+public class CsvReader {
+	  
+	public void CsvReader(){ 
+
+		InputStream is = getClass().getClassLoader().getResourceAsStream("CityExercise.csv");
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader(isr));
+			if(is == null) {
+//				throw new IPLException("File Not Found Exception");
+			}
+			BufferedReader br = new BufferedReader(isr);
+			try {
+				br.readLine();
+			} catch (IOException e) {
+				throw new IPLException("Problem in Reading the Line");
+			}
+			 br.lines().filter(i->i != null).map(i->Pattern.compile(",").split(i))
+			 .forEach((i-> {Match match = new Match();
+							match.setMatchId(Integer.parseInt(i[0]));
+							match.setSeason(Integer.parseInt(i[1]));		
+							list.add(match);
+				}));
+			
+		return ;
+	}
+
+}

@@ -1,0 +1,21 @@
+package pack3;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Dog implements Serializable{
+	private static final long serialVersionUID = 1L;
+	int i =10;
+	int j =20;
+}
+public class Q12 { // sender
+	public static void main(String[] args) throws Exception{
+		 Dog d1 = new Dog();
+		 FileOutputStream fos = new FileOutputStream("serial.txt");
+		 ObjectOutputStream oos = new ObjectOutputStream(fos);
+		 
+				 
+	}
+
+}

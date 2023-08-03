@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/stockTradeService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="stockTradeService" targetNamespace="http://www.example.org/stockTradeService/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/stockTradeService/">
+      <xsd:element name="getMaximumVolTrade">
+        <xsd:complexType>
+          <xsd:sequence>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMaximumVolTradeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="maxVolTrade" type="tns:StockTrade"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="StockTrade">
+      	<xsd:sequence>
+      		<xsd:element name="sequrity" type="xsd:string"></xsd:element>
+      		<xsd:element name="date" type="xsd:string"></xsd:element>
+      		<xsd:element name="open" type="xsd:double"></xsd:element>
+      		<xsd:element name="high" type="xsd:double"></xsd:element>
+      		<xsd:element name="low" type="xsd:double"></xsd:element>
+      		<xsd:element name="close" type="xsd:double"></xsd:element>
+      		<xsd:element name="vol" type="xsd:double"></xsd:element>
+      		<xsd:element name="adjClose" type="xsd:double"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMinimumVolTrade">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMinimumVolTradeResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="minVolTrade" type="tns:StockTrade"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDailyTradingDiff">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDailyTradingDiffResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="diffOfDailyTrading" type="xsd:string" maxOccurs="unbounded"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="readStockTrade">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="readStockTradeResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="stockList" type="tns:StockTrade" maxOccurs="unbounded"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getMaximumVolTradeRequest">
+    <wsdl:part element="tns:getMaximumVolTrade" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMaximumVolTradeResponse">
+    <wsdl:part element="tns:getMaximumVolTradeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMinimumVolTradeRequest">
+  	<wsdl:part name="parameters" element="tns:getMinimumVolTrade"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMinimumVolTradeResponse">
+  	<wsdl:part name="parameters" element="tns:getMinimumVolTradeResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDailyTradingDiffRequest">
+  	<wsdl:part name="parameters" element="tns:getDailyTradingDiff"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDailyTradingDiffResponse">
+  	<wsdl:part name="parameters" element="tns:getDailyTradingDiffResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readStockTradeRequest">
+  	<wsdl:part name="parameters" element="tns:readStockTrade"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="readStockTradeResponse">
+  	<wsdl:part name="parameters" element="tns:readStockTradeResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="stockTradeService">
+    <wsdl:operation name="getMaximumVolTrade">
+      <wsdl:input message="tns:getMaximumVolTradeRequest"/>
+      <wsdl:output message="tns:getMaximumVolTradeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getMinimumVolTrade">
+    	<wsdl:input message="tns:getMinimumVolTradeRequest"></wsdl:input>
+    	<wsdl:output message="tns:getMinimumVolTradeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyTradingDiff">
+    	<wsdl:input message="tns:getDailyTradingDiffRequest"></wsdl:input>
+    	<wsdl:output message="tns:getDailyTradingDiffResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readStockTrade">
+    	<wsdl:input message="tns:readStockTradeRequest"></wsdl:input>
+    	<wsdl:output message="tns:readStockTradeResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="stockTradeServiceSOAP" type="tns:stockTradeService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getMaximumVolTrade">
+      <soap:operation soapAction="http://www.example.org/stockTradeService/getMaximumVolTrade"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMinimumVolTrade">
+      <soap:operation soapAction="http://www.example.org/stockTradeService/getMinimumVolTrade"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDailyTradingDiff">
+      <soap:operation soapAction="http://www.example.org/stockTradeService/getDailyTradingDiff"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readStockTrade">
+      <soap:operation soapAction="http://www.example.org/stockTradeService/readStockTrade"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="stockTradeService">
+    <wsdl:port binding="tns:stockTradeServiceSOAP" name="stockTradeServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

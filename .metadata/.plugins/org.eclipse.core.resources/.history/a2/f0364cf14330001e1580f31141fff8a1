@@ -1,0 +1,35 @@
+package com.reactiveworks.product.model;
+
+import java.time.LocalDate;
+
+public class MobileDevice extends ProcessingDevice {
+	
+	String simType;
+	  
+	public String getSimType() {
+		return simType;
+	}
+	
+
+	public void setSimType(String simType) {
+		this.simType = simType;
+	}
+
+
+	public MobileDevice(String productId, String productName, String productType, double price, int warranty,
+			LocalDate manufecturedDt, String screenSize, String os, int batterySize, int numCore, int ram,
+			String simType)  {
+		super(productId, productName, productType, price, warranty, manufecturedDt, screenSize, os, batterySize,
+				numCore, ram);
+		this.simType = simType;
+	}
+
+
+	@Override
+	public String toString() {
+		return "MobileDevice [simType=" + simType + ", screenSize=" + screenSize + ", os=" + os + ", batterySize="
+				+ batterySize + ", numCore=" + numCore + ", ram=" + ram + ", productId=" + productId + ", productName="
+				+ productName + ", productType=" + productType + ", price=" + price + ", warranty=" + warranty
+				+ ", manufecturedDt=" + manufecturedDt + "]";
+	}
+}

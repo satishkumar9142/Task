@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;Cxf-BottomUp-Opertions-Client&apos;&#x0D;&#x0A;- Original project: &apos;Cxf-BottomUp-Opertions-Client&apos;&#x0D;&#x0A;- Original element: &apos;Cxf-BottomUp-Opertions-Client/src/main/java/com.reactiveworks.cxfclient.com.reactiveworks.cxf&apos;" description="Delete element" element1="/src\/main\/java&lt;com.reactiveworks.cxfclient.com.reactiveworks.cxf" element2="/src\/main\/java&lt;com.reactiveworks.cxfclient.com.reactiveworks" element3="/src\/main\/java&lt;com.reactiveworks.cxfclient.com" element4="/src\/main\/java&lt;com.reactiveworks.cxfclient" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1690276950309" subPackages="false" version="1.0"/>
+</session>

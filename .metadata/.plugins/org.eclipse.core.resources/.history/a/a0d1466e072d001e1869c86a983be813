@@ -1,0 +1,15 @@
+package com.reactiveworks.services;
+
+public class WeatherServicePortTyoeImpl implements WeatherServicePortType {
+
+	@Override
+	public GetCurrentTemperatureRs getCurrentTemperature(GetCurrentTemperatureRq parameters) {
+		
+		System.out.println(parameters.getCity());
+		ObjectFactory factory = new ObjectFactory();
+		GetCurrentTemperatureRs response = factory.createGetCurrentTemperatureRs();
+		response.setTemperature(Math.random());
+		return null;
+	}
+
+}

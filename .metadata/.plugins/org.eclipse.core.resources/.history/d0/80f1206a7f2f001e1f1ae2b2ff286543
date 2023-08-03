@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:p="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org" name="cityPortType" targetNamespace="http://www.example.org" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org">
+      <xsd:element name="getCityById">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCityByIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="getCityByIdRequest">
+    <part element="tns:getCityById" name="parameters"/>
+  </message>
+  <message name="getCityByIdResponse">
+    <part element="tns:getCityByIdResponse" name="parameters"/>
+  </message>
+  <portType name="city">
+    <operation name="getCityById">
+      <input message="tns:getCityByIdRequest"/>
+      <output message="tns:getCityByIdResponse"/>
+    </operation>
+  </portType>
+</definitions>

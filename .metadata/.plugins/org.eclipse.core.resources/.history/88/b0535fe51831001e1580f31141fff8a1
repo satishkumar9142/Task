@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="BottomUp-Tomcat9-J2EE-Axis2-StockTrade">
+        <property name="context-root" value="BottomUp-Tomcat9-J2EE-Axis2-StockTrade"/>
+        <property name="java-output-path" value="/BottomUp-Tomcat9-J2EE-Axis2-StockTrade/build/classes"/>
+    </wb-module>
+</project-modules>

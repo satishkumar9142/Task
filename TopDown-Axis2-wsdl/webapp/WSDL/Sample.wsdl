@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Sample" targetNamespace="http://www.example.org/Sample/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/Sample/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/Sample/">
+      <xsd:element name="add">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="a" type="xsd:int"/>
+          	<xsd:element name="b" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addResponse">
+    <wsdl:part name="parameters" element="tns:addResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRequest">
+    <wsdl:part name="parameters" element="tns:add">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Sample">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:addRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:addResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SampleSOAP" type="tns:Sample">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="http://www.example.org/Sample/add"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Sample">
+    <wsdl:port name="SampleSOAP" binding="tns:SampleSOAP">
+      <soap:address location="http://localhost:8082/TopDown-Axis2-wsdl/services/SampleSOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

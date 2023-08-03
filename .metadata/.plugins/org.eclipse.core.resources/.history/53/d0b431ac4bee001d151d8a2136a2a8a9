@@ -1,0 +1,18 @@
+package Java8;
+
+import java.util.Date;
+import java.util.function.Supplier;
+
+public class SupplierPredefinedFunctionalInterface {
+
+	public static void main(String[] args) {
+		
+		Supplier<Date> s =()->
+		
+	}
+}
+
+/*
+   Supplier only get method.
+
+*/

@@ -1,0 +1,6 @@
+package com.reactivework.cityexercise.services;
+
+public interface CityServices {
+	
+	
+}

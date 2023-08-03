@@ -1,0 +1,32 @@
+ package com.reactiveworks.productuser.model;
+
+import java.util.Map;
+
+import com.reactiveWork.ProductCategory.CustomException.CustomException;
+
+
+/**
+ * 
+ * Model Of Laptop Class Which extends to ProcessingDevice Class Model.
+ *
+ */
+public class Laptop extends ProcessingDevice{
+	
+	String graphicCard;
+	
+	public String getGraphicCard() {
+		return graphicCard;
+	}
+
+	/**
+	 * Override toString Method which is used to Print the data which can be store in the class Model.
+	 */
+	@Override 
+	public String toString() { 
+		return "Laptop [graphicCard=" + graphicCard + ", screenSize=" + screenSize + ", os=" + os + ", batterySize="
+				+ batterySize + ", numCore=" + numCore + ", RAM=" + RAM + ", productId=" + productId + ", productName="
+				+ productName + ", productType=" + productType + ", price=" + price + ", warranty=" + warranty
+				+ ", manufecturedDt=" + manufecturedDt + "]";
+	}
+
+}

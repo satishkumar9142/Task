@@ -1,0 +1,19 @@
+package com.reactivework.mysqldemo.cassandradatabase;
+
+import com.datastax.driver.core.Session;
+import com.datastax.driver.core.schemabuilder.CreateKeyspace;
+import com.datastax.driver.core.schemabuilder.SchemaBuilder;
+
+public class KeyspaceRepository {
+
+    public void createKeyspace(String keyspaceName, int numberOfReplicas) {
+        CreateKeyspace createKeyspace = ((Object) SchemaBuilder.createKeyspace(keyspaceName)
+          .ifNotExists())
+          .withSimpleStrategy(numberOfReplicas);
+
+        Session.execute(createKeyspace.build());
+    }
+    public void useKeyspace(String keyspace) {
+        Session.execute("USE " + CqlIdentifier.fromCql(keyspace));
+    }
+}

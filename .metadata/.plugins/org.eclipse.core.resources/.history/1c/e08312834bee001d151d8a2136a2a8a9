@@ -1,0 +1,8 @@
+package Java8;
+
+public class SupplierPredefinedFunctionalInterface {
+
+	public static void main(String[] args) {
+		
+	}
+}

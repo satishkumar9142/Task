@@ -1,0 +1,70 @@
+package com.reactivework.cityexercise.cityservicespackage;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import com.reactivework.cityexercise.citycustomexceptionpackage.CityCustomException;
+import com.reactivework.cityexercise.citymodelclasspackage.City;
+
+public class CityServices {
+
+	private List<City> list;
+	public CityServices(List<City> list) {
+		this.list = list; 
+	}
+	
+	/**
+	 * This is from City details by id.
+	 * @param id send the id of the city.
+	 * @return  all data of the city.
+	 * @throws CityCustomException if id is not matched.
+	 */
+	public City CityName(int id) throws CityCustomException {
+		
+		List<City> searchId = list.stream().filter(i->i.getId()== id).collect(Collectors.toList());
+		
+		if(!searchId.isEmpty())
+		return searchId.get(0);
+		log.error("Id Not Found Error in CityServices");
+		throw new CityCustomException("Id Not Found Exception",new CityCustomException());
+	}
+
+	//    ======================= City Name By Country Code ==========================	
+	/**
+	 * This is from CIty Details by CountryCode.
+	 * @param cCode send the CountryCode of the city.
+	 * @return  all data of the city.
+	 * @throws CityCustomException if CountryCode is not matched any one.
+	 */
+	public List<City> CityNameByCode(String cCode) throws CityCustomException {
+		List<City> list1 = list.stream().filter(i-> i.getCouCode().equals(cCode)).collect(Collectors.toList());
+		if(list1.isEmpty()) {
+			log.error("Country Code is Invalid  in CityServices");
+			throw new CityCustomException("Country Code is Invalid",new CityCustomException());
+		}	 
+		return list1;
+	}
+
+	//   =======================  Maximum population of  City =========================
+	
+	/**
+	 * This is from Maximum Population.
+	 * @return maximum population of the City
+	 */
+	
+	public City maxPopulation() 
+	{ 
+		 return list.stream().max((a,b)->a.getPopulation()>b.getPopulation()?+1: -1).get();
+	}
+	//  ========================= Minimum Population Of City ==========================
+	
+	/**
+	 * This is from Minimum population.
+	 * @return Minimum population of the city.
+	 */
+	public City minPopulation() 
+	{
+		return list.stream().min((a,b)->a.getPopulation()>b.getPopulation()?+1: -1).get();
+	}
+}	
+//  ============================================================================	
+

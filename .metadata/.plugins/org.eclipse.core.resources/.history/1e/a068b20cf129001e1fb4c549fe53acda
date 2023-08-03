@@ -1,0 +1,91 @@
+package com.reactiveworks.util;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import com.opencsv.CSVWriter;
+import com.reactiveworks.model.Body;
+
+
+
+public class Csvreader {
+	
+	public void ReadCsv() throws FileNotFoundException{
+		
+		List<String[]> list = new ArrayList<>();
+		
+		InputStream is = getClass().getClassLoader().getResourceAsStream("Delhi.csv");
+		InputStreamReader isr = new InputStreamReader(is);
+
+		if(is == null) {
+			throw new FileNotFoundException("File Not Found Exception");
+		}
+		BufferedReader br = new BufferedReader(isr);
+		
+		 br.lines().filter(i->i != null).map(i->Pattern.compile(",").split(i))
+		 .forEach((i-> {
+			/*    
+			    Body body = new Body();
+		 		body.setName(i[0]+"_"+i[28]);
+		 		body.setGivenName(i[1]);
+		 		body.setAdditionalName(i[2]);
+		 		body.setFamilyName(i[3]);
+		 		body.setYomiName(i[4]);
+		 		body.setGivenNameYomi(i[5]);
+		 		body.setAdditionalNameYomi(i[6]);
+		 		body.setFamilyNameYomi(i[7]);
+		 		body.setNamePrefix(i[8]);
+		 		body.setNameSuffix(i[9]);
+		 		body.setInitials(i[10]);
+		 		body.setNickName(i[11]);
+		 		body.setShortName(i[12]);
+		 		body.setMaidenName(i[13]);
+		 		body.setBirthday(i[14]);
+		 		body.setGender(i[15]);
+		 		body.setLocation(i[16]);
+		 		body.setBillingInformation(i[17]);
+		 		body.setDirectoryServer(i[18]);
+		 		body.setMileage(i[19]);
+		 		body.setOccupation(i[20]);
+		 		body.setHobby(i[21]);
+		 		body.setSensitivity(i[22]);
+		 		body.setPriority(i[23]);
+		 		body.setSubject(i[24]);
+		 		body.setNotes(i[25]);
+		 		body.setLanguage(i[26]);
+		 		body.setPhoto(i[27]);
+		 		body.setGroupmembership(i[28]);
+		 		try {
+			 	body.setPhone1_type(i[29]);	
+		 		body.setPhone1_value(i[30]);
+		 		}
+		 		catch (ArrayIndexOutOfBoundsException e) {
+					// TODO: handle exception
+				}  */
+//		 		String n = i[0];
+			    i[0] = i[28]+"-"+ i[0];
+		 		list.add(i);
+			}));
+		 
+		    File file = new File("src//main//resources//changes csv//Delhi.csv");
+	 	    try {
+	 	        FileWriter outputfile = new FileWriter(file);
+	 	        CSVWriter writer = new CSVWriter(outputfile);
+	 	        writer.writeAll(list);
+	 	        writer.close();
+	 	    }
+	 	    catch (IOException e) {
+	 	        e.printStackTrace();
+	 	    }
+//		 System.out.println(list);
+	}
+
+}

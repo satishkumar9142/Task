@@ -1,0 +1,40 @@
+package com.reactiveworks.productuser.model;
+import java.time.LocalDate;
+
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+public class Product {
+	private static Logger log = LogManager.getLogger();
+	String productId;
+	String productName;
+	String productType;
+	double price; 
+	int warranty; 
+	String manufecturedDt;
+
+	public String getProductType() {
+		return productType;
+	}
+	public static Logger getLog() {
+		return log;
+	}
+	public String getProductId() {
+		return productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public int getWarranty() {
+		return warranty;
+	}
+
+}

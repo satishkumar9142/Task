@@ -1,0 +1,21 @@
+package pack3;
+class R{
+	synchronized void test() {
+		for(int i =0;i<10;i++) {
+			System.out.println(i);
+		}
+	}
+}
+public class Q6 {
+	
+	
+	
+	
+	public static void main(String[] args) {
+		static class A extends Thread{
+			R r1;
+			
+		}
+	  for()
+	}
+}

@@ -1,0 +1,22 @@
+<appender name="roll-by-size" class="org.apache.log4j.rolling.RollingFileAppender">
+    <rollingPolicy class="org.apache.log4j.rolling.FixedWindowRollingPolicy">
+        <param name="ActiveFileName" value="S:/WorkSpace/FileAppender/log4j2/app.log" />
+        <param name="FileNamePattern" value="S:/WorkSpace/FileAppender/log4j2/app.gz" />
+    <param name="MinIndex" value="7" />
+    <param name="MaxIndex" value="17" /> 
+    </rollingPolicy>
+    <triggeringPolicy class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+        <param name="MaxFileSize" value="51" />
+    </triggeringPolicy>
+    <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n" />
+    </layout>
+</appender>
+<appender name="roll-by-size" class="org.apache.log4j.RollingFileAppender">
+    <param name="file" value="S:/WorkSpace/FileAppender/log4j2/app.log" />
+    <param name="MaxFileSize" value="5KB" />
+    <param name="MaxBackupIndex" value="2" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n" />
+        </layout>
+</appender>

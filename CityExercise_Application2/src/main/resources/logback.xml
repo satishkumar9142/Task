@@ -1,0 +1,61 @@
+
+<configuration>
+	<property name="name"
+		value="S:/WorkSpace/FileAppender/CityExercise" />
+	<!-- CONSOLE Appender -->
+
+	<appender name="console"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d %green([%thread]) %highlight(%level) %logger{50} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- FileAppender for (rolling) -->
+
+	<appender name="info"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${name}/info.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${name}/file-%d{yyyy-MM-dd}.%i.txt
+			</fileNamePattern>
+			<maxFileSize>10KB</maxFileSize>
+			<maxHistory>10</maxHistory>
+			<totalSizeCap>100MB</totalSizeCap>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="error"
+		class="ch.qos.logback.core.FileAppender">
+		<file>${name}/error.log</file>
+
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!-- root is used for executing in every situtaion -->
+
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="error" />
+		<appender-ref ref="info" />
+	</root>
+</configuration>

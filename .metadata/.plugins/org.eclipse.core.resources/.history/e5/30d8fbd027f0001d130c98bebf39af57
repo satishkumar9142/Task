@@ -1,0 +1,91 @@
+package Java8;
+
+interface I {
+	public void m1();
+
+	public void m2();
+
+	default void m3() {
+		System.out.println("Default Method");
+	}
+}
+
+class Test1 implements I {
+	public void m1() {
+	}
+
+	public void m2() {
+	}
+}
+
+class Test2 implements I {
+	public void m1() {
+	}
+
+	public void m2() {
+	}
+}
+
+class Test3 implements I {
+	public void m1() {
+	}
+
+	public void m2() {
+	}
+}
+
+class Test4 implements I {
+	public void m1() {
+	}
+
+	public void m2() {
+	}
+}
+
+class Test5 implements I {
+	public void m1() {
+	}
+
+	public void m2() {
+	}
+}
+
+public class DefaultMethod {
+
+}
+
+/*
+ * until 1.7V: -------------
+ * 
+ * Every method present inside interface is always : public and abstract
+ * 
+ * void m1(); 
+ * public void m1(); 
+ * abstract void m1(); 
+ * public abstract void m1();
+ * 
+ * 
+ * =================Related Methods:=================== 
+ * 1.8 V : default methods + static methods 
+ * 1.9 V : private methods
+ * 
+ * 
+ * 
+ * variables: -------------------------------------------- 
+ * public static final are allowed inside interface
+ * 
+ * 
+ * 
+ * 
+ * ========Default Method | Virtual Extension Method | Defender Method:
+ * 
+ * Without effecting implementation classes if we want to add new method to the
+ * interface ==> Default Methods
+ * 
+ * default method is only inside the interface not inside the class.
+ * 
+ * Object class method as defaults method
+ * 
+ * 
+ * 
+ */

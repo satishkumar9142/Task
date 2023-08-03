@@ -1,0 +1,23 @@
+1681998078688	Rename package 'StockTradeModelPackage'
+1681998088593	Rename type 'StockTradeModel'
+1682015552735	Rename type 'util'
+1682052214304	Rename compilation unit 'StackTradeMainMethod.java'
+1682053602563	Delete element
+1682057385144	Delete element
+1682060300979	Delete element
+1682060352157	Delete element
+1682073871962	Move compilation unit
+1682077977929	Delete element
+1682078012496	Delete element
+1682140857446	Rename type 'IstokeTradeReader'
+1682140908857	Rename package 'IStockTradeReaderPackage'
+1682140962655	Rename package 'StockTradeReaderImplPackage'
+1682140994052	Rename type 'StockTradeReaderImpl'
+1682141966239	Delete element
+1682142004744	Rename package 'ReadCsvFilePackage'
+1682142015863	Rename compilation unit 'ReaderCSVfile.java'
+1682142359016	Rename type 'date'
+1682144198011	Delete element
+1682144202358	Delete element
+1682144206405	Delete element
+1682144211535	Delete element

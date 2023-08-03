@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyApp3/src/main/webapp/WEB-INF/sun-javax.xml&apos; to &apos;sun-jaxws.xml&apos;" description="Rename resource &apos;sun-javax.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/sun-javax.xml" name="sun-jaxws.xml" stamp="1690433817444" updateReferences="true"/>
+</session>

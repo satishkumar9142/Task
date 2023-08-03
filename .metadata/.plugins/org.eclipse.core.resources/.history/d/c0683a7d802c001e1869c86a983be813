@@ -1,0 +1,13 @@
+package com.reactiveworks.client;
+
+import com.reactiveworks.client.services.HelloService;
+import 
+public class Client {
+	public static void main(String[] args) {
+		
+		HelloService service = new HelloService();
+		com.reactiveworks.client.services.Hello hello = service.getHelloPort();
+		String output = hello.sayHello("Satish");
+		System.out.println(output);
+	}
+}

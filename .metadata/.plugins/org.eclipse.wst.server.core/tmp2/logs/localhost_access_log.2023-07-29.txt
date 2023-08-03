@@ -1,0 +1,6 @@
+127.0.0.1 - - [29/Jul/2023:11:16:55 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Jul/2023:11:16:55 +0530] "GET /BottomUp-Tomcat10-JakartaEE9-CityExercise/ HTTP/1.1" 404 797
+0:0:0:0:0:0:0:1 - - [29/Jul/2023:11:17:14 +0530] "GET /BottomUp-Tomcat10-JakartaEE9-CityExercise/CityService HTTP/1.1" 200 954
+0:0:0:0:0:0:0:1 - - [29/Jul/2023:11:17:18 +0530] "GET /BottomUp-Tomcat10-JakartaEE9-CityExercise/CityService?wsdl HTTP/1.1" 200 5401
+127.0.0.1 - - [29/Jul/2023:11:18:16 +0530] "POST /BottomUp-Tomcat10-JakartaEE9-CityExercise/CityService HTTP/1.1" 200 389
+127.0.0.1 - - [29/Jul/2023:11:35:19 +0530] "POST /BottomUp-Tomcat10-JakartaEE9-ProductExercise/ProductService HTTP/1.1" 200 285

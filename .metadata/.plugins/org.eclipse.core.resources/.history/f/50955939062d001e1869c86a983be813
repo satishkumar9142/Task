@@ -1,0 +1,4 @@
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.example.org/WeatherService/")
+@jakarta.xml.bind.annotation.XmlSchema
+package com.reactiveworks.services;
+

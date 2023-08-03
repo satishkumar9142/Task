@@ -1,0 +1,33 @@
+package com.reactiveworks.city.services;
+
+public class CityServiceImpl implements CityService{
+	List
+	public CityServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public City getCityById(int id) {
+		
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List getListOfCityByCountryCode(String countryCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public City getMaxPopulationOfCity(boolean trueForGetOutPut) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public City getMinPopulationOfCity(boolean trueForGetOutput) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

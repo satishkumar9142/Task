@@ -1,0 +1,13 @@
+package Java8;
+
+import java.util.concurrent.CompletableFuture;
+
+public class CompletableFuturePractice {
+
+	public static void main(String[] args) {
+		 calculateAsynce();
+	}
+	private static void calculateAsynce() {
+		CompletableFuture completableFuture
+	}
+}

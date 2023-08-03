@@ -1,0 +1,16 @@
+package pack3;
+
+import java.io.Externalizable;
+
+class ExternalizableDemo implements Externalizable{
+	String s;
+	int i;
+	int j;
+	public ExternalizableDemo() {
+		System.out.println("Public no arg constructor");
+	}
+}
+public class Q10 {
+	
+
+}

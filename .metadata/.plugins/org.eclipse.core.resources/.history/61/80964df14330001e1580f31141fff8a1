@@ -1,0 +1,32 @@
+ package com.reactiveworks.product.model;
+
+import java.time.LocalDate;
+
+public class Laptop extends ProcessingDevice{
+	
+	String graphicCard;
+	
+	public String getGraphicCard() {
+		return graphicCard;
+	}
+	
+	public void setGraphicCard(String graphicCard) {
+		this.graphicCard = graphicCard;
+	}
+
+	public Laptop(String productId, String productName, String productType, double price, int warranty,
+			LocalDate manufecturedDt, String screenSize, String os, int batterySize, int numCore, int ram,
+			String graphicCard) {
+		super(productId, productName, productType, price, warranty, manufecturedDt, screenSize, os, batterySize,
+				numCore, ram);
+		this.graphicCard = graphicCard;
+	}
+
+	@Override
+	public String toString() {
+		return "Laptop [graphicCard=" + graphicCard + ", screenSize=" + screenSize + ", os=" + os + ", batterySize="
+				+ batterySize + ", numCore=" + numCore + ", ram=" + ram + ", productId=" + productId + ", productName="
+				+ productName + ", productType=" + productType + ", price=" + price + ", warranty=" + warranty
+				+ ", manufecturedDt=" + manufecturedDt + "]";
+	}
+}

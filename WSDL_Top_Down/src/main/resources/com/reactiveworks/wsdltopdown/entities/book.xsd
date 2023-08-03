@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="<a class="vglnk" href="http://www.w3.org/ 2001/XMLSchema"rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>w3</span><span>.</span><span>org</span><span>/</span><span>2001</span><span>/</span><span>XMLSchema</span></a>"
+	targetNamespace="<a class="vglnk"href="http://benchresources.in/entities/Book"rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>entities</span><span>/</span><span>Book</span></a>"xmlns:tns="<a class="vglnk"href="http://benchresources.in/entities/Book"rel="nofollow"><span>http</span><span>://</span><span>benchresources</span><span>.</span><span>in</span><span>/</span><span>entities</span><span>/</span><span>Book</span></a>"
+	elementFormDefault="qualified">
+
+	<!-- Book Request Type -->
+	<xsd:element name="BookRequestType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="isbnNumber" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- Book Response Type -->
+	<xsd:element name="BookResponseType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="bookISBN" type="xsd:string" />
+				<xsd:element name="bookName" type="xsd:string" />
+				<xsd:element name="author" type="xsd:string" />
+				<xsd:element name="category" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema> 

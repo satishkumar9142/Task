@@ -1,0 +1,13 @@
+package pack3;
+
+import java.io.Serializable;
+
+class A implements Serializable{
+	
+}
+public class Q9 {
+	public static void main(String[] args) {
+	 
+		
+	}
+}

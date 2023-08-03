@@ -1,0 +1,17 @@
+package Java8;
+class Student1{
+	String name;
+	int rollno;
+	int marks;
+	int age;
+	
+	public Student1() {
+		// TODO Auto-generated constructor stub
+	}
+}
+public class MethodRefenceThroughConstructor {
+
+	public static void main(String[] args) {
+		
+	}
+}

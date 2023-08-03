@@ -1,0 +1,12 @@
+package com.reactiveworks.client;
+
+import 
+public class Client {
+	public static void main(String[] args) {
+		
+		com.reactiveworks.client.services.HelloService service = new com.reactiveworks.client.services.HelloService();
+		Hello hello = service.getHello();
+		String output = hello.sayHello("Satish");
+		System.out.println(output);
+	}
+}

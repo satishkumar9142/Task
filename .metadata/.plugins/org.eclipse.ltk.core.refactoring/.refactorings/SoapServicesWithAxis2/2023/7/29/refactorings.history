@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.reactiveworks.soapwithaxis2.Operators&apos; to &apos;Operations&apos;&#x0D;&#x0A;- Original project: &apos;SoapServicesWithAxis2&apos;&#x0D;&#x0A;- Original element: &apos;com.reactiveworks.soapwithaxis2.Operators&apos;&#x0D;&#x0A;- Renamed element: &apos;com.reactiveworks.soapwithaxis2.Operations&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Operators&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.reactiveworks.soapwithaxis2{Operators.java[Operators" matchStrategy="1" name="Operations" patterns="*" qualified="true" references="true" similarDeclarations="false" stamp="1689672769157" textual="true" version="1.0"/>
+</session>

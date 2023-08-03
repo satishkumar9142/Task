@@ -1,0 +1,39 @@
+package com.reactiveworks.city.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.reactiveworks.city.exception.CityCustomException;
+import com.reactiveworks.city.util.CityCsvReader;
+
+public class CityServiceImpl implements CityService{
+	List<City> list;
+	public CityServiceImpl() throws CityCustomException {
+		CityCsvReader csv = new CityCsvReader();
+		list = csv.getAllDataOfCity();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public City getCityById(int id) {
+		return list.stream().filter(i->i.getId()== id).collect(Collectors.toList()).get(0);
+	}
+
+	@Override
+	public List<City> getListOfCityByCountryCode(String countryCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public City getMaxPopulationOfCity(boolean trueForGetOutPut) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public City getMinPopulationOfCity(boolean trueForGetOutput) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

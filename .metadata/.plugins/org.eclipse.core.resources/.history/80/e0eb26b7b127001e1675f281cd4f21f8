@@ -1,0 +1,9 @@
+package com.reactiveworks.cxf.exercise;
+
+public interface MathUtility {
+	
+	public int getAdd(int a, int b);
+	
+	public int get
+	
+}

@@ -1,0 +1,8 @@
+127.0.0.1 - - [23/Jul/2023:12:59:22 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [23/Jul/2023:13:00:15 +0530] "GET /BottomUp-Cxf-Mathss/wsdl/mathutility.wsdl HTTP/1.1" 200 2684
+127.0.0.1 - - [23/Jul/2023:13:04:29 +0530] "POST /BottomUp-Cxf-Mathss/services/MathUtilityPort HTTP/1.1" 200 221
+127.0.0.1 - - [23/Jul/2023:13:05:09 +0530] "POST /BottomUp-Cxf-Mathss/services/MathUtilityPort HTTP/1.1" 200 215
+127.0.0.1 - - [23/Jul/2023:13:11:45 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [23/Jul/2023:13:13:01 +0530] "POST /BottomUp-Cxf-Mathss/services HTTP/1.1" 200 992
+127.0.0.1 - - [23/Jul/2023:13:13:12 +0530] "POST /BottomUp-Cxf-Mathss/services HTTP/1.1" 200 992
+127.0.0.1 - - [23/Jul/2023:13:13:32 +0530] "POST /BottomUp-Cxf-Mathss/services HTTP/1.1" 200 992

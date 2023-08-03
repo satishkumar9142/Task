@@ -1,0 +1,8 @@
+package com.reactiveworks.product.service.client;
+
+public class Client {
+	public static void main(String[] args) {
+	
+		
+	}
+}

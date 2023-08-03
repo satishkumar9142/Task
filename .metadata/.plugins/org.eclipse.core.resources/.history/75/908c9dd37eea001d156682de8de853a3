@@ -1,0 +1,11 @@
+package pack3;
+
+import java.io.Serializable;
+
+class Dog implements Serializable{
+	private static final serialVersionUID = 1L;
+}
+public class Q12 {
+	
+
+}

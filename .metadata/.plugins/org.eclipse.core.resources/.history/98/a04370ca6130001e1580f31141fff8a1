@@ -1,0 +1,90 @@
+package com.reactiveworks.product.util;
+
+import java.io.BufferedReader;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import com.reactiveworks.product.exception.ProductException;
+import com.reactiveworks.product.service.Laptop;
+import com.reactiveworks.product.service.Product;
+
+
+public class ProductCsvReader {
+	
+	public List<Product> getAllProducts() throws ProductException {
+		List<Product> list= new ArrayList<Product>(); 
+		BufferedReader br;
+		InputStream is = getClass().getClassLoader().getResourceAsStream("ProductDetail.csv");
+		InputStreamReader streamReader = new InputStreamReader(is);
+		String s ="";
+		if(is == null) {
+			throw new ProductException("File Not Found Exception");
+		}
+			br = new BufferedReader(streamReader);
+			try { 
+				s = br.readLine();
+			} catch (IOException e) {
+				throw new ProductException("problem in reading the line");
+			}
+			String [] s1 = s.split(",");
+			br.lines().filter(line -> line != null).map(line -> line.split(",")).forEach(splitLine ->{
+				
+			});
+		return list; 
+	}
+// ================================================================================
+	private static Product SendMapToModelClass(String [] line) throws ProductException {
+		if(line[2].equals("Laptop") || line[2].equals("Mobile")) {
+			String productId = line[0];
+			String productName = line[1];
+			String productType = line[2];
+			double price = Double.parseDouble(line[3]);
+			int warranty = Integer.parseInt(line[4]);
+			XMLGregorianCalendar date = XMLGregorianCalendar)
+			
+			
+			
+//			Laptop laptop = new Laptop(null, null, null, 0, 0, null);
+			laptop.buildProduct(map);
+			return laptop;
+		}
+		if(map.get("ProductType").equals("Mobile")) {
+			MobileDevice mobile = new MobileDevice();
+			mobile.buildProduct(map);
+			return mobile;
+		}
+		if(map.get("ProductType").equals("TV")) {
+			TV tv = new TV();
+			tv.buildProduct(map);
+			return tv;
+		}
+		if(map.get("ProductType").equals("WashinMachine")) {
+			WashingMachine washinMachine = new WashingMachine();
+			washinMachine.buildProduct(map);
+			return washinMachine;
+		}
+		return null;
+	}
+//===============================================================================
+	private static Map<String,String> readLineInMap(String [] s, String [] s1) {
+		Map<String,String> map = new LinkedHashMap<String,String>();
+		for(int i=0;i<s.length;i++) {
+			try {
+				map.put(s[i], s1[i]);
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				map.put(s[i], "");
+			}
+		}
+		return map;
+	}
+}
+

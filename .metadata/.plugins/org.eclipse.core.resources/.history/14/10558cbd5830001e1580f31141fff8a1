@@ -1,0 +1,187 @@
+
+package com.reactiveworks.city.client;
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the com.reactiveworks.city.client package. 
+ * <p>An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+    private final static QName _GetMinPopulationOfCityResponse_QNAME = new QName("http://service.city.reactiveworks.com/", "getMinPopulationOfCityResponse");
+    private final static QName _GetCityById_QNAME = new QName("http://service.city.reactiveworks.com/", "getCityById");
+    private final static QName _GetCityByIdResponse_QNAME = new QName("http://service.city.reactiveworks.com/", "getCityByIdResponse");
+    private final static QName _GetMinPopulationOfCity_QNAME = new QName("http://service.city.reactiveworks.com/", "getMinPopulationOfCity");
+    private final static QName _GetListOfCityByCountryCode_QNAME = new QName("http://service.city.reactiveworks.com/", "getListOfCityByCountryCode");
+    private final static QName _GetMaxPopulationOfCityResponse_QNAME = new QName("http://service.city.reactiveworks.com/", "getMaxPopulationOfCityResponse");
+    private final static QName _GetListOfCityByCountryCodeResponse_QNAME = new QName("http://service.city.reactiveworks.com/", "getListOfCityByCountryCodeResponse");
+    private final static QName _GetMaxPopulationOfCity_QNAME = new QName("http://service.city.reactiveworks.com/", "getMaxPopulationOfCity");
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.reactiveworks.city.client
+     * 
+     */
+    public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link City }
+     * 
+     */
+    public City createCity() {
+        return new City();
+    }
+
+    /**
+     * Create an instance of {@link GetCityById }
+     * 
+     */
+    public GetCityById createGetCityById() {
+        return new GetCityById();
+    }
+
+    /**
+     * Create an instance of {@link GetCityByIdResponse }
+     * 
+     */
+    public GetCityByIdResponse createGetCityByIdResponse() {
+        return new GetCityByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMinPopulationOfCity }
+     * 
+     */
+    public GetMinPopulationOfCity createGetMinPopulationOfCity() {
+        return new GetMinPopulationOfCity();
+    }
+
+    /**
+     * Create an instance of {@link GetMinPopulationOfCityResponse }
+     * 
+     */
+    public GetMinPopulationOfCityResponse createGetMinPopulationOfCityResponse() {
+        return new GetMinPopulationOfCityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfCityByCountryCode }
+     * 
+     */
+    public GetListOfCityByCountryCode createGetListOfCityByCountryCode() {
+        return new GetListOfCityByCountryCode();
+    }
+
+    /**
+     * Create an instance of {@link GetListOfCityByCountryCodeResponse }
+     * 
+     */
+    public GetListOfCityByCountryCodeResponse createGetListOfCityByCountryCodeResponse() {
+        return new GetListOfCityByCountryCodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMaxPopulationOfCity }
+     * 
+     */
+    public GetMaxPopulationOfCity createGetMaxPopulationOfCity() {
+        return new GetMaxPopulationOfCity();
+    }
+
+    /**
+     * Create an instance of {@link GetMaxPopulationOfCityResponse }
+     * 
+     */
+    public GetMaxPopulationOfCityResponse createGetMaxPopulationOfCityResponse() {
+        return new GetMaxPopulationOfCityResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMinPopulationOfCityResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getMinPopulationOfCityResponse")
+    public JAXBElement<GetMinPopulationOfCityResponse> createGetMinPopulationOfCityResponse(GetMinPopulationOfCityResponse value) {
+        return new JAXBElement<GetMinPopulationOfCityResponse>(_GetMinPopulationOfCityResponse_QNAME, GetMinPopulationOfCityResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityById }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getCityById")
+    public JAXBElement<GetCityById> createGetCityById(GetCityById value) {
+        return new JAXBElement<GetCityById>(_GetCityById_QNAME, GetCityById.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityByIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getCityByIdResponse")
+    public JAXBElement<GetCityByIdResponse> createGetCityByIdResponse(GetCityByIdResponse value) {
+        return new JAXBElement<GetCityByIdResponse>(_GetCityByIdResponse_QNAME, GetCityByIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMinPopulationOfCity }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getMinPopulationOfCity")
+    public JAXBElement<GetMinPopulationOfCity> createGetMinPopulationOfCity(GetMinPopulationOfCity value) {
+        return new JAXBElement<GetMinPopulationOfCity>(_GetMinPopulationOfCity_QNAME, GetMinPopulationOfCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListOfCityByCountryCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getListOfCityByCountryCode")
+    public JAXBElement<GetListOfCityByCountryCode> createGetListOfCityByCountryCode(GetListOfCityByCountryCode value) {
+        return new JAXBElement<GetListOfCityByCountryCode>(_GetListOfCityByCountryCode_QNAME, GetListOfCityByCountryCode.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMaxPopulationOfCityResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getMaxPopulationOfCityResponse")
+    public JAXBElement<GetMaxPopulationOfCityResponse> createGetMaxPopulationOfCityResponse(GetMaxPopulationOfCityResponse value) {
+        return new JAXBElement<GetMaxPopulationOfCityResponse>(_GetMaxPopulationOfCityResponse_QNAME, GetMaxPopulationOfCityResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetListOfCityByCountryCodeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getListOfCityByCountryCodeResponse")
+    public JAXBElement<GetListOfCityByCountryCodeResponse> createGetListOfCityByCountryCodeResponse(GetListOfCityByCountryCodeResponse value) {
+        return new JAXBElement<GetListOfCityByCountryCodeResponse>(_GetListOfCityByCountryCodeResponse_QNAME, GetListOfCityByCountryCodeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetMaxPopulationOfCity }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.city.reactiveworks.com/", name = "getMaxPopulationOfCity")
+    public JAXBElement<GetMaxPopulationOfCity> createGetMaxPopulationOfCity(GetMaxPopulationOfCity value) {
+        return new JAXBElement<GetMaxPopulationOfCity>(_GetMaxPopulationOfCity_QNAME, GetMaxPopulationOfCity.class, null, value);
+    }
+
+}

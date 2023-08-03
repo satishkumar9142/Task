@@ -1,0 +1,5 @@
+package com.reactivework.cityexercise.exception;
+
+public class Client {
+
+}

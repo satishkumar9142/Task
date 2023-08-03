@@ -1,0 +1,39 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope/">
+  <soap:Header/>
+  <soap:Body>
+    <wor:SearchDocuments xmlns:wor="http://worksite.imangine.com">
+      <wor:Database>
+        <wor:string>Database name</wor:string>
+      </wor:Database>
+      <wor:profileSearchParameters>
+        <wor:AttributeID>imProfileDescriptor</wor:AttributeID>
+        <wor:SearchValue>Description</wor:SearchValue>
+      </wor:profileSearchParameters>
+      <wor:profileSearchParameters>
+        <wor:AttributeID>imProfileDescriptor3</wor:AttributeID>
+        <wor:SearchValue>Belong To</wor:SearchValue>
+      </wor:profileSearchParameters>
+      <wor:profileSearchParameters>
+        <wor:AttributeID>imProfileDescriptor4</wor:AttributeID>
+        <wor:SearchValue>App,20</wor:SearchValue>
+      </wor:profileSearchParameters>
+      <wor:profileSearchParameters>
+        <wor:AttributeID>imProfileDocNum</wor:AttributeID>
+        <wor:SearchValue>Document number</wor:SearchValue>
+      </wor:profileSearchParameters>
+      <wor:profileSearchParameters>
+        <wor:SearchEmail>imSearchDocumentsOnly</wor:SearchEmail>
+        <wor:OutputMask>Profile</wor:OutputMask>
+      </wor:profileSearchParameters>
+      <wor:OutputProfile>
+        <wor:imProfileAttributeID>imProfileDocNum</wor:imProfileAttributeID>
+        <wor:imProfileAttributeID>imProfileDescription</wor:imProfileAttributeID>
+        <wor:imProfileAttributeID>imProfileVersion</wor:imProfileAttributeID>
+        <wor:imProfileAttributeID>imProfileCustom16</wor:imProfileAttributeID>
+        <wor:imProfileAttributeID>imProfileCustom3</wor:imProfileAttributeID>
+        <wor:imProfileAttributeID>imProfileDatabase</wor:imProfileAttributeID>
+        <wor:imProfileAttributeID>imProfileExtension</wor:imProfileAttributeID>
+      </wor:OutputProfile>
+    </wor:SearchDocuments>
+  </soap:Body>
+</soap:Envelope>

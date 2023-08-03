@@ -1,0 +1,9 @@
+package com.reactiveworks.productuser.model;
+
+public interface Product {
+	
+	 String ProductId(); 
+	 String ProductName();
+	 String ProductType();
+	 int price();
+}

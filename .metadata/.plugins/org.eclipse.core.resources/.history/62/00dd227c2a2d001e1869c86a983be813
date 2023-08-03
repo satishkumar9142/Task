@@ -1,0 +1,9 @@
+package com.reactivework.cityexercise.services;
+
+import com.reactivework.cityexercise.exception.CityCustomException;
+import com.reactivework.cityexercise.model.City;
+
+public interface CityServices {
+	
+	public City CityName(int id) throws CityCustomException;
+}

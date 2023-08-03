@@ -1,0 +1,13 @@
+package pack3;
+
+import java.util.concurrent.Callable;
+
+class MyCallable implements Callable{
+	int num;
+	public MyCallable() {
+		// TODO Auto-generated constructor stub
+	}
+}
+public class Q16 {
+
+}

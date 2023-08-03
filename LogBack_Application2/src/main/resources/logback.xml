@@ -1,0 +1,32 @@
+<configuration>
+   <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
+ 
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+      <encoder>
+         <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      </encoder>
+   </appender>
+ 
+   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+      <file> S:/WorkSpace/FileAppender/logBack/TimeBased/app.txt </file>
+      <append>true</append>
+     
+      <encoder>
+         <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+      </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>S:/WorkSpace/FileAppender/logBack/TimeBased/app%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+      <timeBasedFileNamingAndTriggeringPolicy
+          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>10KB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+      <maxHistory>10</maxHistory>
+    </rollingPolicy>
+   </appender>
+ 
+   <root level="debug">
+      <appender-ref ref="FILE" />
+      <appender-ref ref="STDOUT" />
+   </root>
+ 
+</configuration>

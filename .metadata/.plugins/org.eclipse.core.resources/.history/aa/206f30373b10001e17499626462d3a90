@@ -1,0 +1,42 @@
+package com.reactiveworks.productuser.csvreader;
+
+import java.io.BufferedReader;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.reactiveworks.productuser.exception.CustomException;
+import com.reactiveworks.productuser.modelinterface.Product;
+
+public class ProductCSVReader {
+
+	private static Logger log = LogManager.getLogger(ProductCSVReader.class);
+	public List<Product> getAllDevicesDetails() throws com.reactiveworks.productuser.exception.CustomException {
+		List<Product> list = new ArrayList<>();
+
+		BufferedReader br;
+		InputStream is = getClass().getClassLoader().getResourceAsStream("ProductDetail.csv");
+		InputStreamReader isr = new InputStreamReader(is);
+		if(is == null) {
+			throw new CustomException("File Not found Exception");
+		}
+		br = new BufferedReader(isr);
+		try {
+			br.readLine();
+		} catch (IOException e) {
+			throw new CustomException("Problem in Reading the Line");
+		}
+		br.lines().filter(i->i != null).map(i->Pattern.compile(",").split(i)).forEach(x->{
+		
+			if(x[2] == )
+		});
+		return list;
+	} 
+}

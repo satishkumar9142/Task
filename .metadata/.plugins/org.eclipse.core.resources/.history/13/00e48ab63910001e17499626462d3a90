@@ -1,0 +1,79 @@
+package com.reactiveworks.productuser.modelinterfaceImpl;
+
+import com.reactiveworks.productuser.modelinterface.Laptop;
+
+public class LaptopImpl implements Laptop{
+
+	@Override
+	public String screenSize() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String os() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int batterySize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int numCore() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int RAM() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String ProductId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String ProductName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String ProductType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int price() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int warranty() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String manufactureDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String graphicCard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

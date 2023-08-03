@@ -1,0 +1,16 @@
+package com.reactiveworks.services;
+
+public class OperationImpl implements Operation{
+
+	@Override
+	public AddResponse newOperation(Add parameters) {
+		// TODO Auto-generated method stub
+		System.out.println(parameters.getA()+ " + " + parameters.getB());
+		ObjectFactory factory = new ObjectFactory();
+		AddResponse response = newOperation(parameters);
+		factory.createAddResponse();
+		
+		return null;
+	}
+
+}

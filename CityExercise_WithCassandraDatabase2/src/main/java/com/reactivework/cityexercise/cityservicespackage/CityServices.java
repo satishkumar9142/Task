@@ -1,0 +1,87 @@
+package com.reactivework.cityexercise.cityservicespackage;
+
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.reactivework.cityexercise.citycustomexceptionpackage.CityCustomException;
+import com.reactivework.cityexercise.citymodelclasspackage.City;
+/**
+ * 
+ *  This is a CityServices Class.
+ *  {@link CityServices}<p>
+ *  {@link CityServices#maxPopulation()}<p>
+ *  {@link #CityName(int)} 
+ */ 
+public class CityServices {
+	private static Logger log = LoggerFactory.getLogger(CityServices.class);
+
+	private List<City> list;
+	/**
+	 * This is a constructor for reading all data from Util class.
+	 * @param list initilized the all citydata in list
+	 */
+	public CityServices(List<City> list) {
+		this.list = list; 
+	}
+	//   =======================City Name By Id ===================================
+	
+	/**
+	 * This is from City details by id.
+	 * @param id send the id of the city.
+	 * @return  all data of the city.
+	 * @throws CityCustomException if id is not matched.
+	 */
+	public City CityName(int id) throws CityCustomException {
+		
+		List<City> searchId = list.stream().filter(i->i.getId()== id).collect(Collectors.toList());
+		
+		if(!searchId.isEmpty())
+		return searchId.get(0);
+		log.error("Id Not Found Error in CityServices");
+		throw new CityCustomException("Id Not Found Exception",new CityCustomException());
+	}
+
+	//    ======================= City Name By Country Code ==========================	
+	/**
+	 * This is from CIty Details by CountryCode.
+	 * @param cCode send the CountryCode of the city.
+	 * @return  all data of the city.
+	 * @throws CityCustomException if CountryCode is not matched any one.
+	 */
+	public List<City> CityNameByCode(String cCode) throws CityCustomException {
+		List<City> list1 = list.stream().filter(i-> i.getCouCode().equals(cCode)).collect(Collectors.toList());
+		if(list1.isEmpty()) {
+			log.error("Country Code is Invalid  in CityServices");
+			throw new CityCustomException("Country Code is Invalid",new CityCustomException());
+		}	 
+		return list1;
+	}
+
+	//   =======================  Maximum population of  City =========================
+	
+	/**
+	 * This is from Maximum Population.
+	 * @return maximum population of the City
+	 */
+	
+	public City maxPopulation() 
+	{ 
+		 return list.stream().max((a,b)->a.getPopulation()>b.getPopulation()?+1: -1).get();
+	}
+	//  ========================= Minimum Population Of City ==========================
+	
+	/**
+	 * This is from Minimum population.
+	 * @return Minimum population of the city.
+	 */
+	public City minPopulation() 
+	{
+		return list.stream().min((a,b)->a.getPopulation()>b.getPopulation()?+1: -1).get();
+	}
+}	
+//  ============================================================================	
+

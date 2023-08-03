@@ -1,0 +1,11 @@
+package pack3;
+
+import java.io.Serializable;
+
+class user implements Serializable{
+	String userName = "rajsatish226@gmail.com";
+	String pass = "Satish"
+}
+public class Q3 {
+
+}

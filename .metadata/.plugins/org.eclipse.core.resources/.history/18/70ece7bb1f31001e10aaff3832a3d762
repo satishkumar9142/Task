@@ -1,0 +1,133 @@
+package com.reactiveworks.stocktrade.services;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.reactiveworks.stocktrade.exception.StockTradeInvalidFormateException;
+import com.reactiveworks.stocktrade.model.StockTrade;
+
+
+public class StockTradeServiceImpl implements StockTradeService {
+
+	private static List<StockTrade> stockList;
+	public StockTradeServiceImpl() throws StockTradeInvalidFormateException {
+		stockList = new ArrayList<StockTrade>();
+		stockList = readStockTrade();
+	}
+	
+	@Override
+	public StockTrade getMaximumVolTrade() {
+		StockTrade trade = new StockTrade();
+		double max = Double.MIN_VALUE;
+		for(int i =0;i<stockList.size();i++) {
+			if(max < stockList.get(i).getVol()) {
+				max = stockList.get(i).getVol();
+				trade = stockList.get(i);
+			}
+		}
+		return trade;
+	}
+
+	@Override
+	public StockTrade getMinimumVolTrade() {
+		StockTrade trade = new StockTrade();
+		double min = Double.MAX_VALUE;
+		for(int i =0;i<stockList.size();i++) {
+			if(min > stockList.get(i).getVol()) {
+				min = stockList.get(i).getVol();
+				trade = stockList.get(i);
+			}
+		}
+		return trade;
+	}
+
+	@Override
+	public List<String> getDailyTradingDiff() {
+		List<String> diff = new ArrayList<String>();
+		for(int i =0;i<stockList.size();i++) {
+			diff.add(stockList.get(i).getDate()+ "=" + (stockList.get(i).getHigh()-stockList.get(i).getLow()));
+		}
+		return diff;
+	}
+
+	@Override
+	public List<StockTrade> readStockTrade() {
+		List<StockTrade> list = new ArrayList<StockTrade>();
+		String s ="";
+
+		BufferedReader br;
+		try {
+			br = new BufferedReader(new FileReader("S:\\WorkSpace\\Cisco.csv"));
+			
+			try {
+				s =br.readLine();
+				s =br.readLine();
+			} catch (IOException e) {
+				throw new StockTradeInvalidFormateException("Problem in reading the line");
+			}
+
+			//		br.lines().filter(i->i != null).map(line -> line.split(",")).forEach(splitLine ->{
+
+			while( s != null) {
+				String [] splitLine = s.split(",");
+				StockTrade stock = new StockTrade();
+				boolean flag = true;
+				stock.setSequrity(splitLine[0]);
+				stock.setDate(changeDatePattern(splitLine[1]));
+				try {
+					stock.setOpen(Double.parseDouble(splitLine[2]));
+					stock.setHigh(Double.parseDouble(splitLine[3]));
+					stock.setLow(Double.parseDouble(splitLine[4]));
+					stock.setClose(Double.parseDouble(splitLine[5]));
+					stock.setVol(Double.parseDouble(splitLine[6]));
+					stock.setAdjClose(Double.parseDouble(splitLine[7]));
+				}
+				catch(NumberFormatException e) {
+					flag = false;
+				}
+				if(flag) {
+					list.add(stock);
+				}
+				try {
+					s = br.readLine();
+				} catch (IOException e) {
+					throw new StockTradeInvalidFormateException("Problem in reading the line");
+				}
+			}
+		} catch (FileNotFoundException e) {
+
+		}
+
+
+		return list;
+	}
+	private static String changeDatePattern(String s) {
+		String s1 = "";
+
+		try {
+			String [] s2 = s.split("/");
+			if(s2[0].length()<2) s1 += "0" + s2[0]+"/";
+			else s1 += s2[0] + "/";
+			if(s2[1].length()<2) s1 += "0" + s2[1]+"/";
+			else s1 += s2[1]+"/";
+			s1 += s2[2];
+		}
+		catch(DateTimeParseException e){
+			s1 = "";
+			String [] s2 = s.split("-");
+			if(s2[0].length()<2) s1 += "0" + s2[0]+"/";
+			else s1 += s2[0] + "/";
+			if(s2[1].length()<2) s1 += "0" + s2[1]+"/";
+			else s1 += s2[1]+"/";
+			s1 += s2[2];
+		}		
+		return s1;
+	}
+}

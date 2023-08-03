@@ -1,0 +1,13 @@
+package pack3;
+
+public class Q14 {
+
+	private Object object = null;
+	private volatile boolean hasNewObject = false;
+	
+	
+	public void setObject(Object obj) {
+		
+	}
+	
+}

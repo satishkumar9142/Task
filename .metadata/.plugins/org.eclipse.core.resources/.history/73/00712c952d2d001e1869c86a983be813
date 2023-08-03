@@ -1,0 +1,55 @@
+package com.reactivework.cityexercise.util;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import com.reactivework.cityexercise.exception.CityCustomException;
+import com.reactivework.cityexercise.model.City;
+import com.reactiveworks.ipl.iplexception.IPLException;
+import com.reactiveworks.ipl.modelclass.Match;
+
+
+public class CityUtil  { 
+	@SuppressWarnings("resource") 
+	public List<City> getCityList (String path) throws CityCustomException{ 
+		List<City> data = new ArrayList<City>();    
+				
+		InputStream is = getClass().getClassLoader().getResourceAsStream("CityExercise.csv");
+		InputStreamReader isr = new InputStreamReader(is);
+
+		if(is == null) {
+			throw new CityCustomException("File Not Found Exception");
+		}
+		BufferedReader br = new BufferedReader(isr);
+		try {
+			br.readLine();
+		} catch (IOException e) {
+			throw new CityCustomException("Problem in Reading the Line");
+		}
+		 br.lines().filter(line->line != null).map(line->Pattern.compile(",").split(line))
+		 .forEach((splitLine-> {
+			 			City city = new City();
+		 					try {
+						    	city.setId(Integer.parseInt(splitLine[0]));
+						    	city.setName(splitLine[1]);
+						    	city.setCouCode(splitLine[2]);
+						    	city.setCity(splitLine[3]);
+						    	city.setPopulation(Long.parseLong(splitLine[4]));
+		 					}
+		 					catch (NumberFormatException e) {
+								continue;
+							}
+		 			data.add(city);
+			}));
+		return data;
+	}
+}
+
+

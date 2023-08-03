@@ -1,0 +1,13 @@
+package pack3;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+public class Q13 { // receiver
+	public static void main(String[] args) throws Exception {
+		FileInputStream fis = new FileInputStream("serial.txt");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		Dog1 d1 = (Dog1) ois.readObject();
+		System.out.println(d1.i + "   " + d1.j + "  " + d1.k + " " + d1.l + "  " + d1.m + "  " + d1.n);
+	}
+}

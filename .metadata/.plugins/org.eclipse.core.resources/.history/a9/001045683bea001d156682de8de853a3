@@ -1,0 +1,27 @@
+package pack3;
+class R{
+	 synchronized void test() {
+		for(int i =0;i<100;i++) {
+			System.out.print(i+ " ");
+		}
+	}
+}
+public class Q6 {
+	static class A extends Thread{
+		R r1;
+		A(R r1){
+			this.r1 = r1;
+		}	
+		public void run() {
+			r1.test();
+		}
+	}
+	public static void main(String[] args) {
+		R r1 = new R();
+		R r2 = new R();
+		A a1 = new A(r1);
+		A b1 = new A(r1);
+		a1.start();
+		b1.start();
+	}
+}

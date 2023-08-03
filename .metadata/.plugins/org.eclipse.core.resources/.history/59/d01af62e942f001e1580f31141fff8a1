@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/cityService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="cityService" targetNamespace="http://www.example.org/cityService/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/cityService/">
+      <xsd:element name="getCityById">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="id" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCityByIdResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cityById" type="tns:City"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="City">
+      	<xsd:sequence>
+      		<xsd:element name="id" type="xsd:int"></xsd:element>
+      		<xsd:element name="name" type="xsd:string"></xsd:element>
+      		<xsd:element name="countryCode" type="xsd:string"></xsd:element>
+      		<xsd:element name="city" type="xsd:string"></xsd:element>
+      		<xsd:element name="population" type="xsd:int"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getListOfCityByCountryCode">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="countryCode" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getListOfCityByCountryCodeResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="cityByCountryCode" type="tns:List"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMaxPopulationOfCity">
+      	<xsd:complexType>
+      		<xsd:sequence>
+      			<xsd:element name="in" type="xsd:boolean"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMaxPopulationOfCityResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="maxPopulationCity" type="tns:City"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>      <xsd:element name="getMinPopulationOfCity">      	<xsd:complexType>      		<xsd:sequence>      			<xsd:element name="in" type="xsd:string"></xsd:element>      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMinPopulationOfCityResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="cityOfMinPopulation" type="tns:City"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+        
+            <xsd:complexType name="List"></xsd:complexType>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCityByIdRequest">
+    <wsdl:part element="tns:getCityById" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getCityByIdResponse">
+    <wsdl:part element="tns:getCityByIdResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getListOfCityByCountryCodeRequest">
+  	<wsdl:part name="parameters" element="tns:getListOfCityByCountryCode"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListOfCityByCountryCodeResponse">
+  	<wsdl:part name="parameters" element="tns:getListOfCityByCountryCodeResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaxPopulationOfCityRequest">
+  	<wsdl:part name="parameters" element="tns:getMaxPopulationOfCity"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMaxPopulationOfCityResponse">
+  	<wsdl:part name="parameters" element="tns:getMaxPopulationOfCityResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMinPopulationOfCityRequest">
+  	<wsdl:part name="parameters" element="tns:getMinPopulationOfCity"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMinPopulationOfCityResponse">
+  	<wsdl:part name="parameters" element="tns:getMinPopulationOfCityResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="cityService">
+    <wsdl:operation name="getCityById">
+      <wsdl:input message="tns:getCityByIdRequest"/>
+      <wsdl:output message="tns:getCityByIdResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfCityByCountryCode">
+    	<wsdl:input message="tns:getListOfCityByCountryCodeRequest"></wsdl:input>
+    	<wsdl:output message="tns:getListOfCityByCountryCodeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxPopulationOfCity">		 <wsdl:input message="tns:getMaxPopulationOfCityRequest"></wsdl:input>
+    	<wsdl:output message="tns:getMaxPopulationOfCityResponse"></wsdl:output>
+    </wsdl:operation>    <wsdl:operation name="getMinPopulationOfCity">    	<wsdl:input message="tns:getMinPopulationOfCityRequest"></wsdl:input>    	<wsdl:output message="tns:getMinPopulationOfCityResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="cityServiceSOAP" type="tns:cityService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCityById">
+      <soap:operation soapAction="http://www.example.org/cityService/getCityById"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfCityByCountryCode">
+      <soap:operation soapAction="http://www.example.org/cityService/getListOfCityByCountryCode"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxPopulationOfCity">
+      <soap:operation soapAction="http://www.example.org/cityService/getMaxPopulationOfCity"/>
+    	<wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMinPopulationOfCity">
+      <soap:operation soapAction="http://www.example.org/cityService/getMinPopulationOfCity"/>
+    	<wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+  </wsdl:binding>
+  <wsdl:service name="cityService">
+    <wsdl:port binding="tns:cityServiceSOAP" name="cityServiceSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

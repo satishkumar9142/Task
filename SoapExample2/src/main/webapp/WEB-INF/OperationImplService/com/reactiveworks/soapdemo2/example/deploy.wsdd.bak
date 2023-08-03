@@ -1,0 +1,38 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OperationImplService WSDL service -->
+
+  <service name="OperationImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://example.soapdemo2.reactiveworks.com"/>
+      <parameter name="wsdlServiceElement" value="OperationImplService"/>
+      <parameter name="schemaQualified" value="http://example.soapdemo2.reactiveworks.com"/>
+      <parameter name="wsdlServicePort" value="OperationImpl"/>
+      <parameter name="className" value="com.reactiveworks.soapdemo2.example.OperationImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="OperationImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getSubtract" qname="operNS:getSubtract" xmlns:operNS="http://example.soapdemo2.reactiveworks.com" returnQName="retNS:getSubtractReturn" xmlns:retNS="http://example.soapdemo2.reactiveworks.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://example.soapdemo2.reactiveworks.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://example.soapdemo2.reactiveworks.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMultiply" qname="operNS:getMultiply" xmlns:operNS="http://example.soapdemo2.reactiveworks.com" returnQName="retNS:getMultiplyReturn" xmlns:retNS="http://example.soapdemo2.reactiveworks.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://example.soapdemo2.reactiveworks.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://example.soapdemo2.reactiveworks.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAdd" qname="operNS:getAdd" xmlns:operNS="http://example.soapdemo2.reactiveworks.com" returnQName="retNS:getAddReturn" xmlns:retNS="http://example.soapdemo2.reactiveworks.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://example.soapdemo2.reactiveworks.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://example.soapdemo2.reactiveworks.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getAdd getSubtract getMultiply"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move &apos;build.xml&apos; to &apos;build&apos;" description="Move &apos;build.xml&apos; to &apos;build&apos;" destination="build" element1="build.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1690360960934" updateReferences="true"/>&#x0A;<refactoring comment="Move &apos;services.xml&apos; to &apos;build&apos;" description="Move &apos;services.xml&apos; to &apos;build&apos;" destination="build" element1="src/main/java/com/reactiveworks/axis2/services.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1690361016168" updateReferences="true"/>
+</session>

@@ -1,0 +1,17 @@
+package pack1;
+
+import org.apache.log4j.spi.LoggerFactory;
+
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.util.StatusViaSLF4JLoggerFactory;
+
+public class TestApp {
+	    private static final Logger logger 
+	      = StatusViaSLF4JLoggerFactory.getLogger(Example.class);
+
+	    public static void main(String[] args) {
+	        logger.info("Example log from {}", Example.class.getSimpleName());
+	    }
+	}
+	
+}

@@ -1,0 +1,43 @@
+ package com.reactiveworks.product.individualproduct;
+
+import java.util.Map;
+import com.reactiveworks.product.exception.ProductException;
+
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("LAPTOP")
+public class Laptop extends ProcessingDevice{
+	
+	String graphicCard;
+	
+	public String getGraphicCard() {
+		return graphicCard;
+	}
+	
+	public Laptop(String graphicCard) {
+		super();
+		this.graphicCard = graphicCard;
+	}
+	
+	
+	@Override 
+	public String toString() { 
+		return "Laptop [graphicCard=" + graphicCard + ", screenSize=" + screenSize + ", os=" + os + ", batterySize="
+				+ batterySize + ", numCore=" + numCore + ", RAM=" + RAM + ", productId=" + productId + ", productName="
+				+ productName + ", productType=" + productType + ", price=" + price + ", warranty=" + warranty
+				+ ", manufecturedDt=" + manufecturedDt + "]";
+	}
+	public Laptop() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public void setGraphicCard(String graphicCard) {
+		this.graphicCard = graphicCard;
+	}
+	public void buildProduct(Map<String,String> map) throws ProductException {
+		super.buildProduct(map);
+		this.graphicCard = map.get("GraphicsCard");
+	}
+}

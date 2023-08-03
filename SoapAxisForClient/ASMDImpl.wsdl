@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soapforaxis.reactiveworks.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soapforaxis.reactiveworks.com" xmlns:intf="http://soapforaxis.reactiveworks.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soapforaxis.reactiveworks.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getSubtract">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSubtractResponse">
+    <complexType>
+     <sequence>
+      <element name="getSubtractReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDivide">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDivideResponse">
+    <complexType>
+     <sequence>
+      <element name="getDivideReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMultiply">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMultiplyResponse">
+    <complexType>
+     <sequence>
+      <element name="getMultiplyReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAdd">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAddResponse">
+    <complexType>
+     <sequence>
+      <element name="getAddReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getDivideResponse">
+
+      <wsdl:part element="impl:getDivideResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAddRequest">
+
+      <wsdl:part element="impl:getAdd" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSubtractRequest">
+
+      <wsdl:part element="impl:getSubtract" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDivideRequest">
+
+      <wsdl:part element="impl:getDivide" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSubtractResponse">
+
+      <wsdl:part element="impl:getSubtractResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMultiplyRequest">
+
+      <wsdl:part element="impl:getMultiply" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMultiplyResponse">
+
+      <wsdl:part element="impl:getMultiplyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAddResponse">
+
+      <wsdl:part element="impl:getAddResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ASMDImpl">
+
+      <wsdl:operation name="getSubtract">
+
+         <wsdl:input message="impl:getSubtractRequest" name="getSubtractRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSubtractResponse" name="getSubtractResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDivide">
+
+         <wsdl:input message="impl:getDivideRequest" name="getDivideRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDivideResponse" name="getDivideResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMultiply">
+
+         <wsdl:input message="impl:getMultiplyRequest" name="getMultiplyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMultiplyResponse" name="getMultiplyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdd">
+
+         <wsdl:input message="impl:getAddRequest" name="getAddRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAddResponse" name="getAddResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ASMDImplSoapBinding" type="impl:ASMDImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSubtract">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSubtractRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSubtractResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDivide">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDivideRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDivideResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMultiply">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMultiplyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMultiplyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAdd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAddRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAddResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ASMDImplService">
+
+      <wsdl:port binding="impl:ASMDImplSoapBinding" name="ASMDImpl">
+
+         <wsdlsoap:address location="http://localhost:8082/SoapForAxis/services/ASMDImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+package com.reactiveworks.product.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.reactiveworks.product.exception.ProductException;
+import com.reactiveworks.product.individualproduct.Laptop;
+import com.reactiveworks.product.individualproduct.Product;
+import com.reactiveworks.product.util.ProductCsvReader;
+
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebService;
+ 
+@WebService
+public class ProductService {
+
+	@WebMethod
+	public List<Laptop> getProductForType(String productType) throws ProductException{
+		List<Product> list = new ArrayList<Product>();
+		List<Laptop> list1 =new ArrayList<>();
+		ProductCsvReader csv = new ProductCsvReader();
+		list = csv.getAllProducts();
+		list1 = list.stream().filter(i -> i.getProductType().equals(productType)).collect(Collectors.toList());
+		System.out.println(list);
+		return list1;
+	}
+} 

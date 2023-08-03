@@ -1,0 +1,52 @@
+package Java8;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Stream { 
+	public static void main(String[] args) {
+	 ArrayList<Integer>  list = new ArrayList();
+	 ArrayList<String> name = new ArrayList();
+	 list.add(70);
+	 list.add(10);
+	 list.add(23);
+	 list.add(33);
+	 list.add(45);
+	 list.add(55);
+	 
+	 
+	 name.add("Satish");
+	 name.add("umar");
+	 name.add("Akash");
+	 name.add("");
+	 name.add("Satish");
+	 name.add("Satish");
+	 name.add("Satish");
+	 
+	 System.out.println(list);
+	 List<Integer> filterasPositiveNumber = list.stream().filter(i->i%2==0).collect(Collectors.toList());  //stream filter collect(Collectors.toList())
+	 List<Integer> add5InAllPeople = list.stream().map(i->i+5).collect(Collectors.toList());// stream().map().collect(Collectors.toList());
+	
+	 long NoOfpeopleLessThan35 = list.stream().filter(i->i<35).count();
+	 
+	 List<Integer> sorted = list.stream().sorted((a,b)->b-a).collect(Collectors.toList());
+	 System.out.println(filterasPositiveNumber);
+	 System.out.println(add5InAllPeople);
+	 System.out.println(NoOfpeopleLessThan35);
+	 System.out.println(sorted);
+	 
+	}
+}
+/*
+   Collection and Stream
+   =======================
+   If we want to represent a group of Objects as a 
+   single entity then we should go for collection.
+   
+   if we want to process Objects from the collection-stream. 
+   
+   Stream s = c.stream(); 
+   java.util.stream package
+   
+*/

@@ -1,0 +1,21 @@
+package pack3;
+
+public class Q15 implements Runnable {
+	String name;
+	public Q15(String name) {
+		this.name = name;
+	}
+	@Override
+	public void run() {
+		System.out.println(name + "......job started by "
+				+ "Thread :" + Thread.currentThread().getName());
+		try {
+			Thread.sleep(5000);
+		}
+		catch(InterruptedException e) {
+		
+		}
+		
+	}
+
+}

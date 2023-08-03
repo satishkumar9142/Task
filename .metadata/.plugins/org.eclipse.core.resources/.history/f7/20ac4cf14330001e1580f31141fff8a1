@@ -1,0 +1,45 @@
+package com.reactiveworks.product.model;
+
+import java.time.LocalDate;
+
+public class WashingMachine extends Product{
+	
+	int loadCapacity;
+	boolean isAutomatic;
+	String doorType;
+	
+	public WashingMachine(String productId, String productName, String productType, double price, int warranty,
+			LocalDate manufecturedDt, int loadCapacity, boolean isAutomatic, String doorType)  {
+		super(productId, productName, productType, price, warranty, manufecturedDt);
+		this.loadCapacity = loadCapacity;
+		this.isAutomatic = isAutomatic;
+		this.doorType = doorType;
+	}
+	public int getLoadCapacity() {
+		return loadCapacity;
+	}
+	public boolean isAutomatic() {
+		return isAutomatic;
+	}
+	public String getDoorType() {
+		return doorType;
+	}
+
+	public void setLoadCapacity(int loadCapacity) {
+		this.loadCapacity = loadCapacity;
+	}
+	public void setAutomatic(boolean isAutomatic) {
+		this.isAutomatic = isAutomatic;
+	}
+	public void setDoorType(String doorType) {
+		this.doorType = doorType;
+	}
+	@Override 
+	public String toString() {
+		return "WashingMachine [loadCapacity=" + loadCapacity + ", isAutomatic=" + isAutomatic + ", doorType="
+				+ doorType + ", productId=" + productId + ", productName=" + productName + ", productType="
+				+ productType + ", price=" + price + ", warranty=" + warranty + ", manufecturedDt=" + manufecturedDt
+				+ "]";
+	}
+}
+

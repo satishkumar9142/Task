@@ -1,0 +1,2 @@
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://services.cityexercise.reactiveworks.com/")
+package com.reactiveworks.city.service.client;

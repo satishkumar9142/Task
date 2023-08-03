@@ -1,0 +1,11 @@
+package com.reactiveworks.client;
+
+public class Client {
+	public static void main(String[] args) {
+	 
+		GetCurrentTemperature request = new GetCurrentTemperature();
+		request.arg0.setCity("Patna");
+		GetCurrentTemperatureResponse response = new GetCurrentTemperatureResponse();
+		String temp = response._return.getTemperature();
+	}
+}

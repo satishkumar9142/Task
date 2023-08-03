@@ -1,0 +1,14 @@
+1686215932797	Rename package 'com.reactiveworks.committed.Connection'
+1686215960960	Rename package 'com.reactiveworks.committed.mainmethod'
+1686215990093	Rename package 'com.reactiveworks.committed.crudoperation'
+1686216009991	Rename type 'committed'
+1686293297274	Rename type 'Util'
+1686293320244	Delete element
+1686293355308	Delete element
+1686293395091	Rename type 'CommittedException'
+1686293422501	Rename package 'com.reactiveworks.repeatable.crudoperation'
+1686293433142	Rename package 'com.reactiveworks.repeatable.connection'
+1686293513389	Delete element
+1686293527183	Rename type 'ConnectingToDataBase'
+1686293667422	Rename type 'RepeatableException'
+1686293968487	Rename package 'com.reactiveworks.committed.customexception'

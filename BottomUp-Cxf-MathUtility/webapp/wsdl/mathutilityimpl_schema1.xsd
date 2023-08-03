@@ -1,0 +1,27 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://example.cxf.reactiveworks.com/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://example.cxf.reactiveworks.com/">
+<xsd:element name="getFactorial" type="tns:getFactorial"/>
+<xsd:complexType name="getFactorial">
+<xsd:sequence>
+<xsd:element name="n" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getFactorialResponse" type="tns:getFactorialResponse"/>
+<xsd:complexType name="getFactorialResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getAdd" type="tns:getAdd"/>
+<xsd:complexType name="getAdd">
+<xsd:sequence>
+<xsd:element name="a" type="xsd:int"/>
+<xsd:element name="b" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getAddResponse" type="tns:getAddResponse"/>
+<xsd:complexType name="getAddResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

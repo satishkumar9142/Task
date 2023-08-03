@@ -1,0 +1,58 @@
+package com.reactiveworks.product.individualproduct;
+
+import java.util.Map;
+
+import com.reactiveworks.product.exception.ProductException;
+
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+public class TV  extends Product{
+	
+	int displaySize;
+	String displayType; 
+	boolean isSmartTV;
+	 
+	public int getDisplaySize() {
+		return displaySize;
+	}
+
+	public String getDisplayType() {
+		return displayType;
+	}
+
+	public boolean isSmartTV() {
+		return isSmartTV;
+	}
+
+	public void setDisplaySize(int displaySize) {
+		this.displaySize = displaySize;
+	}
+	public void setDisplayType(String displayType) {
+		this.displayType = displayType;
+	}
+	public void setSmartTV(boolean isSmartTV) {
+		this.isSmartTV = isSmartTV;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "TV [displaySize=" + displaySize + ", displayType=" + displayType + ", isSmartTV=" + isSmartTV
+				+ ", productId=" + productId + ", productName=" + productName + ", productType=" + productType
+				+ ", price=" + price + ", warranty=" + warranty + ", manufecturedDt=" + manufecturedDt + "]";
+	}
+	
+	public void buildProduct(Map<String,String> map) throws ProductException {
+		super.buildProduct(map);
+		this.displayType = map.get("DisplayType");
+		try {
+			this.displaySize = Integer.parseInt(map.get("DisplaySize"));
+			this.isSmartTV = Boolean.parseBoolean("isSmartTV");
+		}
+		catch(NumberFormatException e) {
+			throw new ProductException("Data Type is not in proper for which dataType we want to convert");
+		}
+	}
+}

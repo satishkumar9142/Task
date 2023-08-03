@@ -1,0 +1,12 @@
+package com.reactiveworks.services;
+
+public class OperationImpl implements Operation{
+
+	@Override
+	public AddResponse newOperation(Add parameters) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+}

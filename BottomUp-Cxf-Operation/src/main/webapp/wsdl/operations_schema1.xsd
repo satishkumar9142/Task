@@ -1,0 +1,15 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cxf.reactiveworks.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://cxf.reactiveworks.com/">
+<xsd:element name="getAdd" type="tns:getAdd"/>
+<xsd:complexType name="getAdd">
+<xsd:sequence>
+<xsd:element name="arg0" type="xsd:int"/>
+<xsd:element name="arg1" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getAddResponse" type="tns:getAddResponse"/>
+<xsd:complexType name="getAddResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

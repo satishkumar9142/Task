@@ -1,0 +1,23 @@
+package com.reactiveworks.cityexercise.services;
+
+import java.util.List;
+
+import com.reactiveworks.cityexercise.exception.CityCustomException;
+import com.reactiveworks.cityexercise.model.City;
+
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebService;
+
+@WebService
+public interface CityServices {
+	
+	@WebMethod
+	public City getCityNameById(int id) throws CityCustomException;
+	@WebMethod
+	public List<City> getListOfCityNameByCode(String cCode) throws CityCustomException;
+	@WebMethod
+	public City getCityOfMaxPopulation();
+	@WebMethod
+	public City getCityOfMinPopulation();
+	
+}

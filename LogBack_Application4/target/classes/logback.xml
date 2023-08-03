@@ -1,0 +1,67 @@
+<configuration>
+<appender name="debug" class="ch.qos.logback.core.FileAppender">
+    <file>S:/WorkSpace/FileAppender/logBack/package/debug.log</file>
+	<filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>DEBUG</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+	
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+    
+  </appender> 
+  
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+	
+	<appender name="error" class="ch.qos.logback.core.FileAppender">
+    <file>S:/WorkSpace/FileAppender/logBack/package/error.log</file>
+    
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+	
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender> 
+  
+  
+	<appender name="warn" class="ch.qos.logback.core.FileAppender">
+    <file>S:/WorkSpace/FileAppender/logBack/package/warn.log</file>
+    
+     <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>WARN</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>
+    </filter>
+	
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender> 
+  
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+     <logger name="pack1" level="TRACE">
+    	 <appender-ref ref="error"/>
+        <appender-ref ref="warn"/>
+        <appender-ref ref="debug"/>
+    </logger>
+    
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+       
+    </root>
+</configuration>

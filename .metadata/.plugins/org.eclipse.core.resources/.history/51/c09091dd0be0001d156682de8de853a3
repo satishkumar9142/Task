@@ -1,0 +1,20 @@
+package StockTradeReaderImplPackage;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import IStockTradeReaderPackage.IStockTradeReader;
+import StockTradePackage.StockTrade;
+
+public class StockTradeReaderImpl {
+
+	IStockTradeReader write = new IStockTradeReader();
+	private List<StockTrade> list = new ArrayList<StockTrade>();
+	try {
+		list = write.readStockTrades("S:\\WorkSpace\\Cisco.csv");
+	}
+	catch() {
+		
+	}
+	
+}

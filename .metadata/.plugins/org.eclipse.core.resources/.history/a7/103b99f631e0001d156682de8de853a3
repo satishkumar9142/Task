@@ -1,0 +1,18 @@
+package StockTradeReaderImplPackage;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import IStockTradeReaderPackage.IStockTradeReader;
+import IStockTradeReaderPackage.IstokeTradeReader;
+import StockTradeInvalidFormateExceptionPackage.StockTradeInvalidFormateException;
+import StockTradePackage.StockTrade;
+
+public class StockTradeReaderImpl implements IstokeTradeReader{
+
+  private
+}

@@ -1,0 +1,9 @@
+package pack3;
+
+public class Q15 implements Runnable {
+	String name;
+	public Q15(String name) {
+		
+	}
+
+}

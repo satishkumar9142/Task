@@ -1,0 +1,5 @@
+package StockTradeReaderImplPackage;
+
+public class StockTradeReaderImpl implements IStockTradeReaderPackage {
+
+}

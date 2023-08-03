@@ -1,0 +1,5 @@
+package com.reactiveworks.cityexercise.services;
+
+public class ListOfCityByCountryCode {
+
+}

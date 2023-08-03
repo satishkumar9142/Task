@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="/Cxf-BottomUp-Operation/src/main/webapp/wsdl/operations.wsdl"/>
+		<item value="http://localhost:8082/Cxf-BottomUp-Operation/services/OperationsPort?wsdl"/>
+		<item value="http://localhost:8081/BottomUp-Axis2-Hello/services/Hello?wsdl"/>
+		<item value="/Cxf-Calculator1/src/main/webapp/wsdl/calculatorimpl.wsdl"/>
+		<item value="/BottomUp-cxf-Calculator/webapp/wsdl/calculatorimpl.wsdl"/>
+	</list>
+</section>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:fms="http://attunedlabs.com/internal/FeatureMetaInfoSupporting"
+			attributeFormDefault="unqualified" elementFormDefault="qualified"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			
+	      <xs:element name="Feature-Metainfo">
+		    <xs:complexType>
+			  <xs:sequence>
+				<xs:element name="FeatureGroup">
+				 <xs:complexType>
+					<xs:sequence>
+					 <xs:element name="Name" type="xs:string" />
+					 <xs:element name="Features">
+					   <xs:complexType>
+						<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Feature">
+						<xs:complexType>
+                        <xs:sequence>
+						  <xs:element name="Name" type="xs:string" />
+                           <xs:element name="FeatureImplementations">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="FeatureImplementation">
+                                  <xs:complexType>
+                                    <xs:attribute name="resourceName" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>

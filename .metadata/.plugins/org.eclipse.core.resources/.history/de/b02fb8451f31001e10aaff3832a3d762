@@ -1,0 +1,39 @@
+package com.reactiveworks.stocktrade.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class StockTradeServiceImpl implements StockTradeService {
+
+	private static List<StockTrade> stockList;
+	public StockTradeReaderImpl() throws StockTradeInvalidFormateException {
+		stockList = new ArrayList<StockTrade>();
+		stockList = readStockTrades();
+	}
+	
+	@Override
+	public StockTrade getMaximumVolTrade() {
+		
+		return null;
+	}
+
+	@Override
+	public StockTrade getMinimumVolTrade() {
+		
+		return null;
+	}
+
+	@Override
+	public List<String> getDailyTradingDiff() {
+		
+		return null;
+	}
+
+	@Override
+	public List<StockTrade> readStockTrade() {
+		
+		return null;
+	}
+
+}

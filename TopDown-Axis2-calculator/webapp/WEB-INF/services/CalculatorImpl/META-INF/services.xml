@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST) --><serviceGroup>
+    <service name="CalculatorImpl">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.reactiveworks.soapaxis2.CalculatorImplMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.reactiveworks.soapaxis2.CalculatorImplSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="getSubtract" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://soapaxis2.reactiveworks.com">
+            <actionMapping>urn:getSubtract</actionMapping>
+            <outputActionMapping>urn:getSubtractResponse</outputActionMapping>
+        </operation>
+        <operation name="getDivide" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://soapaxis2.reactiveworks.com">
+            <actionMapping>urn:getDivide</actionMapping>
+            <outputActionMapping>urn:getDivideResponse</outputActionMapping>
+        </operation>
+        <operation name="getAdd" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://soapaxis2.reactiveworks.com">
+            <actionMapping>urn:getAdd</actionMapping>
+            <outputActionMapping>urn:getAddResponse</outputActionMapping>
+        </operation>
+        <operation name="getMultiply" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://soapaxis2.reactiveworks.com">
+            <actionMapping>urn:getMultiply</actionMapping>
+            <outputActionMapping>urn:getMultiplyResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
